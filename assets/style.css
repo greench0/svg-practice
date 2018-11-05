@@ -1,0 +1,109 @@
+html, body {
+  /* get rid of default spacing on the edges */
+  margin: 0;
+  padding: 0;
+  /* get rid of that 2px window border in Internet Explorer 6 */
+  border: 0;
+  /* no more scroll bar */
+  /* overflow: hidden; */
+}
+/* global */
+
+
+
+
+
+
+
+
+/* header section */
+header {
+background: grey;
+  padding: 10px 0 10px 0;
+  color: black;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 15px;
+ }
+
+
+
+
+
+
+/* middle section */
+#art-board {
+  padding: 0;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 10px;
+ }
+
+.two-up {
+
+  width:50%;
+  margin: 0 auto;
+    padding: 0px 0px 0px 0px;
+    display: block;
+    float: left;
+    line-height: 0;
+}  
+
+.three-up {
+
+  width:33.33333333%;
+  margin: 0 auto;
+    padding: 0px 0px 0px 0px;
+    display: block;
+    float: left;
+    line-height: 0;
+}  
+
+.four-up {
+  width: 25%;
+  float: left;
+  margin: 0 auto;
+  padding: 0px 0px 0px 0px;
+  line-height: 0;
+}
+
+.five-up {
+  width: 20%;
+  float: left;
+  margin: 0 auto;
+  padding: 0px 0px 0px 0px;
+  line-height: 0;
+}
+
+.six-up {
+  width: 16.66666666%;
+  float: left;
+  margin: 0 auto;
+  padding: 0px 0px 0px 0px;
+  line-height: 0;
+}
+
+
+
+
+/* bottom section */
+.footer {
+  background: grey;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 25px;
+ }
+
+ #blocks {
+  padding: 0;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 25px;
+ }
+
+
+ #shape-div {
+   float: left;
+   
+ }
+
