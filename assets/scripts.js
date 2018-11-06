@@ -169,21 +169,24 @@ $("#btnS0").on("click", function () {
     console.log("btn1 clicked");
 
     $(".data").click(function () {
-      console.log(this.innerHTML);
+      console.log(this.innerHTML.responseText);
 
       // this.attr('fill', 'cyan'); 
 
     });
   });
 
+  // svgDiv.innerHTML=loadXML.responseText
 
 
-  $("#btn1").on("click", function () {
-    console.log("btn1 clicked");
-    dColor0 = "pink";
-      // this.attr('fill', 'cyan'); 
 
-  });
+
+  // $("#btn1").on("click", function () {
+  //   console.log("btn1 clicked");
+  //   dColor0 = "pink";
+  //     // this.attr('fill', 'cyan'); 
+
+  // });
 
 
 
