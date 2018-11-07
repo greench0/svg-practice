@@ -15,7 +15,7 @@ header {
 background: grey;
   padding: 10px 0 10px 0;
   color: black;
-  width: 80%;
+  width: 85%;
   margin: 0 auto;
   margin-top: 15px;
  }
@@ -24,7 +24,7 @@ background: grey;
 #art-board {
   padding: 0;
   background: "#5F909C";
-  width: 80%;
+  width: 85%;
   margin: 0 auto;
   margin-top: 10px;
  }
@@ -83,11 +83,15 @@ background: grey;
 
 
 /* bottom section */
-.footer {
+.bottom {
   background: grey;
   width: 80%;
   margin: 0 auto;
   margin-top: 25px;
+ }
+
+ .misc {
+   float: left;
  }
 
  #blocks {
