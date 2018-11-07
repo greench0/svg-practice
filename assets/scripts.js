@@ -152,6 +152,11 @@ var optionBlocks = [];
     makeBlocks(49, "seven-up");
   });
 
+  $("#btn-8up").on("click", function () {
+    clearArt();
+    makeBlocks(64, "eight-up");
+  });
+
 
 // ==================================================
 // buttons to change shape divs when clicked

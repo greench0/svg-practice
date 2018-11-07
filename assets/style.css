@@ -77,7 +77,13 @@ header {
   line-height: 0;
 }
 
-
+.eight-up {
+  width: 12.5%;
+  float: left;
+  margin: 0 auto;
+  padding: 0px 0px 0px 0px;
+  line-height: 0;
+}
 
 .color1 {
   fill: #5F909C;
@@ -192,9 +198,3 @@ p {
       width: 96%;
      }
     }
-
-    @media only screen and (max-width: 500px) {
-      #art-board {
-        width: 100%;
-       }
-      }
