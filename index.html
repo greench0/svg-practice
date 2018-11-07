@@ -2,9 +2,11 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>snap.js- SVGs</title>
-  <script src="assets/jquery-3.3.1.min.js"></script>
+  <title>Block Pattern Maker</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="assets/scripts.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/style.css">
 
@@ -20,42 +22,59 @@
         <button id="btn-4up">4-up</button>
         <button id="btn-5up">5-up</button>
         <button id="btn-6up">6-up</button>
+        <button id="btn-7up">7-up</button>
     </div>
 </header>
 <br>
 
-            
+
+<div class="container-fluid" id="">           
 <div id="art-board">
                 
 </div>
-                
+</div>          
             
-
         
 <br>
        
-<div class = "footer">
-        <!-- <div id="misc"> -->
+<!-- <div class = "footer">
+         <div id="misc"> -->
     <button id="btn0">0 grey</button>
-    <button id="btn1">1 cyan</button>
-    <button id="btn2">new color</button>
-    <br><br>
-    <button id="btnS0"> rotate </button>
-    <!-- <button id="btnS1">shape 2 </button> -->
-    <!-- <button id="btnS1">shape 2#</button> -->
-           <!-- </div> -->
-</div>
-
-
-<div id="blocks">
-
-    <div id="shape-div">
-
     
+<!-- </div>
 
+
+</div>  -->
+
+
+
+<div class="container-fluid" id="footer">
+    <div class="container-fluid card" id="center">
+        <p>
+            <button id="action-box" class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#boxes"
+                aria-expanded="false" aria-controls="boxes">
+                Boxes
+            </button>
+            <button id="action-colors" class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#colors"
+                aria-expanded="false" aria-controls="colors">
+                Colors
+            </button>
+            <button id="action-rotate" class="btn btn-secondary" type="button">
+                Rotate
+            </button>
+        </p>
+        <div class="collapse" id="boxes">
+            <div id='boxes-holder' class='card card-body'>
+                    <div id="shape-div"></div>
+            </div>
+        </div>
+        <div class="collapse" id="colors">
+            <div id='color-holder' class='card card-body' data-spy="scroll">
+            </div>
+        </div>
     </div>
-
 </div>
+
 
 
 

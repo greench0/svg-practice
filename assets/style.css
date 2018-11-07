@@ -6,15 +6,9 @@ html, body {
   border: 0;
   /* no more scroll bar */
   /* overflow: hidden; */
+
 }
 /* global */
-
-
-
-
-
-
-
 
 /* header section */
 header {
@@ -26,14 +20,10 @@ background: grey;
   margin-top: 15px;
  }
 
-
-
-
-
-
 /* middle section */
 #art-board {
   padding: 0;
+  background: "#5F909C";
   width: 80%;
   margin: 0 auto;
   margin-top: 10px;
@@ -83,7 +73,13 @@ background: grey;
   line-height: 0;
 }
 
-
+.seven-up {
+  width: 14.285714285%;
+  float: left;
+  margin: 0 auto;
+  padding: 0px 0px 0px 0px;
+  line-height: 0;
+}
 
 
 /* bottom section */
@@ -104,6 +100,79 @@ background: grey;
 
  #shape-div {
    float: left;
-   
  }
 
+.color1 {
+  fill: #5F909C;
+}
+
+.color0 {
+  fill: #F37B82;
+}
+
+.shape-thumbnail {
+  width: 55px;
+  height: 55px;
+  float: left;
+  margin: 10px;
+  background-clip: content-box;
+  border: none;
+  padding: 0 -10px 0 0;
+}
+
+
+/* -----------------------------------------------------------------------------------------------------------------------------------------
+------ Conor's Footer Section ------------------- */
+p {
+  margin-top: 10px;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-bottom: none;
+}
+
+#center {
+  width: 80%;
+  margin: auto;
+  border-bottom: none;
+}
+
+.img-thumbnail {
+  width: 55px;
+  height: 55px;
+  float: left;
+  margin: 10px;
+  background-clip: content-box;
+  border: none;
+  padding: 0 -10px 0 0;
+}
+
+#color-holder {
+  display: inline-block;
+  width: 100%;
+  height: 120px;
+  overflow-y: scroll !important;
+}
+
+#boxes-holder {
+  display: inline-block;
+  width: 100%;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+  margin-top: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: rgba(0,0,0,.5);
+  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+  margin-top: 2px;
+}
+/* -----------------------------------------------------------------------------------------------------------------------------------------
+------ Conor's Footer Section ------------------- */
