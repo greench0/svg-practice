@@ -199,9 +199,7 @@ $("#action-rotate").on("click", function () {
     console.log("btn1 clicked");
 
     $(".color0").click(function () {
-      
       $(this).css("fill", "yellow");
-
     });
 
     $(".color1").click(function () {
@@ -212,14 +210,37 @@ $("#action-rotate").on("click", function () {
   });
 
 
+  $("#color-holder").on("click", function () {
+    // console.log(this.innerHTML);
+    // var start = this.innerHTML.indexOf("block");
+    // var end = this.innerHTML.indexOf("class");
+    // var svgId = (this.innerHTML.substring(start, end-3));
+    // console.log(svgId);
+
+
+      $("#art-board").click(function () {
+        console.log(this.innerHTML);
+        $(this).css("fill", "pink");
+      });
+
+      $(".color1").click(function () {
+        console.log(this);
+        $(this).css("fill", "pink");
+      });
+
+  });
 
 
 
 
+
+  
 
 //================================================================================================================================================================================//
 
-  
+// $('.fluid-height').height((($(document).height() - 86) / 3) + 'px');
+
+
 //================================================================================================================================================================================//
 //================================================================================================================================================================================//
 //FOOTER

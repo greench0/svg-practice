@@ -1,18 +1,14 @@
 html, body {
-  /* get rid of default spacing on the edges */
   margin: 0;
   padding: 0;
-  /* get rid of that 2px window border in Internet Explorer 6 */
   border: 0;
   /* no more scroll bar */
   /* overflow: hidden; */
 
 }
-/* global */
 
 /* header section */
 header {
-background: grey;
   padding: 10px 0 10px 0;
   color: black;
   width: 85%;
@@ -24,9 +20,9 @@ background: grey;
 #art-board {
   padding: 0;
   background: "#5F909C";
-  width: 85%;
+  width: 42%;
   margin: 0 auto;
-  margin-top: 10px;
+  margin-top: 0px;
  }
 
 .two-up {
@@ -82,29 +78,6 @@ background: grey;
 }
 
 
-/* bottom section */
-.bottom {
-  background: grey;
-  width: 80%;
-  margin: 0 auto;
-  margin-top: 25px;
- }
-
- .misc {
-   float: left;
- }
-
- #blocks {
-  padding: 0;
-  width: 80%;
-  margin: 0 auto;
-  margin-top: 25px;
- }
-
-
- #shape-div {
-   float: left;
- }
 
 .color1 {
   fill: #5F909C;
@@ -122,6 +95,14 @@ background: grey;
   background-clip: content-box;
   border: none;
   padding: 0 -10px 0 0;
+}
+
+
+.fluid-height {
+  background-color: red;
+  width: 100%;
+  padding-top: 100%; /* 1:1 Aspect Ratio */
+  position: relative; /* If you want text inside of it */
 }
 
 
@@ -180,3 +161,34 @@ p {
 }
 /* -----------------------------------------------------------------------------------------------------------------------------------------
 ------ Conor's Footer Section ------------------- */
+
+
+@media only screen and (max-width: 1400px) {
+  #art-board {
+    width: 54%;
+   }
+  }
+
+@media only screen and (max-width: 1200px) {
+  #art-board {
+    width: 64%;
+   }
+  }
+
+@media only screen and (max-width: 1000px) {
+  #art-board {
+    width: 74%;
+   }
+  }
+
+  @media only screen and (max-width: 800px) {
+    #art-board {
+      width: 85%;
+     }
+    }
+
+  @media only screen and (max-width: 600px) {
+    #art-board {
+      width: 96%;
+     }
+    }
