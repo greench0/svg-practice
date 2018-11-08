@@ -3,30 +3,21 @@ html, body {
   padding: 0;
   border: 0;
   /* no more scroll bar */
-  /* overflow: hidden; */
+  overflow: auto;
+
 
 }
 
-/* header section */
-header {
-  padding: 10px 0 10px 0;
-  color: black;
-  width: 85%;
-  margin: 0 auto;
-  margin-top: 15px;
- }
-
-/* middle section */
 #art-board {
   padding: 0;
   background: "#5F909C";
   width: 42%;
   margin: 0 auto;
   margin-top: 0px;
+  margin-bottom: 0px;
  }
 
 .two-up {
-
   width:50%;
   margin: 0 auto;
     padding: 0px 0px 0px 0px;
@@ -36,7 +27,6 @@ header {
 }  
 
 .three-up {
-
   width:33.33333333%;
   margin: 0 auto;
     padding: 0px 0px 0px 0px;
@@ -93,24 +83,6 @@ header {
   fill: #F37B82;
 }
 
-.shape-thumbnail {
-  width: 55px;
-  height: 55px;
-  float: left;
-  margin: 10px;
-  background-clip: content-box;
-  border: none;
-  padding: 0 -10px 0 0;
-}
-
-
-.fluid-height {
-  background-color: red;
-  width: 100%;
-  padding-top: 100%; /* 1:1 Aspect Ratio */
-  position: relative; /* If you want text inside of it */
-}
-
 
 /* -----------------------------------------------------------------------------------------------------------------------------------------
 ------ Conor's Footer Section ------------------- */
@@ -126,7 +98,7 @@ p {
 }
 
 #center {
-  width: 80%;
+  width: 43%;
   margin: auto;
   border-bottom: none;
 }
@@ -141,16 +113,29 @@ p {
   padding: 0 -10px 0 0;
 }
 
+.shape-thumbnail {
+  width: 55px;
+  height: 55px;
+  float: left;
+  margin: 10px;
+  background-clip: content-box;
+  border: none;
+  padding: 0 -10px 0 0;
+}
+
+
 #color-holder {
   display: inline-block;
   width: 100%;
-  height: 120px;
+  height: 210px;
   overflow-y: scroll !important;
 }
 
 #boxes-holder {
   display: inline-block;
   width: 100%;
+  height: 210px;
+  overflow-y: scroll !important;
 }
 
 ::-webkit-scrollbar {
@@ -170,31 +155,31 @@ p {
 
 
 @media only screen and (max-width: 1400px) {
-  #art-board {
+  #art-board, #center {
     width: 54%;
    }
   }
 
 @media only screen and (max-width: 1200px) {
-  #art-board {
+  #art-board, #center {
     width: 64%;
    }
   }
 
 @media only screen and (max-width: 1000px) {
-  #art-board {
+  #art-board, #center {
     width: 74%;
    }
   }
 
   @media only screen and (max-width: 800px) {
-    #art-board {
-      width: 85%;
+    #art-board, #center {
+      width: 88%;
      }
     }
 
   @media only screen and (max-width: 600px) {
-    #art-board {
+    #art-board, #center {
       width: 96%;
      }
     }

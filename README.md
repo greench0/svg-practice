@@ -1,1 +1,2 @@
-# svg-practice
+# project_1
+Collaborative Project for UCB

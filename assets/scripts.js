@@ -1,8 +1,37 @@
 $(document).ready(function () {
-  // ==========================================================
-    // $("#blocks").hide();
+//================================================================================================================================================================================//
+//================================================================================================================================================================================//
 
-// ================================================
+    // function for saving the art board div
+function saveImage() {
+  console.log(document.getElementById("art-board"));
+
+  html2canvas(document.getElementById("art-board")).then(canvas => {
+    //console.log($(canvas));
+    // console.log($(canvas).toBlob());
+    //console.log(canvas.toDataURL("image/png"));
+    //document.body.appendChild(canvas)
+    $("#imageSaver").attr('href', canvas.toDataURL("image/png"));
+      $("#imageSaver").attr("download", "BlockImage.png");
+      $("#imageSaver")[0].click();
+      console.log("saved");
+
+});
+  // console.log(html2canvas("#art-board", {
+  //   onrendered: function(canvas) {
+  //     $("#imageSaver").attr('href', canvas.toDataUrl("image/png"));
+  //     $("#imageSaver").attr("download", "BlockImage.png");
+  //     $("#imageSaver")[0].click();
+  //     console.log("saved");
+
+  //   }
+  // }))
+}
+// $("#imageSaver").on("click", saveImage());
+
+
+//================================================================================================================================================================================//
+//================================================================================================================================================================================//
     // buttons for art-board generation
     function clearArt () {
       $( "#art-board" ).empty();
@@ -10,13 +39,13 @@ $(document).ready(function () {
 
 // =========================
 // a = how many svg files
-var totalShapes = 17;
+var totalShapes = 22;
 
   function blocksForHtml(a) {
     for (i = 0; i < a; i++) {
       var t = $(
-      '<div class="shape-thumbnail"><svg id="block' + i + '" "class="data" viewBox="0 0 100 100"></svg></div>');
-      $('#shape-div').append(t);
+      '<div id="boxes-card" class="shape-thumbnail"><svg id="block' + i + '" "class="data" viewBox="0 0 100 100"></svg></div>');
+      $('#boxes-holder').append(t);
     }
   }
 
@@ -41,33 +70,12 @@ var totalShapes = 17;
   b14 = Snap('#block14');
   b15 = Snap('#block15');
   b16 = Snap('#block16');
+  b17 = Snap('#block17');
+  b18 = Snap('#block18');
+  b19 = Snap('#block19');
+  b20 = Snap('#block20');
+  b21 = Snap('#block21');
 
-var blockOptions = [b0,b1,b2,b3,b4,b5,b6];
-
-
-// var snapData = 0;
-// while (snapData <= totalShapes) {
-//     output = ("b" + snapData + " = Snap('#block" + snapData + "');");
-//     console.log(output);
-//     snapData++;
-// }
-
-
-// var number = 0;
-// while (number <= 5) {
-//     console.log(number);
-//     number++;
-// }
-
-
-var optionBlocks = [];
-
-  //load the external svgs to the html
-  // for (i=0; i<options.length; i++) {
-  //   var j = loadBlocks(i, options[i]);
-  //   optionBlocks.push(j);
-    
-  // };
 
   loadBlocks(0, b0);  
   loadBlocks(1, b1);
@@ -86,6 +94,11 @@ var optionBlocks = [];
   loadBlocks(14, b14);
   loadBlocks(15, b15);
   loadBlocks(16, b16);
+  loadBlocks(17, b17);
+  loadBlocks(18, b18);
+  loadBlocks(19, b19);
+  loadBlocks(20, b20);
+  loadBlocks(21, b21);
  
   // defines the color 1 and 2 for the default shapes
   var dColor0 = "#F37B82";
@@ -162,7 +175,6 @@ var optionBlocks = [];
 // buttons to change shape divs when clicked
 
 $(".shape-thumbnail").on("click", function () {
-
 var start = this.innerHTML.indexOf("block");
 var end = this.innerHTML.indexOf("class");
 
@@ -196,54 +208,32 @@ $("#action-rotate").on("click", function () {
 //       rotation.clear();
 //     }    
 
+// $("#action-rotate").on("click", function () {
+
+//   $("#art-board").click( function() { 
+//     console.log(this.innerHTML);
+//   // block1.transform('');
+//   // block0,block1.animate({ transform: 'r90' }, 100, mina.easein ) ;
+  
+//   } ); 
+  
+//   });
 
 // ==================================================
  // color buttons in progress 
 // get attributges from inner html
-  $("#btn0").on("click", function () {
-    console.log("btn1 clicked");
-
-    $(".color0").click(function () {
-      $(this).css("fill", "yellow");
-    });
-
-    $(".color1").click(function () {
-      console.log(this);
-      $(this).css("fill", "yellow");
-        });
-   
-  });
-
-
-  $("#color-holder").on("click", function () {
-    // console.log(this.innerHTML);
-    // var start = this.innerHTML.indexOf("block");
-    // var end = this.innerHTML.indexOf("class");
-    // var svgId = (this.innerHTML.substring(start, end-3));
-    // console.log(svgId);
-
-
-      $("#art-board").click(function () {
-        console.log(this.innerHTML);
-        $(this).css("fill", "pink");
-      });
-
-      $(".color1").click(function () {
-        console.log(this);
-        $(this).css("fill", "pink");
-      });
-
-  });
-
-
-
-
-
+  // $("#btn0").on("click", function () {
+  //   console.log("btn1 clicked");
+      
+  //     $(".color0").click(function () {
+  //       $(this).css("fill", "rgb(155, 102, 102)");
+  //     });
   
-
-//================================================================================================================================================================================//
-
-// $('.fluid-height').height((($(document).height() - 86) / 3) + 'px');
+  //     $(".color1").click(function () {
+  //       $(this).css("fill", "pink");
+  //         });
+   
+  // });
 
 
 //================================================================================================================================================================================//
@@ -341,30 +331,56 @@ function generateColors(){
         var c = $("<img id='color-card' class='img-thumbnail'></img>");
         var colortype = "background-color: rgb" + "(" + colors[i][0] + "," + colors[i][1] + "," + colors[i][2] + ")";
         c.attr("style", colortype);
+        c.attr("colorpicker", "(" + colors[i][0] + "," + colors[i][1] + "," + colors[i][2] + ")")
         $("#color-holder").append(c);
     };
     // console.log("colorsfilled")
 };
 
-//On Click Event for Colors
-
-
-
-//Fill the boxes boxes
-function generateBoxes() {
-    for (var i = 0; i < 5; i++) {
-
-        var c = $("<img id='boxes-card' class='shape-thumbnail'></img>");
-        $("#boxes-holder").append(c);
-    };
-};
-
 //On Click Event for Boxes
+$("#boxes-holder").on("click", "#boxes-card", function() {
+  $(".shape-thumbnail").css('border', 'none');
+  $(this).css({ 'border': 'solid', 'border-width': '4px', 'border-color': 'gold' });
+});
+
+//On Click Event for Colors
 $("#color-holder").on("click", "#color-card", function() {
     $(".img-thumbnail").css('border', 'none');
     $(this).css({ 'border': 'solid', 'border-width': '4px', 'border-color': 'gold' });
-
 });
+
+
+$("#color-holder").on("click", "#color-card", function() {
+  var color = ($(this).attr("colorpicker"));
+  console.log(color);
+
+  $(".color0").click(function () {
+    console.log("color0");
+    $(this).css("fill", 'rgb' + color +' ');
+    
+  });
+
+  $(".color1").click(function () {
+    $(this).css("fill", 'rgb' + color +' ');
+      });
+});
+
+
+// $("#btn0").on("click", function () {
+//   console.log("btn1 clicked");
+    
+//     $(".color0").click(function () {
+//       $(this).css("fill", "rgb(155, 102, 102)");
+//     });
+
+//     $(".color1").click(function () {
+//       $(this).css("fill", "pink");
+//         });
+ 
+// });
+
+
+
 
 setTimeout(generateColors, 3000);
 
