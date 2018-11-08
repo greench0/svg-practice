@@ -37,6 +37,11 @@ function saveImage() {
       $( "#art-board" ).empty();
     }    
 
+
+    $(".set-height-btn").click(function(){
+      var newHeight = $(".input-height").val();
+      $(".box").height(newHeight);
+  });
 // =========================
 // a = how many svg files
 var totalShapes = 22;
@@ -181,7 +186,7 @@ var end = this.innerHTML.indexOf("class");
 var svgId = (this.innerHTML.substring(start, end-3));
 console.log(svgId);
 
-  $(".data").click( function() { 
+$("#art-board").on("click", ".data", function() {
     $(this).empty();
     $("#" + svgId).clone().appendTo(this);
 
@@ -196,8 +201,7 @@ $("#action-rotate").on("click", function () {
   jQuery.fn.rotate = function(degrees) {
       $(this).css({'transform' : 'rotate('+ degrees +'deg)'});
   };
-  
-  $('.data').click(function() {
+  $("#art-board").on("click", ".data", function() {
       rotation += 90;
       $(this).rotate(rotation);
   });
@@ -222,18 +226,34 @@ $("#action-rotate").on("click", function () {
 // ==================================================
  // color buttons in progress 
 // get attributges from inner html
-  // $("#btn0").on("click", function () {
-  //   console.log("btn1 clicked");
+  $("#btn0").on("click", function () {
+    console.log("btn1 clicked");
       
-  //     $(".color0").click(function () {
-  //       $(this).css("fill", "rgb(155, 102, 102)");
-  //     });
+      // $(".color0").click(function () {
+      //   $(this).css("fill", "rgb(155, 102, 102)");
+      // });
   
-  //     $(".color1").click(function () {
-  //       $(this).css("fill", "pink");
-  //         });
+      // $(".color1").click(function () {
+      //   $(this).css("fill", "pink");
+      //     });
    
-  // });
+  });
+
+
+  $(".shape-thumbnail").on("click", function () {
+    var start = this.innerHTML.indexOf("block");
+    var end = this.innerHTML.indexOf("class");
+
+    var svgId = (this.innerHTML.substring(start, end - 3));
+    console.log(svgId);
+
+    $("#art-board").on("click", ".data", function () {
+      $(this).empty();
+      $("#" + svgId).clone().appendTo(this);
+
+    });
+  });
+
 
 
 //================================================================================================================================================================================//
@@ -354,13 +374,13 @@ $("#color-holder").on("click", "#color-card", function() {
   var color = ($(this).attr("colorpicker"));
   console.log(color);
 
-  $(".color0").click(function () {
+  $("#art-board").on("click", ".color0", function() {
     console.log("color0");
     $(this).css("fill", 'rgb' + color +' ');
     
   });
 
-  $(".color1").click(function () {
+  $("#art-board").on("click", ".color1", function() {
     $(this).css("fill", 'rgb' + color +' ');
       });
 });

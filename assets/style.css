@@ -8,12 +8,13 @@ html, body {
 
 }
 
+
 #art-board {
   padding: 0;
   background: "#5F909C";
   width: 42%;
   margin: 0 auto;
-  margin-top: 0px;
+  margin-top: 15px;
   margin-bottom: 0px;
  }
 
@@ -166,11 +167,18 @@ p {
    }
   }
 
-@media only screen and (max-width: 1000px) {
-  #art-board, #center {
-    width: 74%;
-   }
-  }
+  @media only screen and (max-width: 1000px) {
+    #art-board, #center {
+      width: 74%;
+     }
+    }
+
+  @media only screen and (max-width: 1140px) {
+    #art-board, #center {
+      width: 85%;
+     }
+    }
+
 
   @media only screen and (max-width: 800px) {
     #art-board, #center {
@@ -178,7 +186,7 @@ p {
      }
     }
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 645px) {
     #art-board, #center {
       width: 96%;
      }
