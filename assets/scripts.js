@@ -30,6 +30,23 @@ function saveImage() {
 // $("#imageSaver").on("click", saveImage());
 
 
+$(function() { 
+  $("#btn0").click(function() { 
+      html2canvas($("#art-board"), {
+          onrendered: function(canvas) {
+              theCanvas = canvas;
+              document.body.appendChild(canvas);
+
+              // Convert and download as image 
+              Canvas2Image.saveAsPNG(canvas); 
+              $("#img-out").append(canvas);
+              // Clean up 
+              //document.body.removeChild(canvas);
+          }
+      });
+  });
+}); 
+
 //================================================================================================================================================================================//
 //================================================================================================================================================================================//
     // buttons for art-board generation
@@ -37,25 +54,20 @@ function saveImage() {
       $( "#art-board" ).empty();
     }    
 
-
-    $(".set-height-btn").click(function(){
-      var newHeight = $(".input-height").val();
-      $(".box").height(newHeight);
-  });
+    $("#footer").hide();
 // =========================
 // a = how many svg files
-var totalShapes = 22;
+var totalShapes = 27;
 
   function blocksForHtml(a) {
     for (i = 0; i < a; i++) {
       var t = $(
-      '<div id="boxes-card" class="shape-thumbnail"><svg id="block' + i + '" "class="data" viewBox="0 0 100 100"></svg></div>');
+      '<div id="boxes-card" class="shape-thumbnail"><svg id="block' + i + '" "class="" viewBox="0 0 100 100"></svg></div>');
       $('#boxes-holder').append(t);
     }
   }
 
   blocksForHtml(totalShapes);
-
 // ====================================
 // create and load Snap svg blocks in the shape div container
   b0 = Snap('#block0');
@@ -80,6 +92,11 @@ var totalShapes = 22;
   b19 = Snap('#block19');
   b20 = Snap('#block20');
   b21 = Snap('#block21');
+  b22 = Snap('#block22');
+  b23 = Snap('#block23');
+  b24 = Snap('#block24');
+  b25 = Snap('#block25');
+  b26 = Snap('#block26');
 
 
   loadBlocks(0, b0);  
@@ -104,6 +121,11 @@ var totalShapes = 22;
   loadBlocks(19, b19);
   loadBlocks(20, b20);
   loadBlocks(21, b21);
+  loadBlocks(22, b22);
+  loadBlocks(23, b23);
+  loadBlocks(24, b24);
+  loadBlocks(25, b25);
+  loadBlocks(26, b26);
  
   // defines the color 1 and 2 for the default shapes
   var dColor0 = "#F37B82";
@@ -131,54 +153,80 @@ var totalShapes = 22;
     for (i = 0; i < a; i++) {
       var block = $(
         // "<div class='" + b + "'><svg id='b" + i + "' class='data' viewBox='0 0 100 100'></svg></div>");
-        "<div id='b" + i + "' class='data " + b + "' ></div>");
+        "<div id='b" + i + "' class='data rotate " + b + "' ></div>");
 
       $('#art-board').append(block);
       $('#block0').clone().appendTo("#b" + i + "");
     }
 }
 
+
   // buttons for art-board generation
   $("#btn-2up").on("click", function () {
     clearArt();
+    $(".jumbotron").hide();
     makeBlocks(4, "two-up");
+
+    $("#footer").show();
   });
 
 
   $("#btn-3up").on("click", function () {
     clearArt();
+    $(".jumbotron").hide();
     makeBlocks(9, "three-up");
+    $("#footer").show();
   });
 
   $("#btn-4up").on("click", function () {
     clearArt();
+    $(".jumbotron").hide();
     makeBlocks(16, "four-up");
+    $("#footer").show();
   });
 
   $("#btn-5up").on("click", function () {
     clearArt();
+    $(".jumbotron").hide();
     makeBlocks(25, "five-up");
+    $("#footer").show();
   });
 
   $("#btn-6up").on("click", function () {
     clearArt();
+    $(".jumbotron").hide();
     makeBlocks(36, "six-up");
+    $("#footer").show();
   });
   
     $("#btn-7up").on("click", function () {
     clearArt();
+    $(".jumbotron").hide();
     makeBlocks(49, "seven-up");
+    $("#footer").show();
   });
 
   $("#btn-8up").on("click", function () {
     clearArt();
+    $(".jumbotron").hide();
     makeBlocks(64, "eight-up");
+    $("#footer").show();
   });
 
+  $("#btn-9up").on("click", function () {
+    clearArt();
+    $(".jumbotron").hide();
+    makeBlocks(81, "nine-up");
+    $("#footer").show();
+  });
 
+  // function loadArts() {
+  //   clearArt();
+  //   makeBlocks(4, "two-up");
+  //   }
+  //   loadArts();
 // ==================================================
 // buttons to change shape divs when clicked
-
 $(".shape-thumbnail").on("click", function () {
 var start = this.innerHTML.indexOf("block");
 var end = this.innerHTML.indexOf("class");
@@ -187,74 +235,27 @@ var svgId = (this.innerHTML.substring(start, end-3));
 console.log(svgId);
 
 $("#art-board").on("click", ".data", function() {
+  console.log(this);
     $(this).empty();
     $("#" + svgId).clone().appendTo(this);
 
     }); 
   });
 
+  var rotation = 0;
 // ==================================================
 // rotate a block shape
 $("#action-rotate").on("click", function () {
  
-  var rotation = 0;
+  
   jQuery.fn.rotate = function(degrees) {
       $(this).css({'transform' : 'rotate('+ degrees +'deg)'});
   };
-  $("#art-board").on("click", ".data", function() {
+  $("#art-board").on("click", ".rotate", function() {
       rotation += 90;
       $(this).rotate(rotation);
   });
   });
-
-
-// function clearRotate () {
-//       rotation.clear();
-//     }    
-
-// $("#action-rotate").on("click", function () {
-
-//   $("#art-board").click( function() { 
-//     console.log(this.innerHTML);
-//   // block1.transform('');
-//   // block0,block1.animate({ transform: 'r90' }, 100, mina.easein ) ;
-  
-//   } ); 
-  
-//   });
-
-// ==================================================
- // color buttons in progress 
-// get attributges from inner html
-  $("#btn0").on("click", function () {
-    console.log("btn1 clicked");
-      
-      // $(".color0").click(function () {
-      //   $(this).css("fill", "rgb(155, 102, 102)");
-      // });
-  
-      // $(".color1").click(function () {
-      //   $(this).css("fill", "pink");
-      //     });
-   
-  });
-
-
-  $(".shape-thumbnail").on("click", function () {
-    var start = this.innerHTML.indexOf("block");
-    var end = this.innerHTML.indexOf("class");
-
-    var svgId = (this.innerHTML.substring(start, end - 3));
-    console.log(svgId);
-
-    $("#art-board").on("click", ".data", function () {
-      $(this).empty();
-      $("#" + svgId).clone().appendTo(this);
-
-    });
-  });
-
-
 
 //================================================================================================================================================================================//
 //================================================================================================================================================================================//
@@ -357,7 +358,7 @@ function generateColors(){
     // console.log("colorsfilled")
 };
 
-//On Click Event for Boxes
+//On Click Event for blocks
 $("#boxes-holder").on("click", "#boxes-card", function() {
   $(".shape-thumbnail").css('border', 'none');
   $(this).css({ 'border': 'solid', 'border-width': '4px', 'border-color': 'gold' });
@@ -370,14 +371,13 @@ $("#color-holder").on("click", "#color-card", function() {
 });
 
 
+// on Click Event for adding this Color to Blocks
 $("#color-holder").on("click", "#color-card", function() {
   var color = ($(this).attr("colorpicker"));
   console.log(color);
 
   $("#art-board").on("click", ".color0", function() {
-    console.log("color0");
     $(this).css("fill", 'rgb' + color +' ');
-    
   });
 
   $("#art-board").on("click", ".color1", function() {
@@ -385,19 +385,6 @@ $("#color-holder").on("click", "#color-card", function() {
       });
 });
 
-
-// $("#btn0").on("click", function () {
-//   console.log("btn1 clicked");
-    
-//     $(".color0").click(function () {
-//       $(this).css("fill", "rgb(155, 102, 102)");
-//     });
-
-//     $(".color1").click(function () {
-//       $(this).css("fill", "pink");
-//         });
- 
-// });
 
 
 

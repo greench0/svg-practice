@@ -11,7 +11,7 @@ html, body {
 
 #art-board {
   padding: 0;
-  background: "#5F909C";
+  background: "grey";
   width: 42%;
   margin: 0 auto;
   margin-top: 15px;
@@ -76,6 +76,15 @@ html, body {
   line-height: 0;
 }
 
+.nine-up {
+  width: 11.111111111%;
+  float: left;
+  margin: 0 auto;
+  padding: 0px 0px 0px 0px;
+  line-height: 0;
+}
+
+
 .color1 {
   fill: #5F909C;
 }
@@ -84,6 +93,10 @@ html, body {
   fill: #F37B82;
 }
 
+
+#center .btn{
+  width:150px;
+}
 
 /* -----------------------------------------------------------------------------------------------------------------------------------------
 ------ Conor's Footer Section ------------------- */
