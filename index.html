@@ -13,43 +13,81 @@
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 <script src="assets/scripts.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/style.css">
-    
-
-
 	</head>
-
     <body>
+<!--Navbar-->
+<nav class="navbar navbar-light navbar-1 white">
 
+    <!-- Navbar brand -->
+    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
 
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent15"
+        aria-controls="navbarSupportedContent15" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent15">
+
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item">
+                <a class="nav-link" href="#" button id="btn-2up">2-up</button></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" button id="btn-3up">3-up</button></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" button id="btn-4up">4-up</button></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" button id="btn-5up">5-up</button></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" button id="btn-6up" >6-up</button></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" button id="btn-7up">7-up</button></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" button id="btn-8up">8-up</button></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" button id="btn-9up">9-up</button></a>
+            </li>
+        </ul>
+        <!-- Links -->
+
+    </div>
+    <!-- Collapsible content -->
+
+</nav>
+<!--/.Navbar-->
+      
+      
      
-<div id="art-board" class="">
+<div id="art-board">
 
-    <div class="jumbotron shadow-sm p-3 mb-5 bg-blue rounded">
-    <h2>Welcome to the Block Art Maker!</h2>
-<br>
+    <div id="board-options" class="jumbotron shadow-sm p-3 mb-5 bg-blue rounded">
+    <h2>Welcome to the Art Block Maker</h2>
+    <br>
+    <p>Use the Menu in the Upper Left Corner to pick your Art Board Size and get started!</p>
 
-<div id="board-options">
-
-</div>
-    <p>Click an Art Board size to get started.</p>
-
-    <button id="btn-2up" data-toggle="modal" data-target="#exampleModal" class="btn btn-secondary">2-up</button>
+    <!-- <button id="btn-2up" data-toggle="modal" data-target="#exampleModal" class="btn btn-secondary">2-up</button>
     <button id="btn-3up" data-toggle="modal" data-target="#exampleModal" class="btn btn-secondary">3-up</button>
     <button id="btn-4up" data-toggle="modal" data-target="#exampleModal" class="btn btn-secondary">4-up</button>
     <button id="btn-5up" data-toggle="modal" data-target="#exampleModal" class="btn btn-secondary">5-up</button>
     <button id="btn-6up" data-toggle="modal" data-target="#exampleModal" class="btn btn-secondary">6-up</button>
     <button id="btn-7up" data-toggle="modal" data-target="#exampleModal" class="btn btn-secondary">7-up</button>
     <button id="btn-8up" data-toggle="modal" data-target="#exampleModal" class="btn btn-secondary">8-up</button>
-    <button id="btn-9up" data-toggle="modal" data-target="#exampleModal" class="btn btn-secondary">9-up</button>
+    <button id="btn-9up" data-toggle="modal" data-target="#exampleModal" class="btn btn-secondary">9-up</button> -->
 </div>
 
 </div>
    
 
-
  <div>
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -59,10 +97,11 @@
                       </button>
                     </div>
                     <div class="modal-body">
-                            <p>* Use the Block Shapes button to add different Blocks to your Art Board</p>
-                            <p>* Pick a Color and use it to re color Block Elements </p>
-                            <p>* Use the Rotate button to Rotate Block Sections</p>
-                            <p>* When you are done Hit the save button to save out your Creation as an image</p>
+                            <p>1:  Use the Block Shapes button to add different Blocks to your Art Board</p>
+                            <p>2: Pick a Color and use it to re color Block Elements </p>
+                            <p>3: Use the Rotate button to Rotate Block Sections</p>
+                            <p>4: When you are done Hit the save button to save out your Creation as an image</p>
+                            <p>5: Use the Menu Button at the top left to choose a new art board size and Start Again</p>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -72,19 +111,12 @@
               </div>
  </div>           
         
-       
-<header>
-        <!-- <button>menu button</button> -->
-    <!-- ////////////////////////////////// -->
 
-        <a id="imageSaver"></a>
-            <!-- ////////////////////////////////// -->
-
-
-    </header>
-
-    <div id="img-out"></div>
     
+
+ <a id="imageSaverHolder"></a>
+ <div id="img-out"></div>
+
 
 <div class="container-fluid" id="footer">
     <div class="container-fluid card" id="center">
@@ -102,6 +134,9 @@
             </button>
             <button id="action-save" class="btn btn-secondary" type="button">
                 Save
+            </button>
+            <button id="action-tips" class="btn btn-secondary" type="button" data-toggle="modal" data-target="#exampleModal">
+                Tips
             </button>
         </p>
         <div class="collapse" id="boxes">

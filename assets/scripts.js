@@ -1,51 +1,18 @@
 $(document).ready(function () {
 //================================================================================================================================================================================//
 //================================================================================================================================================================================//
-
-    // function for saving the art board div
+// function for saving the art board div
 function saveImage() {
   console.log(document.getElementById("art-board"));
 
   html2canvas(document.getElementById("art-board")).then(canvas => {
-    //console.log($(canvas));
-    // console.log($(canvas).toBlob());
-    //console.log(canvas.toDataURL("image/png"));
-    //document.body.appendChild(canvas)
-    $("#imageSaver").attr('href', canvas.toDataURL("image/png"));
-      $("#imageSaver").attr("download", "BlockImage.png");
-      $("#imageSaver")[0].click();
+    $("#imageSaverHolder").attr('href', canvas.toDataURL("image/png"));
+    $("#imageSaverHolder").attr("download", "BlockImage.png");
+    $("#imageSaverHolder")[0].click();
       console.log("saved");
-
 });
-  // console.log(html2canvas("#art-board", {
-  //   onrendered: function(canvas) {
-  //     $("#imageSaver").attr('href', canvas.toDataUrl("image/png"));
-  //     $("#imageSaver").attr("download", "BlockImage.png");
-  //     $("#imageSaver")[0].click();
-  //     console.log("saved");
-
-  //   }
-  // }))
 }
-// $("#imageSaver").on("click", saveImage());
-
-
-$(function() { 
-  $("#btn0").click(function() { 
-      html2canvas($("#art-board"), {
-          onrendered: function(canvas) {
-              theCanvas = canvas;
-              document.body.appendChild(canvas);
-
-              // Convert and download as image 
-              Canvas2Image.saveAsPNG(canvas); 
-              $("#img-out").append(canvas);
-              // Clean up 
-              //document.body.removeChild(canvas);
-          }
-      });
-  });
-}); 
+$("#action-save").on("click", saveImage);
 
 //================================================================================================================================================================================//
 //================================================================================================================================================================================//
@@ -57,7 +24,7 @@ $(function() {
     $("#footer").hide();
 // =========================
 // a = how many svg files
-var totalShapes = 31;
+var totalShapes = 33;
 
   function blocksForHtml(a) {
     for (i = 0; i < a; i++) {
@@ -101,6 +68,8 @@ b27 = Snap('#block27');
 b28 = Snap('#block28');
 b29 = Snap('#block29');
 b30 = Snap('#block30');
+b31 = Snap('#block31');
+b32 = Snap('#block32');
 
 loadBlocks(0, b0);
 loadBlocks(1, b1);
@@ -133,6 +102,8 @@ loadBlocks(27, b27);
 loadBlocks(28, b28);
 loadBlocks(29, b29);
 loadBlocks(30, b30);
+loadBlocks(31, b31);
+loadBlocks(32, b32);
  
   // defines the color 1 and 2 for the default shapes
   var dColor0 = "#F37B82";
@@ -234,17 +205,17 @@ loadBlocks(30, b30);
   //   loadArts();
 // ==================================================
 // rotate a block shape
-var EnableRotate = true;
+// var EnableRotate = true;
 
 
-  function RunMyFunction() {
-    if (EnableRotate == true) {
-      alert("This function is enabled");
-    } else {
-      alert("This function is disabled");
-    }
+//   function RunMyFunction() {
+//     if (EnableRotate == true) {
+//       alert("This function is enabled");
+//     } else {
+//       alert("This function is disabled");
+//     }
 
-  }
+//   }
 
 {/* <input type="button" value="Enable my function" onclick="Enabled=true;RunMyFunction();"></input>
 <input type="button" value="Disable my function" onclick="Enabled=false;RunMyFunction();"> */}
@@ -277,11 +248,19 @@ console.log(svgId);
 
 $("#art-board").on("click", ".data", function() {
   
-  console.log(this);
+  // console.log(this);
     $(this).empty();
     $("#" + svgId).clone().appendTo(this);
 
     }); 
+  });
+
+
+  // used to collapse the menus when clicked outside of the menu
+  $(document).click(function(e) {
+    if (!$(e.target).is('.panel-body')) {
+        $('.collapse').collapse('hide');	    
+      }
   });
 
 //================================================================================================================================================================================//
