@@ -12,7 +12,12 @@ function saveImage() {
       console.log("saved");
 });
 }
-$("#action-save").on("click", saveImage);
+
+document.getElementById("action-save").addEventListener('click',function ()
+    {
+      $("#action-save").on("click", saveImage());
+    }  ); 
+
 
 //================================================================================================================================================================================//
 //================================================================================================================================================================================//
@@ -198,27 +203,9 @@ loadBlocks(32, b32);
     $("#footer").show();
   });
 
-  // function loadArts() {
-  //   clearArt();
-  //   makeBlocks(4, "two-up");
-  //   }
-  //   loadArts();
+
 // ==================================================
 // rotate a block shape
-// var EnableRotate = true;
-
-
-//   function RunMyFunction() {
-//     if (EnableRotate == true) {
-//       alert("This function is enabled");
-//     } else {
-//       alert("This function is disabled");
-//     }
-
-//   }
-
-{/* <input type="button" value="Enable my function" onclick="Enabled=true;RunMyFunction();"></input>
-<input type="button" value="Disable my function" onclick="Enabled=false;RunMyFunction();"> */}
 
 var rotation = 0;
 
@@ -267,8 +254,6 @@ $("#art-board").on("click", ".data", function() {
 //================================================================================================================================================================================//
 //FOOTER
 //This Belongs to Conor
-
-
 
 //Store Action Items
 var actionItem = "";
@@ -402,8 +387,6 @@ $("#color-holder").on("click", "#color-card", function() {
 
 
 
-
-
 setTimeout(generateColors, 3000);
 
 //save options
@@ -412,6 +395,8 @@ setTimeout(generateColors, 3000);
 //================================================================================================================================================================================//
 //FOOTER
 //This Belongs to Conor
+
+
 
   // ==========================================================
 }); // end document ready
