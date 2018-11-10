@@ -57,7 +57,7 @@ $(function() {
     $("#footer").hide();
 // =========================
 // a = how many svg files
-var totalShapes = 27;
+var totalShapes = 31;
 
   function blocksForHtml(a) {
     for (i = 0; i < a; i++) {
@@ -70,62 +70,69 @@ var totalShapes = 27;
   blocksForHtml(totalShapes);
 // ====================================
 // create and load Snap svg blocks in the shape div container
-  b0 = Snap('#block0');
-  b1 = Snap('#block1');
-  b2 = Snap('#block2');
-  b3 = Snap('#block3');
-  b4 = Snap('#block4');
-  b5 = Snap('#block5');
-  b6 = Snap('#block6');
-  b7 = Snap('#block7');
-  b8 = Snap('#block8');
-  b9 = Snap('#block9');
-  b10 = Snap('#block10');
-  b11 = Snap('#block11');
-  b12 = Snap('#block12');
-  b13 = Snap('#block13');
-  b14 = Snap('#block14');
-  b15 = Snap('#block15');
-  b16 = Snap('#block16');
-  b17 = Snap('#block17');
-  b18 = Snap('#block18');
-  b19 = Snap('#block19');
-  b20 = Snap('#block20');
-  b21 = Snap('#block21');
-  b22 = Snap('#block22');
-  b23 = Snap('#block23');
-  b24 = Snap('#block24');
-  b25 = Snap('#block25');
-  b26 = Snap('#block26');
+b0 = Snap('#block0');
+b1 = Snap('#block1');
+b2 = Snap('#block2');
+b3 = Snap('#block3');
+b4 = Snap('#block4');
+b5 = Snap('#block5');
+b6 = Snap('#block6');
+b7 = Snap('#block7');
+b8 = Snap('#block8');
+b9 = Snap('#block9');
+b10 = Snap('#block10');
+b11 = Snap('#block11');
+b12 = Snap('#block12');
+b13 = Snap('#block13');
+b14 = Snap('#block14');
+b15 = Snap('#block15');
+b16 = Snap('#block16');
+b17 = Snap('#block17');
+b18 = Snap('#block18');
+b19 = Snap('#block19');
+b20 = Snap('#block20');
+b21 = Snap('#block21');
+b22 = Snap('#block22');
+b23 = Snap('#block23');
+b24 = Snap('#block24');
+b25 = Snap('#block25');
+b26 = Snap('#block26');
+b27 = Snap('#block27');
+b28 = Snap('#block28');
+b29 = Snap('#block29');
+b30 = Snap('#block30');
 
-
-  loadBlocks(0, b0);  
-  loadBlocks(1, b1);
-  loadBlocks(2, b2);
-  loadBlocks(3, b3);
-  loadBlocks(4, b4);
-  loadBlocks(5, b5);
-  loadBlocks(6, b6);
-  loadBlocks(7, b7);
-  loadBlocks(8, b8);
-  loadBlocks(9, b9);
-  loadBlocks(10, b10);
-  loadBlocks(11, b11);
-  loadBlocks(12, b12);
-  loadBlocks(13, b13);
-  loadBlocks(14, b14);
-  loadBlocks(15, b15);
-  loadBlocks(16, b16);
-  loadBlocks(17, b17);
-  loadBlocks(18, b18);
-  loadBlocks(19, b19);
-  loadBlocks(20, b20);
-  loadBlocks(21, b21);
-  loadBlocks(22, b22);
-  loadBlocks(23, b23);
-  loadBlocks(24, b24);
-  loadBlocks(25, b25);
-  loadBlocks(26, b26);
+loadBlocks(0, b0);
+loadBlocks(1, b1);
+loadBlocks(2, b2);
+loadBlocks(3, b3);
+loadBlocks(4, b4);
+loadBlocks(5, b5);
+loadBlocks(6, b6);
+loadBlocks(7, b7);
+loadBlocks(8, b8);
+loadBlocks(9, b9);
+loadBlocks(10, b10);
+loadBlocks(11, b11);
+loadBlocks(12, b12);
+loadBlocks(13, b13);
+loadBlocks(14, b14);
+loadBlocks(15, b15);
+loadBlocks(16, b16);
+loadBlocks(17, b17);
+loadBlocks(18, b18);
+loadBlocks(19, b19);
+loadBlocks(20, b20);
+loadBlocks(21, b21);
+loadBlocks(22, b22);
+loadBlocks(23, b23);
+loadBlocks(24, b24);
+loadBlocks(25, b25);
+loadBlocks(26, b26);
+loadBlocks(27, b27);
+loadBlocks(28, b28);
+loadBlocks(29, b29);
+loadBlocks(30, b30);
  
   // defines the color 1 and 2 for the default shapes
   var dColor0 = "#F37B82";
@@ -153,7 +160,7 @@ var totalShapes = 27;
     for (i = 0; i < a; i++) {
       var block = $(
         // "<div class='" + b + "'><svg id='b" + i + "' class='data' viewBox='0 0 100 100'></svg></div>");
-        "<div id='b" + i + "' class='data rotate " + b + "' ></div>");
+        "<div id='b" + i + "' class='data rotate " + b + "' style='transform: rotate(0deg);'></div>");
 
       $('#art-board').append(block);
       $('#block0').clone().appendTo("#b" + i + "");
@@ -226,6 +233,40 @@ var totalShapes = 27;
   //   }
   //   loadArts();
 // ==================================================
+// rotate a block shape
+var EnableRotate = true;
+
+
+  function RunMyFunction() {
+    if (EnableRotate == true) {
+      alert("This function is enabled");
+    } else {
+      alert("This function is disabled");
+    }
+
+  }
+
+{/* <input type="button" value="Enable my function" onclick="Enabled=true;RunMyFunction();"></input>
+<input type="button" value="Disable my function" onclick="Enabled=false;RunMyFunction();"> */}
+
+var rotation = 0;
+
+$("#action-rotate").on("click", function () {  
+  jQuery.fn.rotate = function(degrees) {
+      $(this).css({'transform' : 'rotate('+ degrees +'deg)'});
+  };
+
+  $("#art-board").on("click", ".rotate", function() {
+  var rotateData = this.style['transform'];
+  var rValue = Number(rotateData.slice(7, -4)) ;
+  
+  // console.log(rValue);
+  rotation = rValue + 90;
+  $(this).rotate(rotation);
+  });
+});
+
+// ==================================================
 // buttons to change shape divs when clicked
 $(".shape-thumbnail").on("click", function () {
 var start = this.innerHTML.indexOf("block");
@@ -235,26 +276,12 @@ var svgId = (this.innerHTML.substring(start, end-3));
 console.log(svgId);
 
 $("#art-board").on("click", ".data", function() {
+  
   console.log(this);
     $(this).empty();
     $("#" + svgId).clone().appendTo(this);
 
     }); 
-  });
-
-  var rotation = 0;
-// ==================================================
-// rotate a block shape
-$("#action-rotate").on("click", function () {
- 
-  
-  jQuery.fn.rotate = function(degrees) {
-      $(this).css({'transform' : 'rotate('+ degrees +'deg)'});
-  };
-  $("#art-board").on("click", ".rotate", function() {
-      rotation += 90;
-      $(this).rotate(rotation);
-  });
   });
 
 //================================================================================================================================================================================//
@@ -269,6 +296,15 @@ var actionItem = "";
 var colorChoice = "";
 var boxChoice = "";
 
+
+// $(document).on("click", "rect", function() {
+//   $(this).attr({ fill: "colorChoice"});
+//   console.log(this);
+// });
+// $(document).on("click", "polygon", function() {
+//   $(this).attr({ fill: "colorChoice"});
+//   console.log(this);
+// });
 
 // Create hiding div
 $("#center").on("click", "button", function() {

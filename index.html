@@ -10,9 +10,10 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="assets/scripts.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+<script src="assets/scripts.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/style.css">
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    
 
 
 	</head>
@@ -21,12 +22,16 @@
 
 
 
-         
+     
 <div id="art-board" class="">
 
     <div class="jumbotron shadow-sm p-3 mb-5 bg-blue rounded">
     <h2>Welcome to the Block Art Maker!</h2>
 <br>
+
+<div id="board-options">
+
+</div>
     <p>Click an Art Board size to get started.</p>
 
     <button id="btn-2up" data-toggle="modal" data-target="#exampleModal" class="btn btn-secondary">2-up</button>
@@ -55,8 +60,8 @@
                     </div>
                     <div class="modal-body">
                             <p>* Use the Block Shapes button to add different Blocks to your Art Board</p>
-                            <p>* Pick a Color and use it to re color Blocks </p>
-                            <p>* Use the Rotate button to Rotate Block Elements</p>
+                            <p>* Pick a Color and use it to re color Block Elements </p>
+                            <p>* Use the Rotate button to Rotate Block Sections</p>
                             <p>* When you are done Hit the save button to save out your Creation as an image</p>
                     </div>
                     <div class="modal-footer">
