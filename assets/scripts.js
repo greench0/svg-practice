@@ -2,21 +2,17 @@ $(document).ready(function () {
 //================================================================================================================================================================================//
 //================================================================================================================================================================================//
 // function for saving the art board div
-function saveImage() {
-  console.log(document.getElementById("art-board"));
 
-  html2canvas(document.getElementById("art-board")).then(canvas => {
-    $("#imageSaverHolder").attr('href', canvas.toDataURL("image/png"));
-    $("#imageSaverHolder").attr("download", "BlockImage.png");
-    $("#imageSaverHolder")[0].click();
-      console.log("saved");
-});
+
+
+
+ 
+var mainBlock = Snap('#main-block');
+Snap.load("assets/svg/block-main.svg", onSVGLoaded ) ;
+
+function onSVGLoaded( data ){ 
+    mainBlock.append( data );
 }
-
-document.getElementById("action-save").addEventListener('click',function ()
-    {
-      $("#action-save").on("click", saveImage());
-    }  ); 
 
 
 //================================================================================================================================================================================//
@@ -26,7 +22,7 @@ document.getElementById("action-save").addEventListener('click',function ()
       $( "#art-board" ).empty();
     }    
 
-    $("#footer").hide();
+    // $("#footer").hide();
 // =========================
 // a = how many svg files
 var totalShapes = 33;
@@ -139,7 +135,7 @@ loadBlocks(32, b32);
         "<div id='b" + i + "' class='data rotate " + b + "' style='transform: rotate(0deg);'></div>");
 
       $('#art-board').append(block);
-      $('#block0').clone().appendTo("#b" + i + "");
+      $('#block9').clone().appendTo("#b" + i + "");
     }
 }
 
@@ -209,7 +205,6 @@ loadBlocks(32, b32);
 
 var rotation = 0;
 
-$("#action-rotate").on("click", function () {  
   jQuery.fn.rotate = function(degrees) {
       $(this).css({'transform' : 'rotate('+ degrees +'deg)'});
   };
@@ -222,7 +217,7 @@ $("#action-rotate").on("click", function () {
   rotation = rValue + 90;
   $(this).rotate(rotation);
   });
-});
+
 
 // ==================================================
 // buttons to change shape divs when clicked
@@ -301,50 +296,31 @@ $("#center").on("click", "button", function() {
         }
 });
 
+
 var colors = [
-    [255,0,0]
-    , [255,128,0]
-    , [255,255,0]
-    , [128,255,0]
-    , [0,255,0]
-    , [0,255,128]
-    , [0,255,255]
-    , [0,128,255]
+
+      [255,132,124]
+    , [153,184,152]
+    , [247,217,105]
+    , [252,145,58]
     , [0,0,255]
-    , [128,0,255]
-    , [255,0,255]
-    , [255,0,128]
     , [128,128,128]
     , [0,0,0]
     , [255,255,255]
 ];
 
-//Color palet API
-function callColorsApi() {
-    var url = "http://colormind.io/api/";
-    var data = {
-        model : "default",
-    }
 
-    var http = new XMLHttpRequest();
+var colorsTwo = [
+    [95,144,156]
+  , [42,54,59]
+  , [0,255,255]
+  , [0,128,255]
+  , [0,0,255]
+  , [128,128,128]
+  , [0,0,0]
+  , [255,255,255]
+];
 
-    http.onreadystatechange = function() {
-        if(http.readyState == 4 && http.status == 200) {
-            var palette = JSON.parse(http.responseText).result;
-                for (i=0; i < 5; i++) {
-                    colors.push(palette[i]);
-                };
-                // console.log("pushed")
-        }
-    }
-
-    http.open("POST", url, true);
-    http.send(JSON.stringify(data));
-};
-callColorsApi();
-callColorsApi();
-callColorsApi();
-callColorsApi();
 
 //Fill hiding div with color boxes
 function generateColors(){
@@ -355,7 +331,16 @@ function generateColors(){
         c.attr("colorpicker", "(" + colors[i][0] + "," + colors[i][1] + "," + colors[i][2] + ")")
         $("#color-holder").append(c);
     };
-    // console.log("colorsfilled")
+};
+
+function generateColorsTwo(){
+  for (var i = 0; i < colorsTwo.length; i++) {
+      var c = $("<img id='color-card' class='img-thumbnail'></img>");
+      var colortype = "background-color: rgb" + "(" + colorsTwo[i][0] + "," + colorsTwo[i][1] + "," + colorsTwo[i][2] + ")";
+      c.attr("style", colortype);
+      c.attr("colorpicker", "(" + colorsTwo[i][0] + "," + colorsTwo[i][1] + "," + colorsTwo[i][2] + ")")
+      $("#color-holder-2").append(c);
+  };
 };
 
 //On Click Event for blocks
@@ -375,19 +360,23 @@ $("#color-holder").on("click", "#color-card", function() {
 $("#color-holder").on("click", "#color-card", function() {
   var color = ($(this).attr("colorpicker"));
   console.log(color);
+  // $('.color0').css({ fill:"" + color + "" });
+    $('.color0').css({ fill: "rgb" + color });
+  });  
 
-  $("#art-board").on("click", ".color0", function() {
-    $(this).css("fill", 'rgb' + color +' ');
-  });
-
-  $("#art-board").on("click", ".color1", function() {
-    $(this).css("fill", 'rgb' + color +' ');
-      });
-});
+  $("#color-holder-2").on("click", "#color-card", function() {
+    var color = ($(this).attr("colorpicker"));
+    console.log(color);
+    // $('.color0').css({ fill:"" + color + "" });
+      $('.color1').css({ fill: "rgb" + color });
+    }); 
 
 
 
-setTimeout(generateColors, 3000);
+
+generateColors();
+generateColorsTwo();
+
 
 //save options
 //override existing blocks
