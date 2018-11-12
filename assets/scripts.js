@@ -211,6 +211,7 @@ var rotation = 0;
 
   $("#art-board").on("click", ".rotate", function() {
   var rotateData = this.style['transform'];
+  
   var rValue = Number(rotateData.slice(7, -4)) ;
   
   // console.log(rValue);
