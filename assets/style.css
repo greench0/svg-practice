@@ -3,21 +3,30 @@ html, body {
   padding: 0;
   border: 0;
   /* no more scroll bar */
-
-   
+  
 
 }
 
+.card {
+    border: 0px solid darkgrey;
+
+}
+
+#art-container {
+  /* border: 2px solid darkgrey; */
+
+}
 
 #art-board {
-  padding: 0;
-  /* border: 8px solid lightgrey; */
+  padding: 0 0 0 0;
   background: "grey";
   border
-  width: 42%;
+  width: 35%;
   margin: 0 auto;
   margin-top: 15px;
   margin-bottom: 0px;
+  
+  /* border: 2px solid darkgrey; */
 
   /* background: rgb(240,236,214); */
  }
@@ -27,7 +36,9 @@ html, body {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  border: 6px solid white;
+  border: 1px solid lightgrey;
+    /* border: 2px solid darkgrey; */
+
 }  
 
 .two-up {
@@ -106,20 +117,26 @@ html, body {
 }
 
 
-/* #center .btn {
-  width:150px;
-} */
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+
+}
 
 .rotate {
-
-
 transition: transform .13s;
 }
 
 /* -----------------------------------------------------------------------------------------------------------------------------------------
 ------ Conor's Footer Section ------------------- */
 p {
-  margin-top: 10px;
+  margin-top: 5px;
+}
+
+.container-fluid {
+  width: 100%;
 }
 
 #footer {
@@ -130,7 +147,7 @@ p {
 }
 
 #center {
-  width: 43%;
+  width: 100%;
   margin: auto;
   border-bottom: none;
 }
@@ -187,13 +204,13 @@ p {
 ------ Conor's Footer Section ------------------- */
 
 
-@media only screen and (max-width: 1400px) {
+/* @media only screen and (max-width: 1400px) {
   #art-board, #center {
     width: 52%;
    }
-  }
+  } */
 
-@media only screen and (max-width: 1200px) {
+/* @media only screen and (max-width: 1200px) {
   #art-board, #center {
     width: 62%;
    }
@@ -201,25 +218,25 @@ p {
 
   @media only screen and (max-width: 1000px) {
     #art-board, #center {
-      width: 65%;
+      width: 60%;
      }
     }
 
   @media only screen and (max-width: 1140px) {
     #art-board, #center {
-      width: 70%;
+      width: 68%;
      }
     }
 
 
   @media only screen and (max-width: 800px) {
     #art-board, #center {
-      width: 94%;
+      width: 98%;
      }
-    }
+    } */
 
-  @media only screen and (max-width: 645px) {
+  /* @media only screen and (max-width: 645px) {
     #art-board, #center {
       width: 98%;
      }
-    }
+    } */
