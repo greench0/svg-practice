@@ -10,7 +10,7 @@ html, body {
 
 .card {
     /* border: 0px solid darkgrey; */
-    background-color: lightblue;
+    /* background-color: lightblue; */
 
 
 }
@@ -29,7 +29,7 @@ margin-bottom: 8px !important;
 }
 
 #art-board {
-  padding: 0 0 15px 0;
+  padding: 0 0 5px 0;
   /* background: "grey"; */
   border
   /* width: 35%; */
