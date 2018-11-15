@@ -6,9 +6,12 @@ html, body {
   
 
 }
+ 
 
 .card {
     /* border: 0px solid darkgrey; */
+    background-color: lightblue;
+
 
 }
 
@@ -26,7 +29,7 @@ margin-bottom: 8px !important;
 }
 
 #art-board {
-  padding: 0 0 0 0;
+  padding: 0 0 15px 0;
   /* background: "grey"; */
   border
   /* width: 35%; */
@@ -39,11 +42,16 @@ margin-bottom: 8px !important;
   /* background: #5F909C; */
  }
 
+ .card-header {
+   width: 100%;
+ }
+
  #main-block {
   width:50%;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 40px;
   /* border: 1px solid lightgrey; */
     /* border: 2px solid darkgrey; */
 

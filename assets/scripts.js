@@ -22,10 +22,10 @@ function onSVGLoaded( data ){
       $( "#art-board" ).empty();
     }    
 
-    // $("#footer").hide();
+    $("#footer").hide();
 // =========================
 // a = how many svg files
-var totalShapes = 33;
+var totalShapes = 34;
 
   function blocksForHtml(a) {
     for (i = 0; i < a; i++) {
@@ -71,6 +71,7 @@ b29 = Snap('#block29');
 b30 = Snap('#block30');
 b31 = Snap('#block31');
 b32 = Snap('#block32');
+b33 = Snap('#block33');
 
 loadBlocks(0, b0);
 loadBlocks(1, b1);
@@ -105,6 +106,7 @@ loadBlocks(29, b29);
 loadBlocks(30, b30);
 loadBlocks(31, b31);
 loadBlocks(32, b32);
+loadBlocks(33, b33);
  
   // defines the color 1 and 2 for the default shapes
   var dColor0 = "#F37B82";
@@ -301,11 +303,12 @@ $("#center").on("click", "button", function() {
 var colors = [
 
       [255,132,124]
-    , [153,184,152]
-    , [247,217,105]
-    , [252,145,58]
-    , [0,0,255]
-    , [128,128,128]
+    
+    , [255,221,121]
+    , [255,194,5]
+    , [181,34,10]
+    , [139,192,100]
+    , [0,126,227]
     , [0,0,0]
     , [255,255,255]
 ];
@@ -314,8 +317,9 @@ var colors = [
 var colorsTwo = [
     [95,144,156]
   , [42,54,59]
-  , [0,255,255]
+  , [255,221,121]
   , [0,128,255]
+  , [139,192,100]
   , [0,0,255]
   , [128,128,128]
   , [0,0,0]
