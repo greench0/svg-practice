@@ -143,7 +143,7 @@ loadBlocks(32, b32);
   // buttons for art-board generation
   $("#btn-2up").on("click", function () {
     clearArt();
-    $(".jumbotron").hide();
+    $("#board-options").hide();
     makeBlocks(4, "two-up");
 
     $("#footer").show();
@@ -152,49 +152,49 @@ loadBlocks(32, b32);
 
   $("#btn-3up").on("click", function () {
     clearArt();
-    $(".jumbotron").hide();
+    $("#board-options").hide();
     makeBlocks(9, "three-up");
     $("#footer").show();
   });
 
   $("#btn-4up").on("click", function () {
     clearArt();
-    $(".jumbotron").hide();
+    $("#board-options").hide();
     makeBlocks(16, "four-up");
     $("#footer").show();
   });
 
   $("#btn-5up").on("click", function () {
     clearArt();
-    $(".jumbotron").hide();
+    $("#board-options").hide();
     makeBlocks(25, "five-up");
     $("#footer").show();
   });
 
   $("#btn-6up").on("click", function () {
     clearArt();
-    $(".jumbotron").hide();
+    $("#board-options").hide();
     makeBlocks(36, "six-up");
     $("#footer").show();
   });
   
     $("#btn-7up").on("click", function () {
     clearArt();
-    $(".jumbotron").hide();
+    $("#board-options").hide();
     makeBlocks(49, "seven-up");
     $("#footer").show();
   });
 
   $("#btn-8up").on("click", function () {
     clearArt();
-    $(".jumbotron").hide();
+    $("#board-options").hide();
     makeBlocks(64, "eight-up");
     $("#footer").show();
   });
 
   $("#btn-9up").on("click", function () {
     clearArt();
-    $(".jumbotron").hide();
+    $("#board-options").hide();
     makeBlocks(81, "nine-up");
     $("#footer").show();
   });

@@ -8,27 +8,35 @@ html, body {
 }
 
 .card {
-    border: 0px solid darkgrey;
+    /* border: 0px solid darkgrey; */
 
 }
 
-#art-container {
+#board-options {
   /* border: 2px solid darkgrey; */
+  background: "grey";
 
+
+}
+
+.btn
+{
+margin-right: 6px;
+margin-bottom: 8px !important;
 }
 
 #art-board {
   padding: 0 0 0 0;
-  background: "grey";
+  /* background: "grey"; */
   border
-  width: 35%;
+  /* width: 35%; */
   margin: 0 auto;
   margin-top: 15px;
   margin-bottom: 0px;
   
   /* border: 2px solid darkgrey; */
 
-  /* background: rgb(240,236,214); */
+  /* background: #5F909C; */
  }
 
  #main-block {
@@ -36,7 +44,7 @@ html, body {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid lightgrey;
+  /* border: 1px solid lightgrey; */
     /* border: 2px solid darkgrey; */
 
 }  
@@ -153,8 +161,8 @@ p {
 }
 
 .img-thumbnail {
-  width: 55px;
-  height: 55px;
+  width: 3.25em;
+  height: 3.25em;
   float: left;
   margin: 10px;
   background-clip: content-box;
@@ -164,8 +172,8 @@ p {
 }
 
 .shape-thumbnail {
-  width: 70px;
-  height: 70px;
+  width: 4em;
+  height: 4em;
   float: left;
   margin: 10px;
   background-clip: content-box;
