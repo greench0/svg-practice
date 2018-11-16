@@ -9,15 +9,19 @@ html, body {
  
 
 .card {
-    /* border: 0px solid darkgrey; */
-    /* background-color: lightblue; */
-
+  margin-top: 10px;
 
 }
+
+.card-header{
+  height: 48px;
+}
+
 
 #board-options {
   /* border: 2px solid darkgrey; */
   background: "grey";
+  margin-top: -20px;
 
 
 }
@@ -25,7 +29,7 @@ html, body {
 .btn
 {
 margin-right: 6px;
-margin-bottom: 8px !important;
+margin-bottom: 10px !important;
 }
 
 #art-board {
@@ -34,7 +38,7 @@ margin-bottom: 8px !important;
   border
   /* width: 35%; */
   margin: 0 auto;
-  margin-top: 15px;
+  margin-top: 5px;
   margin-bottom: 0px;
   
   /* border: 2px solid darkgrey; */
@@ -45,6 +49,11 @@ margin-bottom: 8px !important;
  .card-header {
    width: 100%;
  }
+
+ .color-hold {
+margin-top: -10px;
+}
+
 
  #main-block {
   width:50%;
@@ -148,7 +157,7 @@ transition: transform .13s;
 /* -----------------------------------------------------------------------------------------------------------------------------------------
 ------ Conor's Footer Section ------------------- */
 p {
-  margin-top: 5px;
+  margin-bottom: -5px;
 }
 
 .container-fluid {
