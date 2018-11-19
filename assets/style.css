@@ -154,6 +154,33 @@ margin-top: -10px;
 transition: transform .13s;
 }
 
+.more-btn,
+.more-menu-btn {
+    background: none;
+    border: 0 none;
+    line-height: normal;
+    overflow: visible;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    cursor: pointer;
+}
+
+.more-dot {
+    background-color: #aab8c2;
+    /* margin: 0 auto; */
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 2px;
+    border-radius: 50%;
+    padding-right: 5px;
+    transition: background-color 0.3s;
+}
+
 /* -----------------------------------------------------------------------------------------------------------------------------------------
 ------ Conor's Footer Section ------------------- */
 p {
