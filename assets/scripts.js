@@ -25,7 +25,7 @@ function onSVGLoaded( data ){
     $("#footer").hide();
 // =========================
 // a = how many svg files
-var totalShapes = 60;
+var totalShapes = 65;
 
   function blocksForHtml(a) {
     for (i = 0; i < a; i++) {
@@ -98,6 +98,11 @@ b56 = Snap('#block56');
 b57 = Snap('#block57');
 b58 = Snap('#block58');
 b59 = Snap('#block59');
+b60 = Snap('#block60');
+b61 = Snap('#block61');
+b62 = Snap('#block62');
+b63 = Snap('#block63');
+b64 = Snap('#block64');
 
 
 loadBlocks(0, b0);
@@ -160,6 +165,11 @@ loadBlocks(56, b56);
 loadBlocks(57, b57);
 loadBlocks(58, b58);
 loadBlocks(59, b59);
+loadBlocks(60, b60);
+loadBlocks(61, b61);
+loadBlocks(62, b62);
+loadBlocks(63, b63);
+loadBlocks(64, b64);
  
   // defines the color 1 and 2 for the default shapes
   var dColor0 = "#F37B82";
