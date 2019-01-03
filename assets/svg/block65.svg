@@ -4,8 +4,9 @@
 	  viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
 <g id="layer1">
 <rect class="color1" fill="#FFFFFF" width="100" height="100"/>
-<rect class="color0" x="37.5" fill="#AAAAAA" width="25" height="100"/>
-<circle class="color0" fill="#AAAAAA" cx="81.25" cy="81.25" r="15"/>
-<circle class="color0" fill="#AAAAAA" cx="18.75" cy="81.25" r="15"/>
+<rect class="color0" x="37.501" y="0.001" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -20.7108 50.0001)" fill="#AAAAAA" width="24.999" height="99.999"/>
+<rect class="color0" x="0.001" y="37.501" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -20.7108 50.0001)" fill="#AAAAAA" width="99.998" height="24.999"/>
 </g>
 </svg>
+
+

@@ -25,7 +25,7 @@ function onSVGLoaded( data ){
     $("#footer").hide();
 // =========================
 // a = how many svg files
-var totalShapes = 65;
+var totalShapes = 69;
 
   function blocksForHtml(a) {
     for (i = 0; i < a; i++) {
@@ -103,6 +103,10 @@ b61 = Snap('#block61');
 b62 = Snap('#block62');
 b63 = Snap('#block63');
 b64 = Snap('#block64');
+b65 = Snap('#block65');
+b66 = Snap('#block66');
+b67 = Snap('#block67');
+b68 = Snap('#block68');
 
 
 loadBlocks(0, b0);
@@ -170,6 +174,10 @@ loadBlocks(61, b61);
 loadBlocks(62, b62);
 loadBlocks(63, b63);
 loadBlocks(64, b64);
+loadBlocks(65, b65);
+loadBlocks(66, b66);
+loadBlocks(67, b67);
+loadBlocks(68, b68);
  
   // defines the color 1 and 2 for the default shapes
   var dColor0 = "#F37B82";
@@ -200,7 +208,7 @@ loadBlocks(64, b64);
         "<div id='b" + i + "' class='data rotate " + b + "' style='transform: rotate(0deg);'></div>");
 
       $('#art-board').append(block);
-      $('#block9').clone().appendTo("#b" + i + "");
+      $('#block5').clone().appendTo("#b" + i + "");
     }
 }
 
