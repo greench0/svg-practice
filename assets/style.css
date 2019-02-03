@@ -35,6 +35,7 @@ margin-bottom: 10px !important;
   margin: 0 auto;
   margin-top: 5px;
   margin-bottom: 0px;
+  cursor: pointer;
  }
 
  #board-options {
@@ -133,6 +134,7 @@ p {
   background-clip: content-box;
   border: none;
   padding: 0 -5px 0 0;
+  cursor: pointer;
 
 }
 
@@ -144,6 +146,7 @@ p {
   background-clip: content-box;
   border: none;
   padding: 0 -10px 0 0;
+  cursor: pointer;
 }
 
 
