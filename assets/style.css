@@ -2,28 +2,26 @@ html, body {
   margin: 0;
   padding: 0;
   border: 0;
-  /* no more scroll bar */
-  
-
 }
  
 
-.card {
-  margin-top: 10px;
-
+#main-card {
+  margin-top: 20px;
+  border-width: 2px;
+  /* background: #5F909C !important; */
+  border-color: #D3D3D3;
+ 
 }
 
-.card-header{
-  height: 48px;
-}
 
+.center-block {
+  float:none;
+}
 
 #board-options {
   /* border: 2px solid darkgrey; */
   background: "grey";
   margin-top: -20px;
-
-
 }
 
 .btn
@@ -34,103 +32,52 @@ margin-bottom: 10px !important;
 
 #art-board {
   padding: 0 0 5px 0;
-  /* background: "grey"; */
-  border
-  /* width: 35%; */
   margin: 0 auto;
   margin-top: 5px;
   margin-bottom: 0px;
-  
-  /* border: 2px solid darkgrey; */
-
-  /* background: #5F909C; */
  }
 
- .card-header {
-   width: 100%;
- }
+ #board-options {
+  margin: 2rem auto;
+  /* background: var(--yellow); */
+  border-radius: 10px;
+  padding: 2rem;
+  border: 3px solid var(--peach);
+  box-shadow: 1px 1px 0 var(--peach), 2px 2px 0 var(--peach), 3px 3px 0 var(--peach);
+}
+
 
  .color-hold {
 margin-top: -10px;
 }
 
-
  #main-block {
-  width:50%;
-  display: block;
+  width:75%;
+  /* display: block; */
   margin-left: auto;
   margin-right: auto;
-  padding-top: 40px;
   /* border: 1px solid lightgrey; */
     /* border: 2px solid darkgrey; */
 
 }  
 
-.two-up {
-  width:50%;
+.block-up {
   margin: 0 auto;
     padding: 0px 0px 0px 0px;
     display: block;
     float: left;
     line-height: 0;
-}  
-
-.three-up {
-  width:33.33333333%;
-  margin: 0 auto;
-    padding: 0px 0px 0px 0px;
-    display: block;
-    float: left;
-    line-height: 0;
-}  
-
-.four-up {
-  width: 25%;
-  float: left;
-  margin: 0 auto;
-  padding: 0px 0px 0px 0px;
-  line-height: 0;
 }
 
-.five-up {
-  width: 20%;
-  float: left;
-  margin: 0 auto;
-  padding: 0px 0px 0px 0px;
-  line-height: 0;
-}
+.two-up { width:50%; }  
+.three-up { width:33.33333333%; }  
+.four-up { width: 25%; }
+.five-up { width: 20%; }
+.six-up { width: 16.66666666%; }
+.seven-up { width: 14.285714285%; }
+.eight-up { width: 12.5%; }
+.nine-up { width: 11.111111111%; }
 
-.six-up {
-  width: 16.66666666%;
-  float: left;
-  margin: 0 auto;
-  padding: 0px 0px 0px 0px;
-  line-height: 0;
-}
-
-.seven-up {
-  width: 14.285714285%;
-  float: left;
-  margin: 0 auto;
-  padding: 0px 0px 0px 0px;
-  line-height: 0;
-}
-
-.eight-up {
-  width: 12.5%;
-  float: left;
-  margin: 0 auto;
-  padding: 0px 0px 0px 0px;
-  line-height: 0;
-}
-
-.nine-up {
-  width: 11.111111111%;
-  float: left;
-  margin: 0 auto;
-  padding: 0px 0px 0px 0px;
-  line-height: 0;
-}
 
 
 .color1 {
@@ -154,32 +101,6 @@ margin-top: -10px;
 transition: transform .13s;
 }
 
-.more-btn,
-.more-menu-btn {
-    background: none;
-    border: 0 none;
-    line-height: normal;
-    overflow: visible;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    width: 100%;
-    text-align: left;
-    outline: none;
-    cursor: pointer;
-}
-
-.more-dot {
-    background-color: #aab8c2;
-    /* margin: 0 auto; */
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    margin-right: 2px;
-    border-radius: 50%;
-    padding-right: 5px;
-    transition: background-color 0.3s;
-}
 
 /* -----------------------------------------------------------------------------------------------------------------------------------------
 ------ Conor's Footer Section ------------------- */
@@ -205,13 +126,13 @@ p {
 }
 
 .img-thumbnail {
-  width: 3.25em;
-  height: 3.25em;
+  width: 3.5em;
+  height: 3.5em;
   float: left;
   margin: 10px;
   background-clip: content-box;
   border: none;
-  padding: 0 -10px 0 0;
+  padding: 0 -5px 0 0;
 
 }
 
@@ -219,7 +140,7 @@ p {
   width: 4em;
   height: 4em;
   float: left;
-  margin: 10px;
+  margin: 12px;
   background-clip: content-box;
   border: none;
   padding: 0 -10px 0 0;
