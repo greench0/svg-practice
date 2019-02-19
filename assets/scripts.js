@@ -99,9 +99,15 @@ $(document).ready(function () {
 
     var rValue = Number(rotateData.slice(7, -4));
 
-    // console.log(rValue);
     rotation = rValue + 90;
     $(this).rotate(rotation);
+    
+    // if (rotation == 360) {
+    //   rotation = 0;
+    //   $(this).rotate(rotation);
+    //   // alert('!');
+    // }
+
   });
 
 
