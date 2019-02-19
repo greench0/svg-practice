@@ -1,6 +1,7 @@
 $(document).ready(function () {
   //========================================================================================//
   //========================================================================================//
+  let divAmount = [];
 
   var mainBlock = Snap('#main-block');
 
@@ -66,6 +67,7 @@ $(document).ready(function () {
         "<div id='b" + i + "' class='block-up data rotate " + b + "' style='transform: rotate(0deg);'></div>");
       $('#art-board').append(block);
       $('#block16').clone().appendTo("#b" + i + "");
+      
     }
   }
 
@@ -77,6 +79,9 @@ $(document).ready(function () {
     clearArt();
     $("#board-options").hide();
     makeBlocks(totalBlocks, xAmount);
+    
+    divAmount.push(totalBlocks);
+
 
     $("#footer").show();
   });
@@ -110,6 +115,7 @@ $(document).ready(function () {
     $("#art-board").on("click", ".data", function () {
       $(this).empty();
       $("#" + svgId).clone().appendTo(this);
+      // console.log(svgId);
     });
   });
 
@@ -127,7 +133,6 @@ $(document).ready(function () {
   
   // Create hiding div
   $("#footer-btns").on("click", "button", function () {
-    console.log(this);
     if (this.id === "action-box") {
       $("#action-colors").attr({ "aria-expanded": "false", "class": "btn btn-secondary collapsed btn-lg" });
       $("#colors").attr("class", "collapse");
@@ -187,7 +192,6 @@ $(document).ready(function () {
   ];
 
 
-
   //Fill hiding div with color boxes
   function generateColors() {
     for (var i = 0; i < colors.length; i++) {
@@ -231,8 +235,6 @@ $(document).ready(function () {
   });
 
 
-
-
   // on Click Event for adding this Color to Blocks
   $("#color-holder").on("click", "#color-card", function () {
     var color = ($(this).attr("colorpicker"));
@@ -250,14 +252,55 @@ $(document).ready(function () {
   });
 
 
-
   generateColors();
   generateColorsTwo();
 
-
-
-
-
   //========================================================================================//
+// save button function
+
+
+  document.getElementById("save").addEventListener("click", function(){
+// div block id
+console.log(divAmount[0]);
+let blockoValue = [];
+let rotateoValue = [];
+// let colorV = document.getElementById('b0');
+
+// console.log(element);
+
+for (i = 0; i < divAmount[0]; i++) {
+let blocko = [];
+let rotateo = [];
+
+let element = document.getElementById('b'+ i);
+//   
+// svg block number
+let bData = element.outerHTML;
+
+let svgBlockData = bData.substring(
+  bData.lastIndexOf('<svg id="') + 14, 
+  bData.lastIndexOf('" "class')
+);
+ blocko.push(svgBlockData);
+
+// rotate info
+  let rotateData = bData.substring(
+    bData.lastIndexOf('style="transform: rotate(') + 25, 
+    bData.lastIndexOf('deg);"')
+  );
+
+rotateo.push(rotateData);
+
+// console.log(blocko);
+blockoValue.push(blocko);
+rotateoValue.push(rotateo);
+
+}
+alert(blockoValue);
+alert(rotateoValue);
+
+
+  });
+
   //========================================================================================//
 }); // end document ready
