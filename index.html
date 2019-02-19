@@ -73,8 +73,12 @@
                 </button>
 
                 <!-- <button onClick="download()">Download</button> -->
-                <button id="save" class="btn btn-secondary btn-lg">Save</button>
+                <button type="button" id="save" class="btn btn-secondary btn-lg"data-toggle="modal" data-target=".bd-example-modal-lg">Save</button>
             </p>
+
+
+
+
 
 
             <div class="collapse" id="boxes">
@@ -119,6 +123,36 @@
 
 
 
+
+
+<!-- Button trigger modal -->
+  
+  <!-- Modal -->
+  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Copy + Paste</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <h3>block data:</h3>
+          <p id="block-data"></p>
+          <hr>
+          <br>
+          <h3>rotate data:</h3>
+          <p id="rotate-data"></p>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 

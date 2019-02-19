@@ -302,9 +302,11 @@ blockoValue.push(blocko);
 rotateoValue.push(rotateo);
 
 }
-alert(blockoValue);
-alert(rotateoValue);
+console.log(blockoValue);
+console.log(rotateoValue);
 
+document.getElementById('block-data').innerHTML = blockoValue;
+document.getElementById('rotate-data').innerHTML = rotateoValue;
 
   });
 
