@@ -328,7 +328,6 @@ blockoValue.push(blocko);
 rotateoValue.push(rotateo);
 }
 
-
 console.log(blockoValue);
 console.log(rotateoValue);
 
