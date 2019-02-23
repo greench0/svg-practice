@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="layer1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	  viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
-<g id="layer1">
-<rect class="color1" fill="#AAAAAA" width="100" height="100"/>
-<rect class="color0" x="37.501" y="0.001" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -20.7108 50.0001)" fill="#FFFFFF" width="24.999" height="99.999"/>
-<rect class="color0" x="0.001" y="37.501" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -20.7108 50.0001)" fill="#FFFFFF" width="99.998" height="24.999"/>
-</g>
+	  viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
+	  <g>
+<rect class="color1" fill="#AAAAAA" width="200" height="200"/>
+<polygon class="color0" fill="#FFFFFF" points="188.386,153.033 135.354,100 188.385,46.969 153.031,11.616 100,64.647 46.967,11.614 
+	11.614,46.968 64.646,100 11.614,153.033 46.967,188.387 100,135.354 153.032,188.387 "/>
+	</g>
 </svg>
-
-

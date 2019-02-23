@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="layer1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	  viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
-<g id="layer1">
-<rect class="color1" fill="#AAAAAA" width="100" height="100"/>
-<polygon class="color0" fill="#FFFFFF" points="36.741,5.807 19.064,23.484 45.582,50 19.064,76.517 36.741,94.193 80.936,50 "/>
+	  viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
+	  <g>
+<rect class="color1" fill="#AAAAAA" width="200" height="200"/>
+<polygon class="color0" fill="#FFFFFF" points="73.482,11.614 38.128,46.968 91.164,100 38.128,153.034 73.482,188.386 161.872,100 "/>
 </g>
 </svg>
