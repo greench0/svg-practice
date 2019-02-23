@@ -65,7 +65,6 @@ $(document).ready(function () {
   function makeBlocks(a, b) {
     for (i = 0; i < a; i++) {
       var block = $(
-        // "<div class='" + b + "'><svg id='b" + i + "' class='data' viewBox='0 0 100 100'></svg></div>");
         "<div id='b" + i + "' class='block-up data rotate " + b + "' style='transform: rotate(0deg);'></div>");
       $('#art-board').append(block);
       $('#block16').clone().appendTo("#b" + i + "");
@@ -104,12 +103,6 @@ $(document).ready(function () {
     rotation = rValue + 90;
     $(this).rotate(rotation);
     
-    // if (rotation == 360) {
-    //   rotation = 0;
-    //   $(this).rotate(rotation);
-    //   // alert('!');
-    // }
-
   });
 
 
@@ -136,9 +129,6 @@ $(document).ready(function () {
 
   //========================================================================================//
   //========================================================================================//
-  //Store Action Items
-
-  
   // Create hiding div
   $("#footer-btns").on("click", "button", function () {
     if (this.id === "action-box") {
@@ -299,7 +289,6 @@ else if (divAmount[0] == 64) {
 else if (divAmount[0] == 81) {
   totalValue.push('0, 111.1111, 222.2222, 333.3333, 444.4444, 555.5555, 666.6666, 777.7777, 888.8888, 1000');
 }
-
 
 
 for (i = 0; i < divAmount[0]; i++) {
