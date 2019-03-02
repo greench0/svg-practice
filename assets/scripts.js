@@ -1,5 +1,7 @@
 $(document).ready(function () {
   //========================================================================================//
+
+
   //========================================================================================//
   let divAmount = [];
 
@@ -17,7 +19,7 @@ $(document).ready(function () {
     $("#art-board").empty();
   }
 
-  // $("#footer").hide();
+  $("#footer").hide();
   // =========================
   // a = how many svg files
   var totalShapes = 83;
@@ -68,7 +70,6 @@ $(document).ready(function () {
         "<div id='b" + i + "' class='block-up data rotate " + b + "' style='transform: rotate(0deg);'></div>");
       $('#art-board').append(block);
       $('#block16').clone().appendTo("#b" + i + "");
-      
     }
   }
 
@@ -266,7 +267,8 @@ let rotateoValue = [];
 let totalValue = [];
 
 
-if (divAmount[0] == 16) {
+
+if (divAmount[0] == 16) { 
   totalValue.push('0, 250, 500, 750, 1000');
 }
 
@@ -303,7 +305,6 @@ let svgBlockData = bData.substring(
   bData.lastIndexOf('<svg id="') + 14, 
   bData.lastIndexOf('" "class')
 );
- blocko.push(svgBlockData);
 
 // rotate info
   let rotateData = bData.substring(
@@ -311,14 +312,16 @@ let svgBlockData = bData.substring(
     bData.lastIndexOf('deg);"')
   );
 
+
+blocko.push(svgBlockData);
 rotateo.push(rotateData);
+
 
 blockoValue.push(blocko);
 rotateoValue.push(rotateo);
 }
 
-console.log(blockoValue);
-console.log(rotateoValue);
+
 
 document.getElementById('block-data').innerHTML = blockoValue;
 document.getElementById('rotate-data').innerHTML = rotateoValue;

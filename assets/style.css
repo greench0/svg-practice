@@ -79,7 +79,9 @@ margin-top: -10px;
 .eight-up { width: 12.5%; }
 .nine-up { width: 11.111111111%; }
 
-
+.modal p {
+  word-wrap: break-word;
+}
 
 .color1 {
   fill: #808080;
