@@ -5,13 +5,18 @@ html, body {
 }
  
 
-#main-card {
+.main-card {
   margin-top: 20px;
-  border-width: 2px;
+  border-width: 1px;
   /* background: #5F909C !important; */
   border-color: #D3D3D3;
  
 }
+
+/* #main-card:hover {
+  transform:translateY(5px);
+  
+} */
 
 
 .center-block {
