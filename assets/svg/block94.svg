@@ -4,9 +4,9 @@
 	  viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
 	  <g>
 <rect class="color1" fill="#AAAAAA" width="200" height="200"/>
-<path class="color0" fill="#FFFFFF" d="M0,0v200h75V0H0z M37.5,192.5c-16.568,0-30-13.432-30-30s13.432-30,30-30s30,13.432,30,30
-	S54.068,192.5,37.5,192.5z"/>
-<path class="color0" fill="#FFFFFF" d="M125,0v200h75V0H125z M162.5,192.5c-16.568,0-30-13.432-30-30s13.432-30,30-30
-	s30,13.432,30,30S179.068,192.5,162.5,192.5z"/>
-	</g>
+<rect class="color0" x="25" y="124.667" fill="#FFFFFF" width="50" height="50"/>
+<rect class="color0" x="125" y="124.667" fill="#FFFFFF" width="50" height="50"/>
+<rect class="color0" x="25" y="25" fill="#FFFFFF" width="50" height="50"/>
+<rect class="color0" x="125" y="25" fill="#FFFFFF" width="50" height="50"/>
+</g>
 </svg>
