@@ -56,9 +56,9 @@ let bData = [
     function makeBlocks(b) {
       setTimeout( function(){
       for (i = 0; i < bData.length; i++) {
-        var block = $("<div class='0b" + i + " block-up data rotate " + b + "' style='transform: rotate(" + rData[i] + "deg);'></div>");
+        var block = $("<div class='0b" + i + " block-up " + b + "' style='transform: rotate(" + rData[i] + "deg);'></div>");
         $('.art-board').append(block);
-        $('#block' + bData[i] + '').clone().appendTo(".0b" + i + "");
+        $('#block' + bData[0] + '').clone().appendTo(".0b" + i + "");
       }
       
     }, 1 );
