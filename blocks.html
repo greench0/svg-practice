@@ -26,20 +26,25 @@
         <div class="wrapper">
         
             <!-- Sidebar  -->
-            <nav id="sidebar">
-                <div class="sidebar-header">
-                     <p>Blocks</p>
-                                <!-- <button id="action-box" class="btn btn-secondary action-rotate btn-lg" type="button" data-toggle="collapse" data-target="#boxes" aria-expanded="false" aria-controls="boxes"> Blocks </button> -->
-                                        
-                     
-                </div>
-
+            <nav id="sidebar" class="d-inline-flex pt-5 pb-5">
             
-                 
-                        <div id='boxes-holder' class='card' data-spy="scroll"></div>
-         
+              
+            
+                
+                <div class="card ">
+                    <button type="button" id="sidebarCollapse" class="btn btn-secondary btn-lg btn-maker"> <i class="fas fa-align-left"></i> <span> < </span> </button>
+                    <button id="action-color" class="btn btn-secondary btn-lg btn-maker2" type="button" data-toggle="collapse" data-target="#colors" aria-expanded="false" aria-controls="colors"> Colors </button>
+                    <button type="button" id="save" class="btn btn-secondary btn-lg btn-maker3" data-toggle="modal" data-target=".bd-example-modal-lg">Export</button>
+
+                    <div class="card-header"><p>&#9679 &#9632 &#9650 BLOCKS</p>
+
+                    </div>
+                    
+                <div id='boxes-holder' class='' data-spy="scroll"></div>
+                
+              </div>
             </nav>
-        
+
 
 
 
@@ -47,19 +52,12 @@
             <div id="content">
         
 
-
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    
+                <nav class="navbar navbar-expand-lg shadow-none justify-content-center">
             
-                        <button type="button" id="sidebarCollapse" class="btn btn-warning btn-lg"> <i class="fas fa-align-left"></i> <span>Toggle</span> </button>
-        
-                        <button id="action-color" class="btn btn-secondary btn-lg" type="button" data-toggle="collapse" data-target="#colors" aria-expanded="false" aria-controls="colors"> Colors </button>
 
-                        <button type="button" id="save" class="btn btn-secondary btn-lg float-left" data-toggle="modal" data-target=".bd-example-modal-lg">Export</button>
 
-            
                         <div class="collapse" id="colors">
-                                <div class='card card-body p-2' data-spy="scroll">
+                                <div class='card card-body p-2 ' data-spy="scroll">
                     
                                     <div id='color-holder' class="justify-content-center">
                                         <p>color 1</p>
@@ -71,13 +69,14 @@
                     
                                 </div>
                             </div>
-                            
 
+                            
+   
                 </nav>
 
 
 
-    <div id="main-card" class="card col-lg-5 mx-auto shadow p-0 mb-5 rounded">
+    <div id="main-card" class="card col-lg-5 mx-auto shadow p-0 mb-5 ">
 
         <div id="art-board" class="col-lg-12 text-center p-3"></div>
 
@@ -136,8 +135,6 @@
 
 
 </div>
-
-
 </body>
 
 </html>
