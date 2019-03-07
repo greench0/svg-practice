@@ -131,6 +131,13 @@ margin-bottom: 8px !important;
 transition: transform .13s;
 }
 
+.nav-tabs {
+  border-bottom: none;
+  margin-bottom: -25px;
+  /* background-color:red; */
+  margin-top: -10px;
+}
+
 /* -----------------------------------------------------------------------------------------------------------------------------------------
 ------ Footer Section ------------------- */
 .img-thumbnail {
@@ -146,8 +153,8 @@ transition: transform .13s;
 }
 
 .shape-thumbnail {
-  width: 54px;
-  height: 54px;
+  width: 52px;
+  height: 52px;
   float: left;
   margin: 12px;
   background-clip: content-box;
