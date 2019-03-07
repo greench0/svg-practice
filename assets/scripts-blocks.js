@@ -227,20 +227,20 @@ $(document).ready(function () {
   //On Click Event for blocks
   $("#boxes-holder").on("click", ".boxes-card", function () {
     $(".shape-thumbnail").css('border', 'none');
-    $(this).css({ 'border': 'solid', 'border-width': '4px', 'border-color': 'gold' });
+    $(this).css({ 'border': 'solid', 'border-width': '4px', 'border-color': '#68645c' });
   });
 
   //On Click Event for Colors
   $("#color-holder").on("click", "#color-card", function () {
     $(".img-thumbnail").css('border', 'none');
-    $(this).css({ 'border': 'solid', 'border-width': '4px', 'border-color': 'gold' });
+    $(this).css({ 'border': 'solid', 'border-width': '4px', 'border-color': '#68645c' });
   });
   
 
   //On Click Event for boards
   $("#board-holder").on("click", "#board-holder", function () {
     $(".board-thumbnail").css('border', 'none');
-    $(this).css({ 'border': 'solid', 'border-width': '4px', 'border-color': 'gold' });
+    $(this).css({ 'border': 'solid', 'border-width': '4px', 'border-color': '#68645c' });
   });
 
 

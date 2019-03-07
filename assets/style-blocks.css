@@ -50,7 +50,6 @@ html, body {
 {
 margin-right: 6px;
 margin-bottom: 8px !important;
-
 -webkit-border-radius: 0 !important;
 -moz-border-radius: 0 !important;
      border-radius: 0 !important;
@@ -59,25 +58,25 @@ margin-bottom: 8px !important;
 .btn-maker {
   /* background-color: red; */
   position: absolute;
-  margin-left: 246px;
+  margin-left: 251px;
   margin-top: 48px;
   z-index: 2;
   background-color:#68645c;
 }
 
-.btn-maker2 {
+.btn-colors {
   /* background-color: red; */
   position: absolute;
-  margin-left: 246px;
+  margin-left: 251px;
   margin-top: 101px;
   z-index: 2;
   background-color:#68645c;
 }
 
-.btn-maker3 {
+.btn-export {
   /* background-color: red; */
   position: absolute;
-  margin-left: 246px;
+  margin-left: 251px;
   margin-top: 154px;
   z-index: 2;
   background-color:#68645c;
@@ -147,13 +146,13 @@ transition: transform .13s;
 }
 
 .shape-thumbnail {
-  width: 50px;
-  height: 50px;
+  width: 54px;
+  height: 54px;
   float: left;
   margin: 12px;
   background-clip: content-box;
   border: none;
-  padding: 0 -10px 0 0;
+  padding: 0 -5px 0 5px;
   cursor: pointer;
 }
 
@@ -182,12 +181,15 @@ transition: transform .13s;
 }
 
 #sidebar {
-  padding-left: 20px;
+  padding-left: 15px;
+  padding-top: 90px;
     min-width: 270px;
     max-width: 270px;
     background: white;
     transition: all 0.3s;
-    height: 100vh;
+    height: 95vh;
+    
+    
 }
 
 #sidebar.active {
