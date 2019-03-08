@@ -53,41 +53,70 @@ let bData = [
 
 
     // second function code here
-    function makeBlocks(b) {
-      setTimeout( function(){
-      for (i = 0; i < bData.length; i++) {
-        var block = $("<div class='0b" + i + " block-up " + b + "' style='transform: rotate(" + rData[i] + "deg);'></div>");
-        $('.art-board').append(block);
-        $('#block' + bData[0] + '').clone().appendTo(".0b" + i + "");
-      }
+//     function makeBlocks(b) {
+//       setTimeout( function(){
+//       for (i = 0; i < bData.length; i++) {
+//         var block = $("<div class='0b" + i + " block-up " + b + "' style='transform: rotate(" + rData[i] + "deg);'></div>");
+//         $('.art-board').append(block);
+//         $('#block' + bData[0] + '').clone().appendTo(".0b" + i + "");
+//       }
       
-    }, 1 );
-    }
+//     }, 1 );
+//     }
 
 
-// $(document).bind('function_a_complete', b);
-makeBlocks('four-up');
-$("#board-options").hide();
+// // $(document).bind('function_a_complete', b);
+// makeBlocks('four-up');
+// $("#board-options").hide();
+
+
+var mainBlock = Snap('.some-div');
+
+Snap.load("assets/svg/block-main.svg", onSVGLoaded);
+
+function onSVGLoaded(data) {
+  mainBlock.append(data);
+}
+// var target2 = ("<div class='1b1 block-up data rotate style='transform: rotate(0 deg);'></div>");
+
+var target = document.getElementById('some-div');
+
+// Create the new element
+// This can be any valid HTML element: p, article, span, etc...
+let div = document.createElement('div');
+    div.setAttribute("class", "b1 block-up data rotate four-up");
+    div.setAttribute("style", "transform: rotate(180deg);");
+    
+div.innerHTML = 'Your content, markup, etc.';
+
+$('.block1').clone().appendTo(".b1");
+
+// You could also add classes, IDs, and so on
+// div is a fully manipulatable DOM Node
 
 
 
-
+// Insert the element after our target element
+target.parentNode.insertBefore( div, target.nextSibling );
 
 function makeBlocks2(b) {
-  setTimeout( function(){
+  // setTimeout( function(){
+
   for (i = 0; i < bData.length; i++) {
-    var block = $(
-      "<div class='1b" + i + " block-up data rotate " + b + "' style='transform: rotate(" + rData[i] + "deg);'></div>");
-    $('.art-board2').append(block);
-    $('#block' + bData[i] + '').clone().appendTo(".1b" + i + "");
+
+    var block = ("<div class='1b" + i + " block-up data rotate " + b + "' style='transform: rotate(" + rData[i] + "deg);'></div>");
+    // Insert the element before our target element
+
+    // $('.art-board').append(block);
+    // $('#block' + bData[i] + '').clone().appendTo(".1b" + i + "");
   }
 
-}, 1 );
+// }, 1 );
 }
 
 
-// $(document).bind('function_a_complete', b);
-makeBlocks2('four-up');
+// // $(document).bind('function_a_complete', b);
+makeBlocks2();
 
 
   //========================================================================================//

@@ -67,9 +67,7 @@ $(document).ready(function () {
   // create the block elements for the html page
   function makeBlocks(a, b) {
     for (i = 0; i < a; i++) {
-      var block = $(
-        "<div id='b" + i + "' class='block-up data rotate " + b + "' style='transform: rotate(0deg);'></div>");
-      $('#art-board').append(block);
+      var block = $( "<div id='b" + i + "' class='block-up data rotate " + b + "' style='transform: rotate(0deg);'></div>"); $('#art-board').append(block);
       $('#block16').clone().appendTo("#b" + i + "");
     }
   }
