@@ -8,7 +8,7 @@ html, body {
   min-height: 100%;
   height: 100%;
   max-height: 100%;
-  background-color: white;
+  background-color: #f2f2f2;
 }
  
 
@@ -22,9 +22,9 @@ html, body {
 
 
 .card {
-  border-style: solid !important;
+  /* border-style: solid !important;
   border-width: 4px !important;
-  border-color: #2A363B;
+  border-color: white; */
   /* box-shadow: 6px 6px 0px 3px #555555; */
   -webkit-border-radius: 0 !important;
   -moz-border-radius: 0 !important;
@@ -32,8 +32,9 @@ html, body {
 }
 
 .card-header {
-  border-bottom: 3px solid #2A363B !important;
+  border-bottom: 3px solid #444444 !important;
   height: 50px;
+  background-color: #444444;
   /* border-color: #7c7c7c; */
   /* box-shadow: 6px 6px 0px 3px #555555; */
 }
@@ -58,28 +59,28 @@ margin-bottom: 8px !important;
 .btn-maker {
   /* background-color: red; */
   position: absolute;
-  margin-left: 251px;
-  margin-top: 48px;
+  margin-left: 253px;
+  margin-top: 50px;
   z-index: 2;
-  background-color:#2A363B;
+  background-color:#444444;
 }
 
 .btn-colors {
   /* background-color: red; */
   position: absolute;
-  margin-left: 251px;
-  margin-top: 101px;
+  margin-left: 253px;
+  margin-top: 105px;
   z-index: 2;
-  background-color:#2A363B;
+  background-color:#444444;
 }
 
 .btn-export {
   /* background-color: red; */
   position: absolute;
-  margin-left: 251px;
-  margin-top: 154px;
+  margin-left: 253px;
+  margin-top: 160px;
   z-index: 2;
-  background-color:#2A363B;
+  background-color:#444444;
 }
 
 
@@ -119,7 +120,7 @@ margin-bottom: 8px !important;
 }
 
 .color1 {
-  fill: #808080;
+  fill: #444444;
 }
 
 .color0 {
@@ -189,12 +190,12 @@ transition: transform .13s;
 
 #sidebar {
   padding-left: 15px;
-  padding-top: 90px;
+  padding-top: 20px;
     min-width: 270px;
     max-width: 270px;
-    background: white;
+    background: #f2f2f2;
     transition: all 0.3s;
-    height: 95vh;
+    height: 90vh;
     
     
 }
