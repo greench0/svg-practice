@@ -1,82 +1,21 @@
 $(document).ready(function () {
   //========================================================================================//
-  let divAmount = [];
+
 
   //========================================================================================//
-  
-  var mainBlock = Snap('#main-block');
+  let divAmount = [];
+
+  mainBlock = Snap('#main-block');
 
   Snap.load("assets/svg/block-main.svg", onSVGLoaded);
 
   function onSVGLoaded(data) {
     mainBlock.append(data);
   }
-
-
-
-
-  // mainBlock2 = Snap('#some-div');
-
-  // Snap.load("assets/svg/block-main.svg", onSVGLoaded2);
-  // function onSVGLoaded2(data) {
-  //   mainBlock2.append(data);
-  // }
-
-
-  let bDataArray = [
-    27,23,23,27,23,2,2,23,23,2,2,23,27,23,23,27
-    ];
   
-    let rDataArray = [
-  90,90,90,180,360,450,540,180,360,360,630,180,360,270,270,270
-    ];
-  
-  //   function makeBlocksTest(b) {
-  //     setTimeout( function(){
-    
-  //     for (i = 0; i < bDataArray.length; i++) {
-    
-  //       var block = ("<div class='b" + i + " block-up data rotate " + b + "' style='transform: rotate(" + rDataArray[i] + "deg);'></div>");
-  //       // Insert the element before our target element
-    
-  //       $('.art-board2').append(block);
-  //       $('#block' + bDataArray[i] + '').clone().appendTo(".b" + i + "");
-  //     }
-    
-  //   }, 1 );
-  //   }
-    
-    // makeBlocksTest("four-up");
-
-
- function makeBlocksTest(b) {
-      setTimeout( function(){
-    
-      for (i = 0; i < 16; i++) {
-    
-        var block = ("<div class='2b" + i + " block-up data rotate " + b + "' style='transform: rotate(" + rDataArray[i] + "deg);'></div>");
-    
-    
-        $('#some-div').append(block);
-        $('#block5').clone().appendTo(".2b" + i + "");
-      }
-    
-    }, 1 );
-    }
-    
-    makeBlocksTest("four-up");
-
   //========================================================================================//
   //========================================================================================//
   // buttons for art-board generation
-  $(document).ready(function () {
-    $('#sidebarCollapse').on('click', function () {
-        $('#sidebar').toggleClass('active');
-    });
-});
-
-
-
   function clearArt() {
     $("#art-board").empty();
   }
@@ -129,9 +68,7 @@ $(document).ready(function () {
   // create the block elements for the html page
   function makeBlocks(a, b) {
     for (i = 0; i < a; i++) {
-      var block = $(
-        "<div id='b" + i + "' class='block-up data rotate " + b + "' style='transform: rotate(0deg);'></div>");
-      $('#art-board').append(block);
+      var block = $( "<div id='b" + i + "' class='block-up data rotate " + b + "' style='transform: rotate(0deg);'></div>"); $('#art-board').append(block);
       $('#block16').clone().appendTo("#b" + i + "");
     }
   }
@@ -143,9 +80,9 @@ $(document).ready(function () {
     let totalBlocks = $(this).data('btn-x');
     clearArt();
     $("#board-options").hide();
-    makeBlocks(totalBlocks, xAmount);
+    makeBlocks(16, "four-up");
     
-    divAmount.push(totalBlocks);
+    // divAmount.push(totalBlocks);
 
 
     $("#footer").show();
@@ -177,19 +114,21 @@ $(document).ready(function () {
     var end = this.innerHTML.indexOf("class");
     var svgId = (this.innerHTML.substring(start, end - 3));
 
+    console.log(svgId);
+
     $("#art-board").on("click", ".data", function () {
       $(this).empty();
       $("#" + svgId).clone().appendTo(this);
-      // console.log(svgId);
+      console.log(this);
     });
   });
 
   // used to collapse the menus when clicked outside of the menu
-  // $(document).click(function (e) {
-  //   if (!$(e.target).is('.panel-body')) {
-  //     $('.collapse').collapse('hide');
-  //   }
-  // });
+  $(document).click(function (e) {
+    if (!$(e.target).is('.panel-body')) {
+      $('.collapse').collapse('hide');
+    }
+  });
 
   //========================================================================================//
   //========================================================================================//
@@ -236,23 +175,28 @@ $(document).ready(function () {
   });
 
   var colors = [
-      [255, 132, 124]
+    [255, 255, 255]
+    , [255, 132, 124]
     , [255, 221, 121]
     , [255, 194, 5]
     , [181, 34, 10]
     , [139, 192, 100]
     , [0, 126, 227]
     , [95, 144, 156]
-    , [245, 245, 245]
+    , [255, 221, 121]
+    , [0, 128, 255]
+    , [139, 192, 100]
+    , [0, 0, 255]
+    , [128, 128, 128]
     , [42, 54, 59]
-
+    , [0, 0, 0]
   ];
 
 
   //Fill hiding div with color boxes
   function generateColors() {
     for (var i = 0; i < colors.length; i++) {
-      var c = $("<img id='color-card' class='img-thumbnail img-t1'></img>");
+      var c = $("<img id='color-card' class='img-thumbnail'></img>");
       var colortype = "background-color: rgb" + "(" + colors[i][0] + "," + colors[i][1] + "," + colors[i][2] + ")";
       c.attr("style", colortype);
       c.attr("colorpicker", "(" + colors[i][0] + "," + colors[i][1] + "," + colors[i][2] + ")")
@@ -262,7 +206,7 @@ $(document).ready(function () {
 
   function generateColorsTwo() {
     for (var i = 0; i < colors.length; i++) {
-      var c = $("<img id='color-card' class='img-thumbnail img-t2'></img>");
+      var c = $("<img id='color-card' class='img-thumbnail'></img>");
       var colortype = "background-color: rgb" + "(" + colors[i][0] + "," + colors[i][1] + "," + colors[i][2] + ")";
       c.attr("style", colortype);
       c.attr("colorpicker", "(" + colors[i][0] + "," + colors[i][1] + "," + colors[i][2] + ")")
@@ -275,26 +219,20 @@ $(document).ready(function () {
   //On Click Event for blocks
   $("#boxes-holder").on("click", ".boxes-card", function () {
     $(".shape-thumbnail").css('border', 'none');
-    $(this).css({ 'border': 'solid', 'border-width': '4px', 'border-color': '#2A363B' });
+    $(this).css({ 'border': 'solid', 'border-width': '4px', 'border-color': 'gold' });
   });
 
   //On Click Event for Colors
   $("#color-holder").on("click", "#color-card", function () {
-    $(".img-t1").css('border', 'none');
-    $(this).css({ 'border': 'solid', 'border-width': '4px', 'border-color': '#2A363B' });
+    $(".img-thumbnail").css('border', 'none');
+    $(this).css({ 'border': 'solid', 'border-width': '4px', 'border-color': 'gold' });
   });
   
 
-  $("#color-holder-2").on("click", "#color-card", function () {
-    $(".img-t2").css('border', 'none');
-    $(this).css({ 'border': 'solid', 'border-width': '4px', 'border-color': '#2A363B' });
-  });
-
-  
   //On Click Event for boards
   $("#board-holder").on("click", "#board-holder", function () {
     $(".board-thumbnail").css('border', 'none');
-    $(this).css({ 'border': 'solid', 'border-width': '4px', 'border-color': '#2A363B' });
+    $(this).css({ 'border': 'solid', 'border-width': '4px', 'border-color': 'gold' });
   });
 
 
@@ -320,14 +258,16 @@ $(document).ready(function () {
 
   //========================================================================================//
 // save button function
-$("#save").on("click", function () {
-  // document.getElementById("save").addEventListener("click", function(){
+
+
+  document.getElementById("save").addEventListener("click", function(){
 // div block id
-// console.log(divAmount[0]);
+console.log(divAmount[0]);
 
 let blockoValue = [];
 let rotateoValue = [];
 let totalValue = [];
+
 
 
 if (divAmount[0] == 16) { 
@@ -383,13 +323,12 @@ blockoValue.push(blocko);
 rotateoValue.push(rotateo);
 }
 
+
+
 document.getElementById('block-data').innerHTML = blockoValue;
 document.getElementById('rotate-data').innerHTML = rotateoValue;
 document.getElementById('total-data').innerHTML = totalValue;
   });
-
-  
-  //========================================================================================//
 
   //========================================================================================//
 }); // end document ready

@@ -24,7 +24,7 @@ html, body {
 .card {
   border-style: solid !important;
   border-width: 4px !important;
-  border-color: #68645c;
+  border-color: #2A363B;
   /* box-shadow: 6px 6px 0px 3px #555555; */
   -webkit-border-radius: 0 !important;
   -moz-border-radius: 0 !important;
@@ -32,7 +32,7 @@ html, body {
 }
 
 .card-header {
-  border-bottom: 3px solid #68645c !important;
+  border-bottom: 3px solid #2A363B !important;
   height: 50px;
   /* border-color: #7c7c7c; */
   /* box-shadow: 6px 6px 0px 3px #555555; */
@@ -61,7 +61,7 @@ margin-bottom: 8px !important;
   margin-left: 251px;
   margin-top: 48px;
   z-index: 2;
-  background-color:#68645c;
+  background-color:#2A363B;
 }
 
 .btn-colors {
@@ -70,7 +70,7 @@ margin-bottom: 8px !important;
   margin-left: 251px;
   margin-top: 101px;
   z-index: 2;
-  background-color:#68645c;
+  background-color:#2A363B;
 }
 
 .btn-export {
@@ -79,7 +79,7 @@ margin-bottom: 8px !important;
   margin-left: 251px;
   margin-top: 154px;
   z-index: 2;
-  background-color:#68645c;
+  background-color:#2A363B;
 }
 
 

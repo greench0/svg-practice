@@ -70,26 +70,57 @@ let bData = [
 // $("#board-options").hide();
 
 
-var mainBlock = Snap('.some-div');
+mainBlock = Snap('#some-div');
 
-Snap.load("assets/svg/block-main.svg", onSVGLoaded);
+Snap.load("assets/svg/block-main.svg", onSVGL);
 
-function onSVGLoaded(data) {
+function onSVGL(data) {
   mainBlock.append(data);
 }
+
+// $(mainBlock).clone().appendTo("#some-div2");
+
+
+
+
+
+
+
+blockLoad = Snap('#some-div2');
+  Snap.load("assets/svg/block5.svg", onSVGLoaded);
+  function onSVGLoaded(data) {
+    blockLoad.append(data);
+  }
+
+
+
+// function elem_cloneRun(loc,k)
+// {
+//     var SNPsvg = Snap("#"+loc+"SVG");
+//     var circle = SNPsvg.circle(200,100,50).attr({fill: 'red' });
+
+//     var clone1=circle.clone()
+//     clone1.attr({cx: 180,cy:80,fill:'blue'})
+
+//     var clone2=circle.clone()
+//     clone2.attr({cx: 220,cy:120,fill:'green'})
+//     //---Note: clone2 is behind clone1---
+
+//     updateSvgSource(loc,k)
+// }
 // var target2 = ("<div class='1b1 block-up data rotate style='transform: rotate(0 deg);'></div>");
 
-var target = document.getElementById('some-div');
+// var target = document.getElementById('some-div');
 
-// Create the new element
-// This can be any valid HTML element: p, article, span, etc...
-let div = document.createElement('div');
-    div.setAttribute("class", "b1 block-up data rotate four-up");
-    div.setAttribute("style", "transform: rotate(180deg);");
+// // Create the new element
+// // This can be any valid HTML element: p, article, span, etc...
+// let div = document.createElement('div');
+//     div.setAttribute("class", "b1 block-up data rotate four-up");
+//     div.setAttribute("style", "transform: rotate(180deg);");
     
-div.innerHTML = 'Your content, markup, etc.';
+// div.innerHTML = 'Your content, markup, etc.';
 
-$('.block1').clone().appendTo(".b1");
+// $('.block1').clone().appendTo(".b1");
 
 // You could also add classes, IDs, and so on
 // div is a fully manipulatable DOM Node
