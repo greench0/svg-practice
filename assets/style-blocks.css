@@ -22,10 +22,6 @@ html, body {
 
 
 .card {
-  /* border-style: solid !important;
-  border-width: 4px !important;
-  border-color: white; */
-  /* box-shadow: 6px 6px 0px 3px #555555; */
   -webkit-border-radius: 0 !important;
   -moz-border-radius: 0 !important;
        border-radius: 0 !important;
@@ -65,7 +61,7 @@ margin-bottom: 8px !important;
 }
 
 
-.btn-sidebar {
+.btn-maker,.btn-colors, .btn-export, .btn-grid {
   position: absolute;
   background-color:#444444;
   width: 58px;
@@ -82,9 +78,14 @@ margin-bottom: 8px !important;
   margin-top: 108px;
 }
 
-.btn-export {
+.btn-grid {
   margin-left: 253px;
   margin-top: 166px;
+}
+
+.btn-export {
+  margin-left: 253px;
+  margin-top: 224px;
 }
 
 
@@ -183,6 +184,16 @@ transition: transform .13s;
   overflow-y: scroll !important;
 }
 
+.grid-on {
+  border-style: solid !important;
+    border-color: white !important;
+    border-width: 1px !important;
+  }  
+  .grid-off {
+    border-style: none !important;
+      border-color: white !important;
+      border-width: 0px !important;
+    }  
 /* -----------------------------------------------------------------------------------------------------------------------------------------
 ------ end Footer Section ------------------- */
 
@@ -200,8 +211,7 @@ transition: transform .13s;
     background: #f2f2f2;
     transition: all 0.3s;
     height: 90vh;
-    
-    
+     
 }
 
 #sidebar.active {

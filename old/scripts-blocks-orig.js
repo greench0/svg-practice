@@ -12,20 +12,60 @@ $(document).ready(function () {
     mainBlock.append(data);
   }
 
-  
 
-    // button events to show / hide the grid - strokes
-    $("#btn-grid").click(function () {
-      
-      if ($( ".data" ).hasClass( "grid-off" )) {
-        $(".data").removeClass("grid-off");
-        $(".data").addClass("grid-on");
+
+
+  // mainBlock2 = Snap('#some-div');
+
+  // Snap.load("assets/svg/block-main.svg", onSVGLoaded2);
+  // function onSVGLoaded2(data) {
+  //   mainBlock2.append(data);
+  // }
+
+
+  let bDataArray = [
+    27,23,23,27,23,2,2,23,23,2,2,23,27,23,23,27
+    ];
+  
+    let rDataArray = [
+  90,90,90,180,360,450,540,180,360,360,630,180,360,270,270,270
+    ];
+  
+  //   function makeBlocksTest(b) {
+  //     setTimeout( function(){
+    
+  //     for (i = 0; i < bDataArray.length; i++) {
+    
+  //       var block = ("<div class='b" + i + " block-up data rotate " + b + "' style='transform: rotate(" + rDataArray[i] + "deg);'></div>");
+  //       // Insert the element before our target element
+    
+  //       $('.art-board2').append(block);
+  //       $('#block' + bDataArray[i] + '').clone().appendTo(".b" + i + "");
+  //     }
+    
+  //   }, 1 );
+  //   }
+    
+    // makeBlocksTest("four-up");
+
+
+ function makeBlocksTest(b) {
+      setTimeout( function(){
+    
+      for (i = 0; i < 16; i++) {
+    
+        var block = ("<div class='2b" + i + " block-up data rotate " + b + "' style='transform: rotate(" + rDataArray[i] + "deg);'></div>");
+    
+    
+        $('#some-div').append(block);
+        $('#block5').clone().appendTo(".2b" + i + "");
       }
-else {
-      $(".data").removeClass("grid-on");
-      $(".data").addClass("grid-off");
-}
-    });
+    
+    }, 1 );
+    }
+    
+    makeBlocksTest("four-up");
+
   //========================================================================================//
   //========================================================================================//
   // buttons for art-board generation
@@ -34,6 +74,7 @@ else {
         $('#sidebar').toggleClass('active');
     });
 });
+
 
 
   function clearArt() {
@@ -89,7 +130,7 @@ else {
   function makeBlocks(a, b) {
     for (i = 0; i < a; i++) {
       var block = $(
-        "<div id='b" + i + "' class='block-up data rotate grid-off " + b + "' style='transform: rotate(0deg);'></div>");
+        "<div id='b" + i + "' class='block-up data rotate " + b + "' style='transform: rotate(0deg);'></div>");
       $('#art-board').append(block);
       $('#block16').clone().appendTo("#b" + i + "");
     }
@@ -279,54 +320,44 @@ else {
 
   //========================================================================================//
 // save button function
-// $("#save").on("click", function () {
-  document.getElementById("save").addEventListener("click", function(){
+$("#save").on("click", function () {
+  // document.getElementById("save").addEventListener("click", function(){
 // div block id
 // console.log(divAmount[0]);
-let mongoData = {};
 
 let blockoValue = [];
-let rotatoValue = [];
+let rotateoValue = [];
 let totalValue = [];
 
 
 if (divAmount[0] == 16) { 
   totalValue.push('0, 250, 500, 750, 1000');
-  mongoData.cssData = "four-up";
 }
 
 else if (divAmount[0] == 25) {
   totalValue.push('0,200,400,600,800,1000');
-  mongoData.cssData = "five-up";
 }
 
 else if (divAmount[0] == 36) {
   totalValue.push('0, 166.6666, 333.3333, 500, 666.6666, 833.3333,1000');
-  mongoData.cssData = "six-up";
 }
 
 else if (divAmount[0] == 49) {
   totalValue.push('0, 142.857, 285.714, 428.571, 571.428, 714.285, 857.142, 1000');
-  mongoData.cssData = "seven-up";
 }
 
 else if (divAmount[0] == 64) {
   totalValue.push('0, 125, 250, 375, 500, 625, 750, 875, 1000');
-  mongoData.cssData = "eight-up";
 }
 
 else if (divAmount[0] == 81) {
   totalValue.push('0, 111.1111, 222.2222, 333.3333, 444.4444, 555.5555, 666.6666, 777.7777, 888.8888, 1000');
-  mongoData.cssData = "nine-up";
 }
-
-let blockDat = [];
 
 
 for (i = 0; i < divAmount[0]; i++) {
 let blocko = [];
-let rotato = [];
-let blockD = {};
+let rotateo = [];
 
 let element = document.getElementById('b'+ i);
 //   
@@ -337,69 +368,28 @@ let svgBlockData = bData.substring(
   bData.lastIndexOf('" "class')
 );
 
-Object.assign(blockD, {bData: svgBlockData});
-
 // rotate info
   let rotateData = bData.substring(
     bData.lastIndexOf('style="transform: rotate(') + 25, 
     bData.lastIndexOf('deg);"')
   );
 
-  Object.assign(blockD, {rData: rotateData});
-
-
-  // console.log(blockD);
 
 blocko.push(svgBlockData);
-rotato.push(rotateData);
+rotateo.push(rotateData);
 
 
 blockoValue.push(blocko);
-rotatoValue.push(rotato);
-
-
-blockDat.push(blockD);
-// Object.assign(blockDat, {blockData: blockD});
+rotateoValue.push(rotateo);
 }
 
 document.getElementById('block-data').innerHTML = blockoValue;
-document.getElementById('rotate-data').innerHTML = rotatoValue;
+document.getElementById('rotate-data').innerHTML = rotateoValue;
 document.getElementById('total-data').innerHTML = totalValue;
-
-
-
-
-
-// let botTest = document.getElementById("bottomDiv").innerHTML;
-let botTest = document.getElementById('b0').innerHTML;
-
-let botTestSub = botTest.substring(
-  botTest.lastIndexOf('class="color1"') + 22, 
-  botTest.lastIndexOf(';">')
-);
-
-// console.log(botTestSub);
-
-
-mongoData.pData = totalValue;
-mongoData.blockData = blockDat;
-
-// mongoData.cssData = cssDataArr;
-console.log(mongoData);
-// console.log(blockDat);
   });
 
-
+  
   //========================================================================================//
-  let data = { 
-    id: 3, cssData: "two-up", color0: "white", color1: "green", pData: [0, 250, 500, 750, 1000],
-    blockData: [
-      {bData: 27 , rData: 90},
-      {bData: 27 , rData: 180},
-      {bData: 27 , rData: 360},
-      {bData: 27 , rData: 270}
-    ]
-  };
 
   //========================================================================================//
 }); // end document ready
