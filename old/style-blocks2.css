@@ -63,25 +63,30 @@ margin-bottom: 8px !important;
 
 .btn-maker,.btn-colors, .btn-export, .btn-grid {
   position: absolute;
-  background-color:#444444;
+  background-color:#444444 !important;
   width: 58px;
+  height: 54px;
   font-size: 24px;
-  margin-left: 0px;
+  color: white;
 }
 
 .btn-maker {
+  margin-left: 253px;
   margin-top: 51px;
 }
 
 .btn-colors {
+  margin-left: 253px;
   margin-top: 110px;
 }
 
 .btn-grid {
+  margin-left: 253px;
   margin-top: 169px;
 }
 
 .btn-export {
+  margin-left: 253px;
   margin-top: 228px;
 }
 
@@ -107,12 +112,6 @@ margin-bottom: 8px !important;
     line-height: 0;
 }
 
-.two-up { width:50%; }  
-.three-up { width:33.33333333%; }  
-.four-up { 
-  width: 25%; 
-  margin: 0px -1px -1px 0;
-}
 .two-up { width: 50%; margin: 0 -1px -1px 0; }  
 .three-up { width:33.33333333%; margin: 0 -1px -1px 0; }  
 .four-up { width: 25%; margin: 0 -1px -1px 0;}
@@ -121,6 +120,7 @@ margin-bottom: 8px !important;
 .seven-up { width: 14.285714285%; margin: 0 -1px -1px 0;}
 .eight-up { width: 12.5%; margin: 0 -1px -1px 0;}
 .nine-up { width: 11.111111111%; margin: 0 -1px -1px 0;}
+
 
 .modal p {
   word-wrap: break-word;
@@ -205,25 +205,19 @@ transition: transform .13s;
     align-items: stretch;
 }
 
-.sidebar-buttons {
-  background: #444444;
-  height: 95vh;
-  margin-top: 20px;
-}
-
 #sidebar {
-  padding-left: 50px;
+  padding-left: 15px;
   padding-top: 20px;
-    min-width: 305px;
-    max-width: 305px;
-    background: #f2f2f2;
+    min-width: 270px;
+    max-width: 270px;
+    background: #f2f2f2 !important;
     transition: all 0.3s;
-    height: 95vh;
+    height: 90vh;
      
 }
 
 #sidebar.active {
-    margin-left: -305px;
+    margin-left: -270px;
 }
 
 /* ---------------------------------------------------
@@ -232,7 +226,7 @@ transition: transform .13s;
 
 @media (max-width: 768px) {
     #sidebar {
-        margin-left: -305px;
+        margin-left: -270px;
     }
     #sidebar.active {
         margin-left: 0;

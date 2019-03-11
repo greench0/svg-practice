@@ -1,0 +1,225 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+ 
+
+.main-card {
+  margin-top: 20px;
+  border-width: 1px;
+  /* background: #5F909C !important; */
+  border-color: #D3D3D3;
+ 
+}
+
+/* #main-card:hover {
+  transform:translateY(5px);
+  
+} */
+
+
+.center-block {
+  float:none;
+}
+
+#board-options {
+  /* border: 2px solid darkgrey; */
+  background: "grey";
+  margin-top: -20px;
+}
+
+.btn
+{
+margin-right: 6px;
+margin-bottom: 10px !important;
+}
+
+#art-board {
+  padding: 0 0 5px 0;
+  margin: 0 auto;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  cursor: pointer;
+ }
+
+ #board-options {
+  margin: 2rem auto;
+  /* background: var(--yellow); */
+  border-radius: 10px;
+  padding: 2rem;
+  border: 3px solid var(--peach);
+  box-shadow: 1px 1px 0 var(--peach), 2px 2px 0 var(--peach), 3px 3px 0 var(--peach);
+}
+
+
+ .color-hold {
+margin-top: -10px;
+}
+
+ #main-block {
+  width:50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* border: 1px solid lightgrey; */
+    /* border: 2px solid darkgrey; */
+
+}  
+
+.block-up {
+  margin: 0 auto;
+    padding: 0px 0px 0px 0px;
+    display: block;
+    float: left;
+    line-height: 0;
+}
+
+.two-up { width:50%; }  
+.three-up { width:33.33333333%; }  
+.four-up { width: 25%; }
+.five-up { width: 20%; }
+.six-up { width: 16.66666666%; }
+.seven-up { width: 14.285714285%; }
+.eight-up { width: 12.5%; }
+.nine-up { width: 11.111111111%; }
+
+.modal p {
+  word-wrap: break-word;
+}
+
+.color1 {
+  fill: #808080;
+}
+
+.color0 {
+  fill: #ffdd79;
+}
+
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+
+}
+
+.rotate {
+transition: transform .13s;
+}
+
+
+/* -----------------------------------------------------------------------------------------------------------------------------------------
+------ Conor's Footer Section ------------------- */
+p {
+  margin-bottom: -5px;
+}
+
+.container-fluid {
+  width: 100%;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-bottom: none;
+}
+
+#center {
+  width: 100%;
+  margin: auto;
+  border-bottom: none;
+}
+
+.img-thumbnail {
+  width: 3.5em;
+  height: 3.5em;
+  float: left;
+  margin: 10px;
+  background-clip: content-box;
+  border: none;
+  padding: 0 -5px 0 0;
+  cursor: pointer;
+
+}
+
+.shape-thumbnail {
+  width: 4em;
+  height: 4em;
+  float: left;
+  margin: 12px;
+  background-clip: content-box;
+  border: none;
+  padding: 0 -10px 0 0;
+  cursor: pointer;
+}
+
+
+#color-holder {
+  display: inline-block;
+  width: 100%;
+  /* height: 210px; */
+  overflow-y: scroll !important;
+}
+
+#boxes-holder {
+  display: inline-block;
+  width: 100%;
+  height: 400px;
+  overflow-y: scroll !important;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+  margin-top: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: rgba(0,0,0,.5);
+  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+  margin-top: 2px;
+}
+/* -----------------------------------------------------------------------------------------------------------------------------------------
+------ Conor's Footer Section ------------------- */
+
+
+/* @media only screen and (max-width: 1400px) {
+  #art-board, #center {
+    width: 52%;
+   }
+  } */
+
+/* @media only screen and (max-width: 1200px) {
+  #art-board, #center {
+    width: 62%;
+   }
+  }
+
+  @media only screen and (max-width: 1000px) {
+    #art-board, #center {
+      width: 60%;
+     }
+    }
+
+  @media only screen and (max-width: 1140px) {
+    #art-board, #center {
+      width: 68%;
+     }
+    }
+
+
+  @media only screen and (max-width: 800px) {
+    #art-board, #center {
+      width: 98%;
+     }
+    } */
+
+  /* @media only screen and (max-width: 645px) {
+    #art-board, #center {
+      width: 98%;
+     }
+    } */
