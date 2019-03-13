@@ -1,0 +1,243 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  min-width: 100%;
+  width: 100%;
+  max-width: 100%;
+
+  min-height: 100%;
+  height: 100%;
+  max-height: 100%;
+  background-color: #f2f2f2;
+}
+ 
+
+#main-card {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+ 
+
+}
+
+
+.card {
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+       border-radius: 0 !important;
+}
+
+.card-header {
+  border-bottom: 3px solid #444444 !important;
+  height: 50px;
+  background-color: #444444;
+  /* border-color: #7c7c7c; */
+  /* box-shadow: 6px 6px 0px 3px #555555; */
+}
+
+.modal {
+  text-align: center;
+}
+
+.modal-header {
+  border-bottom: 3px solid #444444 !important;
+  /* height: 50px; */
+  background-color: #444444;
+}
+
+#board-options {
+  /* border: 2px solid darkgrey; */
+  /* background: "grey";
+  margin-top: -20px; */
+}
+
+.btn
+{
+margin-right: 6px;
+margin-bottom: 8px !important;
+-webkit-border-radius: 0 !important;
+-moz-border-radius: 0 !important;
+     border-radius: 0 !important;
+}
+
+
+.btn-maker,.btn-colors, .btn-export, .btn-grid, .btn-fill {
+  position: absolute;
+  background-color:#444444;
+  width: 58px;
+  font-size: 24px;
+}
+
+.btn-maker {
+  margin-left: 253px;
+  margin-top: 50px;
+}
+
+.btn-colors {
+  margin-left: 253px;
+  margin-top: 108px;
+}
+
+.btn-grid {
+  margin-left: 253px;
+  margin-top: 166px;
+}
+
+.btn-fill {
+  margin-left: 253px;
+  margin-top: 224px;
+}
+
+.btn-export {
+  margin-left: 253px;
+  margin-top: 282px;
+}
+
+
+#art-board {
+  cursor: pointer;
+ }
+
+
+ #main-block {
+  width:50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}  
+
+
+.block-up {
+  margin: 0 auto;
+    padding: 0px 0px 0px 0px;
+    display: block;
+    float: left;
+    line-height: 0;
+}
+
+.two-up { width:50%; }  
+.three-up { width:33.33333333%; }  
+.four-up { width: 25%; margin: 0px -1px -1px 0; }
+.two-up { width: 50%; margin: 0 -1px -1px 0; }  
+.three-up { width:33.33333333%; margin: 0 -1px -1px 0; }  
+.four-up { width: 25%; margin: 0 -1px -1px 0;}
+.five-up { width: 20%; margin: 0 -1px -1px 0;}
+.six-up { width: 16.66666666%; margin: 0 -1px -1px 0;}
+.seven-up { width: 14.285714285%; margin: 0 -1px -1px 0;}
+.eight-up { width: 12.5%; margin: 0 -1px -1px 0;}
+.nine-up { width: 11.111111111%; margin: 0 -1px -1px 0;}
+
+
+.modal p {
+  word-wrap: break-word;
+}
+
+.color1 {
+  fill: #444444;
+}
+
+.color0 {
+  fill: #ffdd79;
+}
+
+
+.rotate {
+transition: transform .13s;
+}
+
+.nav-tabs {
+  border-bottom: none;
+  margin-bottom: -25px;
+  /* background-color:red; */
+  margin-top: -10px;
+}
+
+/* -----------------------------------------------------------------------------------------------------------------------------------------
+------ Footer Section ------------------- */
+.img-thumbnail {
+  width: 50px;
+  height: 50px;
+  float: left;
+  margin: 10px;
+  background-clip: content-box;
+  border: none;
+  padding: 0 -5px 0 0;
+  cursor: pointer;
+
+}
+
+.shape-thumbnail {
+  width: 52px;
+  height: 52px;
+  float: left;
+  margin: 12px;
+  background-clip: content-box;
+  border: none;
+  padding: 0 -5px 0 5px;
+  cursor: pointer;
+}
+
+
+#color-holder {
+  display: inline-block;
+  width: 100%;
+  /* height: 210px; */
+  /* overflow-y: scroll !important; */
+}
+
+#boxes-holder {
+  display: inline-block;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll !important;
+}
+
+.grid-on {
+  border-style: solid !important;
+    border-color: white !important;
+    border-width: 1px !important;
+  }  
+  .grid-off {
+    border-style: none !important;
+      border-color: white !important;
+      border-width: 0px !important;
+    }  
+/* -----------------------------------------------------------------------------------------------------------------------------------------
+------ end Footer Section ------------------- */
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar {
+  padding-left: 15px;
+  padding-top: 20px;
+    min-width: 270px;
+    max-width: 270px;
+    background: #f2f2f2;
+    transition: all 0.3s;
+    height: 90vh;
+     
+}
+
+#sidebar.active {
+    margin-left: -270px;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -270px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}

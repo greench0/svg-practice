@@ -1,7 +1,9 @@
 $(document).ready(function () {
   //========================================================================================//
   let divAmount = [];
-
+  let xAmount = 'four-up';
+  let totalBlocks = '16';
+  let svgId = 'block16';
   //========================================================================================//
   
   var mainBlock = Snap('#main-block');
@@ -12,7 +14,6 @@ $(document).ready(function () {
     mainBlock.append(data);
   }
 
-  
 
     // button events to show / hide the grid - strokes
     $("#btn-grid").click(function () {
@@ -54,30 +55,17 @@ else {
   }
 
 
-
   blocksForHtml(totalShapes);
   //========================================================================================//
   // create and load Snap svg blocks in the shape div container
-  function LoadSnapsFunc() {
-    for ( i=0; i<=totalShapes; i++ )
-    {
-        var str ="b"+ i+" = Snap('#block"+ i +"');";
-        //Declaring and Setting dynamic variable to undefined using eval
-        eval(str);
-    }
- }
- LoadSnapsFunc();
+  b0 = Snap('#block0'); b1 = Snap('#block1'); b2 = Snap('#block2'); b3 = Snap('#block3'); b4 = Snap('#block4'); b5 = Snap('#block5'); b6 = Snap('#block6'); b7 = Snap('#block7'); b8 = Snap('#block8'); b9 = Snap('#block9'); b10 = Snap('#block10'); b11 = Snap('#block11'); b12 = Snap('#block12'); b13 = Snap('#block13'); b14 = Snap('#block14'); b15 = Snap('#block15'); b16 = Snap('#block16'); b17 = Snap('#block17'); b18 = Snap('#block18'); b19 = Snap('#block19'); b20 = Snap('#block20'); b21 = Snap('#block21'); b22 = Snap('#block22'); b23 = Snap('#block23'); b24 = Snap('#block24'); b25 = Snap('#block25'); b26 = Snap('#block26'); b27 = Snap('#block27'); b28 = Snap('#block28'); b29 = Snap('#block29'); b30 = Snap('#block30'); b31 = Snap('#block31'); b32 = Snap('#block32'); b33 = Snap('#block33'); b34 = Snap('#block34'); b35 = Snap('#block35'); b36 = Snap('#block36'); b37 = Snap('#block37'); b38 = Snap('#block38'); b39 = Snap('#block39'); b40 = Snap('#block40'); b41 = Snap('#block41'); b42 = Snap('#block42'); b43 = Snap('#block43'); b44 = Snap('#block44'); b45 = Snap('#block45'); b46 = Snap('#block46'); b47 = Snap('#block47'); b48 = Snap('#block48'); b49 = Snap('#block49'); b50 = Snap('#block50'); b51 = Snap('#block51'); b52 = Snap('#block52'); b53 = Snap('#block53'); b54 = Snap('#block54'); b55 = Snap('#block55'); b56 = Snap('#block56'); b57 = Snap('#block57'); b58 = Snap('#block58'); b59 = Snap('#block59'); b60 = Snap('#block60'); b61 = Snap('#block61'); b62 = Snap('#block62'); b63 = Snap('#block63'); b64 = Snap('#block64'); b65 = Snap('#block65'); b66 = Snap('#block66'); b67 = Snap('#block67'); b68 = Snap('#block68'); b69 = Snap('#block69'); b70 = Snap('#block70'); b71 = Snap('#block71'); b72 = Snap('#block72'); b73 = Snap('#block73'); b74 = Snap('#block74'); b75 = Snap('#block75'); b76 = Snap('#block76'); b77 = Snap('#block77'); b78 = Snap('#block78'); b79 = Snap('#block79'); b80 = Snap('#block80'); b81 = Snap('#block81'); 
+  b82 = Snap('#block82'); b83 = Snap('#block83'); b84 = Snap('#block84'); b85 = Snap('#block85'); b86 = Snap('#block86'); b87 = Snap('#block87'); b88 = Snap('#block88'); b89 = Snap('#block89'); 
+  b90 = Snap('#block90'); 
 
-  function LoadBlocksFunc() {
-    for ( i=0; i<=totalShapes; i++ )
-    {
-        var str ="loadBlocks("+i+", b"+i+");";
-        //Declaring and Setting dynamic variable to undefined using eval
-        eval(str);
-    }
- }
- LoadBlocksFunc();
-  //========================================================================================//
+  loadBlocks(0, b0); loadBlocks(1, b1); loadBlocks(2, b2); loadBlocks(3, b3); loadBlocks(4, b4); loadBlocks(5, b5); loadBlocks(6, b6); loadBlocks(7, b7); loadBlocks(8, b8); loadBlocks(9, b9); loadBlocks(10, b10); loadBlocks(11, b11); loadBlocks(12, b12); loadBlocks(13, b13); loadBlocks(14, b14); loadBlocks(15, b15); loadBlocks(16, b16); loadBlocks(17, b17); loadBlocks(18, b18); loadBlocks(19, b19); loadBlocks(20, b20); loadBlocks(21, b21); loadBlocks(22, b22); loadBlocks(23, b23); loadBlocks(24, b24); loadBlocks(25, b25); loadBlocks(26, b26); loadBlocks(27, b27); loadBlocks(28, b28); loadBlocks(29, b29); loadBlocks(30, b30); loadBlocks(31, b31); loadBlocks(32, b32); loadBlocks(33, b33); loadBlocks(34, b34); loadBlocks(35, b35); loadBlocks(36, b36); loadBlocks(37, b37); loadBlocks(38, b38); loadBlocks(39, b39); loadBlocks(40, b40); loadBlocks(41, b41); loadBlocks(42, b42); loadBlocks(43, b43); loadBlocks(44, b44); loadBlocks(45, b45); loadBlocks(46, b46); loadBlocks(47, b47); loadBlocks(48, b48); loadBlocks(49, b49); loadBlocks(50, b50); loadBlocks(51, b51); loadBlocks(52, b52); loadBlocks(53, b53); loadBlocks(54, b54); loadBlocks(55, b55); loadBlocks(56, b56); loadBlocks(57, b57); loadBlocks(58, b58); loadBlocks(59, b59); loadBlocks(60, b60); loadBlocks(61, b61); loadBlocks(62, b62); loadBlocks(63, b63); loadBlocks(64, b64); loadBlocks(65, b65); loadBlocks(66, b66); loadBlocks(67, b67); loadBlocks(68, b68); loadBlocks(69, b69); loadBlocks(70, b70); loadBlocks(71, b71); loadBlocks(72, b72); loadBlocks(73, b73); loadBlocks(74, b74); loadBlocks(75, b75); loadBlocks(76, b76); loadBlocks(77, b77); loadBlocks(78, b78); loadBlocks(79, b79); loadBlocks(80, b80); loadBlocks(81, b81); 
+  loadBlocks(82, b82); loadBlocks(83, b83); loadBlocks(84, b84); loadBlocks(85, b85); loadBlocks(86, b86); loadBlocks(87, b87); loadBlocks(88, b88); loadBlocks(89, b89); 
+  loadBlocks(90, b90); 
+
   // defines the color 1 and 2 for the default shapes
   var dColor0 = "#F37B82";
   var dColor1 = "#808080";
@@ -110,17 +98,60 @@ else {
 
   // on click button event for make blocks 
   $(".artBoardButtons").on("click", function () {
-    let xAmount = $(this).data('btn-up');
-    let totalBlocks = $(this).data('btn-x');
+     xAmount = $(this).data('btn-up');
+     totalBlocks = $(this).data('btn-x');
     clearArt();
     $("#board-options").hide();
     makeBlocks(totalBlocks, xAmount);
     
     divAmount.push(totalBlocks);
 
-
-    $("#footer").show();
   });
+
+
+
+  //========================================================================================//
+  // create the block elements for the html page
+  function fillBlocks(a, b) {
+    for (i = 0; i < a; i++) {
+      var block = $(
+        "<div id='b" + i + "' class='block-up data rotate grid-off " + b + "' style='transform: rotate(0deg);'></div>");
+      $('#art-board').append(block);
+      $('#' + svgId + '').clone().appendTo("#b" + i + "");
+    }
+  }
+
+
+  // on click button event for make blocks 
+  $(".btn-fill").on("click", function () {
+    // let xAmount = 'four-up';
+    // let totalBlocks = '16';
+    
+    // let xAmount = $(this).data('btn-up');
+    // let totalBlocks = $(this).data('btn-x');
+    // console.log($("#b0"))
+    clearArt();
+    $("#board-options").hide();
+    fillBlocks(totalBlocks, xAmount);
+    
+    divAmount.push(totalBlocks);
+
+  });
+// ==============================
+
+
+  // $("#btn-misc").on("click", function () {
+  //   let xAmount = $(this).data('btn-up');
+  //   let totalBlocks = $(this).data('btn-x');
+  //   clearArt();
+  //   $("#board-options").hide();
+  //   makeBlocks(totalBlocks, xAmount);
+    
+  //   divAmount.push(totalBlocks);
+
+
+  //   $("#footer").show();
+  // });
 
   //========================================================================================//
   // JS for rotating a block shape
@@ -144,18 +175,21 @@ else {
   //========================================================================================//
   // buttons to change shape divs when clicked
   $(".shape-thumbnail").on("click", function () {
+
     var start = this.innerHTML.indexOf("block");
     var end = this.innerHTML.indexOf("class");
-    var svgId = (this.innerHTML.substring(start, end - 3));
+     svgId = (this.innerHTML.substring(start, end - 3));
 
     $("#art-board").on("click", ".data", function () {
       $(this).empty();
       $("#" + svgId).clone().appendTo(this);
       // console.log(svgId);
     });
+    return svgId;
   });
 
- 
+
+
   //========================================================================================//
   //========================================================================================//
   // Create hiding div
@@ -397,15 +431,5 @@ console.log(mongoData);
 
 
   //========================================================================================//
-  let data = { 
-    id: 3, cssData: "two-up", color0: "white", color1: "green", pData: [0, 250, 500, 750, 1000],
-    blockData: [
-      {bData: 27 , rData: 90},
-      {bData: 27 , rData: 180},
-      {bData: 27 , rData: 360},
-      {bData: 27 , rData: 270}
-    ]
-  };
-
   //========================================================================================//
 }); // end document ready
