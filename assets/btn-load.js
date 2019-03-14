@@ -4,6 +4,9 @@ $(document).ready(function () {
   let xAmount = 'four-up';
   let totalBlocks = '16';
   let svgId = 'block16';
+  let svgIdRandom = ''
+    // a = how many svg files
+    const totalShapes = 91;
   //========================================================================================//
   
   var mainBlock = Snap('#main-block');
@@ -43,8 +46,6 @@ else {
 
   $("#footer").hide();
   // =========================
-  // a = how many svg files
-  var totalShapes = 91;
 
   function blocksForHtml(a) {
     for (i = 0; i < a; i++) {
@@ -111,7 +112,7 @@ else {
 
 
   //========================================================================================//
-  // create the block elements for the html page
+  // create the block elements based on block selection to fill art board
   function fillBlocks(a, b) {
     for (i = 0; i < a; i++) {
       var block = $(
@@ -120,7 +121,6 @@ else {
       $('#' + svgId + '').clone().appendTo("#b" + i + "");
     }
   }
-
 
   // on click button event for make blocks 
   $(".btn-fill").on("click", function () {
@@ -135,23 +135,33 @@ else {
     fillBlocks(totalBlocks, xAmount);
     
     divAmount.push(totalBlocks);
-
   });
 // ==============================
 
+ //========================================================================================//
+  // create the block elements based on block selection to fill art board
+  function randomBlocks(a, b) {
+    for (i = 0; i < a; i++) {
+      let block = $( "<div id='b" + i + "' class='block-up data rotate grid-off " + b + "' style='transform: rotate(0deg);'></div>");
+      let randomNum = Math.floor(Math.random() * (+ totalShapes - +0)) + +0; 
+      $('#art-board').append(block);
+      $('#block' + randomNum + '').clone().appendTo("#b" + i + "");
+    }
+  }
 
-  // $("#btn-misc").on("click", function () {
-  //   let xAmount = $(this).data('btn-up');
-  //   let totalBlocks = $(this).data('btn-x');
-  //   clearArt();
-  //   $("#board-options").hide();
-  //   makeBlocks(totalBlocks, xAmount);
+ 
+  // on click button event for make blocks 
+  $(".btn-random").on("click", function () {
+
+    // let xAmount = $(this).data('btn-up');
+    // let totalBlocks = $(this).data('btn-x');
+    // console.log($("#b0"))
+    clearArt();
+    $("#board-options").hide();
+    randomBlocks(totalBlocks, xAmount);
     
-  //   divAmount.push(totalBlocks);
-
-
-  //   $("#footer").show();
-  // });
+    divAmount.push(totalBlocks);
+  });
 
   //========================================================================================//
   // JS for rotating a block shape
@@ -300,14 +310,14 @@ else {
   // on Click Event for adding this Color to Blocks
   $("#color-holder").on("click", "#color-card", function () {
     var color = ($(this).attr("colorpicker"));
-    console.log(color);
+    // console.log(color);
     // $('.color0').css({ fill:"" + color + "" });
     $('.color0').css({ fill: "rgb" + color });
   });
 
   $("#color-holder-2").on("click", "#color-card", function () {
     var color = ($(this).attr("colorpicker"));
-    console.log(color);
+    // console.log(color);
     // $('.color0').css({ fill:"" + color + "" });
     $('.color1').css({ fill: "rgb" + color });
     $("#main-color").css("border-color", "red");

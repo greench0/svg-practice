@@ -61,37 +61,39 @@ margin-bottom: 8px !important;
 }
 
 
-.btn-maker,.btn-colors, .btn-export, .btn-grid, .btn-fill {
+.btn-maker,.btn-colors, .btn-export, .btn-grid, .btn-fill, .btn-random {
   position: absolute;
   background-color:#444444;
   width: 58px;
   font-size: 24px;
+  margin-left: 253px;
 }
 
 .btn-maker {
-  margin-left: 253px;
   margin-top: 50px;
 }
 
 .btn-colors {
-  margin-left: 253px;
   margin-top: 108px;
 }
 
 .btn-grid {
-  margin-left: 253px;
   margin-top: 166px;
 }
 
 .btn-fill {
-  margin-left: 253px;
   margin-top: 224px;
 }
 
 .btn-export {
-  margin-left: 253px;
   margin-top: 282px;
 }
+
+.btn-random {
+  margin-top: 340px;
+}
+
+
 
 
 #art-board {
