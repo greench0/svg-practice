@@ -53,7 +53,7 @@ html, body {
 
 .btn
 {
-margin-right: 6px;
+margin-right: 16px;
 margin-bottom: 8px !important;
 -webkit-border-radius: 0 !important;
 -moz-border-radius: 0 !important;
@@ -65,32 +65,39 @@ margin-bottom: 8px !important;
   position: absolute;
   background-color:#444444;
   width: 58px;
-  font-size: 24px;
+  font-size: 25px;
   margin-left: 253px;
 }
 
+.btn-maker:hover ,.btn-colors:hover , .btn-export:hover , .btn-grid:hover , .btn-fill:hover , .btn-random:hover {
+  color:#f2f2f2 !important;
+  
+  }
+
+ 
+  
 .btn-maker {
   margin-top: 50px;
 }
 
 .btn-colors {
-  margin-top: 108px;
+  margin-top: 110px;
 }
 
 .btn-grid {
-  margin-top: 166px;
+  margin-top: 170px;
 }
 
 .btn-fill {
-  margin-top: 224px;
+  margin-top: 230px;
 }
 
 .btn-export {
-  margin-top: 282px;
+  margin-top: 290px;
 }
 
 .btn-random {
-  margin-top: 340px;
+  margin-top: 350px;
 }
 
 
@@ -98,6 +105,8 @@ margin-bottom: 8px !important;
 
 #art-board {
   cursor: pointer;
+  margin-left:3px;
+  margin-bottom: 3px;
  }
 
 
@@ -157,8 +166,8 @@ transition: transform .13s;
 /* -----------------------------------------------------------------------------------------------------------------------------------------
 ------ Footer Section ------------------- */
 .img-thumbnail {
-  width: 50px;
-  height: 50px;
+  width: 52px;
+  height: 52px;
   float: left;
   margin: 10px;
   background-clip: content-box;
@@ -177,8 +186,13 @@ transition: transform .13s;
   border: none;
   padding: 0 -5px 0 5px;
   cursor: pointer;
+  z-index: 1 !important;
 }
 
+.shape-thumbnail:hover {
+  background-color: black;
+  opacity: 80%;
+}
 
 #color-holder {
   display: inline-block;
@@ -197,7 +211,7 @@ transition: transform .13s;
 .grid-on {
   border-style: solid !important;
     border-color: white !important;
-    border-width: 1px !important;
+    border-width: 2px !important;
   }  
   .grid-off {
     border-style: none !important;
