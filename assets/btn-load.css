@@ -61,7 +61,7 @@ margin-bottom: 8px !important;
 }
 
 
-.btn-maker,.btn-colors, .btn-export, .btn-grid, .btn-fill, .btn-random {
+.btn-maker,.btn-colors, .btn-export, .btn-grid, .btn-fill, .btn-random, .btn-rotate {
   position: absolute;
   background-color:#444444;
   width: 58px;
@@ -71,11 +71,9 @@ margin-bottom: 8px !important;
 
 .btn-maker:hover ,.btn-colors:hover , .btn-export:hover , .btn-grid:hover , .btn-fill:hover , .btn-random:hover {
   color:#f2f2f2 !important;
-  
   }
 
- 
-  
+
 .btn-maker {
   margin-top: 50px;
 }
@@ -100,6 +98,9 @@ margin-bottom: 8px !important;
   margin-top: 350px;
 }
 
+.btn-rotate {
+  margin-top: 410px;
+}
 
 
 

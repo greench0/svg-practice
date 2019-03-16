@@ -149,7 +149,6 @@ else {
     
     divAmount.push(totalBlocks);
   });
-// ==============================
 
  //========================================================================================//
   // create the block elements based on block selection to fill art board
@@ -177,6 +176,60 @@ else {
   });
 
   //========================================================================================//
+  // create the block elements based on block selection to fill art board
+  function randomRotate(a, b) {
+    for (i = 0; i < a; i++) {
+
+      let block = $( "<div id='b" + i + "' class='block-up data rotate grid-off " + b + "' style='transform: rotate(0deg);'></div>");
+      
+      let randomNum = Math.floor(Math.random() * (+ 4 - +0)) + +0; 
+      console.log(randomNum);
+      
+    
+    }
+  }
+
+
+  // let rotateData = bData.substring(
+  //   bData.lastIndexOf('style="transform: rotate(') + 25, 
+  //   bData.lastIndexOf('deg);"')
+  // );
+
+  // var rotation = 0;
+
+  // jQuery.fn.rotate = function (degrees) {
+  //   $(this).css({ 'transform': 'rotate(' + degrees + 'deg)' });
+  // };
+
+  // $("#art-board").on("click", ".rotate", function () {
+  //   var rotateData = this.style['transform'];
+
+  //   var rValue = Number(rotateData.slice(7, -4));
+
+  //   rotation = rValue + 90;
+  //   $(this).rotate(rotation);
+    
+  // });
+
+
+
+ 
+  // on click button event for make blocks 
+  $(".btn-rotate").on("click", function () {
+
+    for (i = 0; i < divAmount[0]; i++) {
+      const randomRoteValues = [0, 90, 180, 270];
+      var randomRotate = randomRoteValues[Math.floor(Math.random()*randomRoteValues.length)];
+      
+      let element = document.getElementById('b'+ i);
+
+    $(element).rotate(randomRotate);
+
+  }
+      });
+
+
+   //========================================================================================//
   // JS for rotating a block shape
   var rotation = 0;
 
@@ -428,9 +481,6 @@ blockDat.push(blockD);
 document.getElementById('block-data').innerHTML = blockoValue;
 document.getElementById('rotate-data').innerHTML = rotatoValue;
 document.getElementById('total-data').innerHTML = totalValue;
-
-
-
 
 
 // let botTest = document.getElementById("bottomDiv").innerHTML;
