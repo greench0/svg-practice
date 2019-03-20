@@ -3,7 +3,8 @@
 <svg version="1.1" id="layer1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	  viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
 	  <g>
-<rect class="color1" fill="#AAAAAA" width="200" height="200"/>
-<rect class="color0" x="25" y="150" fill="#FFFFFF" width="150" height="50"/>
-</g>
+<rect class="color1" fill="#A7A9AC" width="200" height="200"/>
+<path class="color0" fill="#FFFFFF" d="M154.042,47.976c29.292,29.29,17.679,123.742,17.679,123.742s-94.458,11.616-123.743-17.676
+	c-29.292-29.292-29.292-76.778,0-106.064C77.268,18.69,124.752,18.69,154.042,47.976z"/>
+	</g>
 </svg>

@@ -3,9 +3,12 @@
 <svg version="1.1" id="layer1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	  viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
 	  <g>
-<rect class="color0" fill="#AAAAAA" width="200" height="200"/>
-<path class="color1" fill="#FFFFFF" d="M100,0C44.784,0,0,44.782,0,100s44.782,100,100,100c55.216,0,100-44.782,100-100
-	S155.218,0,100,0z M153.033,64.645l-88.389,88.389c-4.881,4.881-12.797,4.881-17.678,0c-4.88-4.882-4.88-12.798,0-17.679
-	l88.39-88.389c4.879-4.88,12.797-4.88,17.678,0C157.914,51.848,157.913,59.764,153.033,64.645z"/>
-	</g>
+	<rect class="color1" fill="#AAAAAA" width="200" height="200"/>
+	<path class="color0" fill="#FFFFFF" d="M100,200h100V100C200,155.2,155.2,200,100,200z"/>
+	<path class="color0" fill="#FFFFFF" d="M100,0H0v100C0,44.8,44.8,0,100,0z"/>
+	<path class="color0" fill="#FFFFFF" d="M0,100v100h100C44.8,200,0,155.2,0,100z"/>
+	<path class="color0" fill="#FFFFFF" d="M125,25c-41.4,0-75,33.6-75,75c0,41.4,33.6,75,75,75c41.4,0,75-33.6,75-75
+		C200,58.6,166.4,25,125,25z"/>
+	<path class="color0" fill="#FFFFFF" d="M100,0c55.2,0,100,44.8,100,100V0H100z"/>
+</g>
 </svg>
