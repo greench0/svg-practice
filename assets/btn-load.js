@@ -105,7 +105,7 @@ else {
       var block = $(
         "<div id='b" + i + "' class='block-up data rotate grid-off " + b + "' style='transform: rotate(0deg);'></div>");
       $('#art-board').append(block);
-      $('#block16').clone().appendTo("#b" + i + "");
+      $('#block60').clone().appendTo("#b" + i + "");
     }
   }
 

@@ -61,49 +61,42 @@ margin-bottom: 8px !important;
 }
 
 
-.btn-maker,.btn-colors, .btn-export, .btn-grid, .btn-fill, .btn-random, .btn-rotate {
+.nav-buttons {
   position: absolute;
-  background-color:#444444;
   width: 58px;
-  font-size: 25px;
+  margin-top: 51px;
   margin-left: 253px;
 }
 
-.btn-maker:hover ,.btn-colors:hover , .btn-export:hover , .btn-grid:hover , .btn-fill:hover , .btn-random:hover {
+.nav-buttons button {
+  font-size: 25px;
+  width: 58px;
+  background-color:#444444;
+}
+
+.btn-maker:hover ,.btn-colors:hover , .btn-export:hover , .btn-grid:hover , .btn-fill:hover , .btn-random:hover, .btn-help:hover {
   color:#f2f2f2 !important;
   }
 
 
-.btn-maker {
-  margin-top: 50px;
+/* .btn-maker { margin-top: 50px; }
+.btn-colors { margin-top: 110px; }
+.btn-grid { margin-top: 170px; }
+.btn-fill { margin-top: 230px; }
+.btn-export { margin-top: 290px; }
+.btn-random { margin-top: 350px; }
+.btn-rotate { margin-top: 410px; }
+.btn-help { margin-top: 470px; } */
+
+.inline {
+  display: inline-block;
+  
 }
 
-.btn-colors {
-  margin-top: 110px;
+#help button
+{
+  display: inline-block;
 }
-
-.btn-grid {
-  margin-top: 170px;
-}
-
-
-.btn-fill {
-  margin-top: 230px;
-}
-
-.btn-export {
-  margin-top: 290px;
-}
-
-.btn-random {
-  margin-top: 350px;
-}
-
-.btn-rotate {
-  margin-top: 410px;
-}
-
-
 
 #art-board {
   cursor: pointer;
