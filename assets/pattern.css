@@ -28,9 +28,9 @@ html, body {
 }
 
 .card-header {
-  border-bottom: 3px solid #444444 !important;
+  border-bottom: 3px solid #525252 !important;
   height: 50px;
-  background-color: #444444;
+  background-color: #525252;
   /* border-color: #7c7c7c; */
   /* box-shadow: 6px 6px 0px 3px #555555; */
 }
@@ -40,9 +40,9 @@ html, body {
 }
 
 .modal-header {
-  border-bottom: 3px solid #444444 !important;
+  border-bottom: 3px solid #525252 !important;
   /* height: 50px; */
-  background-color: #444444;
+  background-color: #525252;
 }
 
 #board-options {
@@ -71,26 +71,15 @@ margin-bottom: 8px !important;
 .nav-buttons button {
   font-size: 25px;
   width: 58px;
-  background-color:#444444;
+  background-color:#525252;
 }
 
 .btn-maker:hover ,.btn-colors:hover , .btn-export:hover , .btn-grid:hover , .btn-fill:hover , .btn-random:hover, .btn-help:hover {
   color:#f2f2f2 !important;
   }
 
-
-/* .btn-maker { margin-top: 50px; }
-.btn-colors { margin-top: 110px; }
-.btn-grid { margin-top: 170px; }
-.btn-fill { margin-top: 230px; }
-.btn-export { margin-top: 290px; }
-.btn-random { margin-top: 350px; }
-.btn-rotate { margin-top: 410px; }
-.btn-help { margin-top: 470px; } */
-
 .inline {
   display: inline-block;
-  
 }
 
 #help button
@@ -119,6 +108,7 @@ margin-bottom: 8px !important;
     display: block;
     float: left;
     line-height: 0;
+    /* background-color: rgb(245, 245, 245); */
 }
 
 .two-up { width:50%; }  
@@ -138,17 +128,17 @@ margin-bottom: 8px !important;
   word-wrap: break-word;
 }
 
-.color1 {
-  fill: #444444;
-}
+/* .color1 {
+  fill: #525252;
+} */
 
 .color0 {
-  fill: #ffdd79;
+  fill: #525252;
 }
 
 
 .rotate {
-transition: transform .13s;
+transition: transform .04s;
 }
 
 .nav-tabs {
@@ -182,10 +172,15 @@ transition: transform .13s;
   padding: 0 -5px 0 5px;
   cursor: pointer;
   z-index: 1 !important;
+  background-color: rgb(245, 245, 245);
 }
 
+/* 245, 245, 245
+68, 68, 68 */
+
+
 .shape-thumbnail:hover {
-  background-color: black;
+  background-color: #afafaf;
   opacity: 80%;
 }
 
@@ -205,7 +200,7 @@ transition: transform .13s;
 
 .grid-on {
   border-style: solid !important;
-    border-color: white !important;
+    border-color: pink !important;
     border-width: 2px !important;
   }  
   .grid-off {
