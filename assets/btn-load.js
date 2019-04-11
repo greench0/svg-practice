@@ -6,7 +6,7 @@ $(document).ready(function () {
   let svgId = 'block16';
   let svgIdRandom = ''
     // a = how many svg files
-    const totalShapes = 101;
+    const totalShapes = 105;
   //========================================================================================//
   
   var mainBlock = Snap('#main-block');

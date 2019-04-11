@@ -224,13 +224,12 @@ transition: transform .13s;
 
 #sidebar {
   padding-left: 15px;
-  padding-top: 20px;
+  padding-top: -5px;
     min-width: 270px;
     max-width: 270px;
     background: #f2f2f2;
     transition: all 0.3s;
-    height: 90vh;
-     
+    height: 86vh; 
 }
 
 #sidebar.active {
@@ -242,13 +241,25 @@ transition: transform .13s;
 ----------------------------------------------------- */
 
 @media (max-width: 768px) {
-    #sidebar {
-        margin-left: -270px;
-    }
-    #sidebar.active {
-        margin-left: 0;
-    }
-    #sidebarCollapse span {
-        display: none;
-    }
+  #sidebar {
+    padding-left: 15px;
+    padding-top: -5px;
+      min-width: 182px;
+      max-width: 182px;
+      background: #f2f2f2;
+      transition: all 0.3s;
+      height: 86vh;
+  }
+  
+  #sidebar.active {
+      margin-left: -182px;
+  }
+
+  .nav-buttons {
+    position: absolute;
+    width: 58px;
+    margin-top: 51px;
+    margin-left: 167px;
+  }
+  
 }
