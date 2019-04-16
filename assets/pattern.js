@@ -7,6 +7,10 @@ $(document).ready(function () {
   let svgIdRandom = ''
     // a = how many svg files
     const totalShapes = 105;
+
+      // defines the color 1 and 2 for the default shapes
+    color = '(68,68,68)';
+    color2 = '(68,68,68)';
   //========================================================================================//
   
   var mainBlock = Snap('#main-block');
@@ -16,7 +20,6 @@ $(document).ready(function () {
   function onSVGLoaded(data) {
     mainBlock.append(data);
   }
-
 
     // button events to show / hide the grid - strokes
     $("#btn-grid").click(function () {
@@ -58,6 +61,15 @@ else {
 
   blocksForHtml(totalShapes);
   //========================================================================================//
+  function loadBlocks(a, block) {
+    Snap.load("assets/svg-pattern/block" + a + ".svg", function (data) {
+      var paper = data.select("g");
+      block.append(paper);
+    });
+  }
+
+  //========================================================================================//
+  //========================================================================================//
   // create and load Snap svg blocks in the shape div container
   function LoadSnapsFunc() {
     for ( i=0; i<=totalShapes; i++ )
@@ -78,37 +90,27 @@ else {
     }
  }
  LoadBlocksFunc();
-  //========================================================================================//
 
-  // defines the color 1 and 2 for the default shapes
-  var dColor0 = "#525252";
-  var dColor1 = "#ffdd79";
-
-  function loadBlocks(a, block) {
-    Snap.load("assets/svg-pattern/block" + a + ".svg", function (data) {
-      var paper = data.select("g");
-      // set attribute color sfor color1 and color0 defined in the external svg
-      // attributes = paper.select('[class="color0"]');
-      // attributes.attr({ fill: dColor0 });
-
-      // attributes = paper.select('[class="color1"]');
-      // attributes.attr({ fill: dColor1 });
-
-      block.append(paper);
-    });
-  }
-
-  //========================================================================================//
-  // create the block elements for the html page
+   //========================================================================================//
+  // fills the art boards with Blocks when artBoardButtons is clicked
   function makeBlocks(a, b) {
     for (i = 0; i < a; i++) {
       var block = $(
         "<div id='b" + i + "' class='block-up data rotate grid-off " + b + "' style='transform: rotate(0deg);'></div>");
       $('#art-board').append(block);
-      $('#block60').clone().appendTo("#b" + i + "");
+      $('#block58').clone().appendTo("#b" + i + "");
     }
   }
 
+
+  function makeBlocks2(a, b) {
+    for (i = 0; i < a; i++) {
+      var block = $(
+        "<div id='b" + i + "' class='block-up data rotate grid-off " + b + "' style='transform: rotate(0deg);'></div>");
+      $('#art-board2').append(block);
+      $('#block16').clone().appendTo("#b" + i + "");
+    }
+  }
 
   // on click button event for make blocks 
   $(".artBoardButtons").on("click", function () {
@@ -118,10 +120,10 @@ else {
     $("#board-options").hide();
     makeBlocks(totalBlocks, xAmount);
     
+    makeBlocks2(totalBlocks, xAmount);
     divAmount.push(totalBlocks);
 
   });
-
 
 
   //========================================================================================//
@@ -137,12 +139,6 @@ else {
 
   // on click button event for make blocks 
   $(".btn-fill").on("click", function () {
-    // let xAmount = 'four-up';
-    // let totalBlocks = '16';
-    
-    // let xAmount = $(this).data('btn-up');
-    // let totalBlocks = $(this).data('btn-x');
-    // console.log($("#b0"))
     clearArt();
     $("#board-options").hide();
     fillBlocks(totalBlocks, xAmount);
@@ -150,44 +146,6 @@ else {
     divAmount.push(totalBlocks);
   });
 
- //========================================================================================//
-  // create the block elements based on block selection to fill art board
-  function randomBlocks(a, b) {
-    for (i = 0; i < a; i++) {
-      let block = $( "<div id='b" + i + "' class='block-up data rotate grid-off " + b + "' style='transform: rotate(0deg);'></div>");
-      let randomNum = Math.floor(Math.random() * (+ totalShapes - +0)) + +0; 
-      $('#art-board').append(block);
-      $('#block' + randomNum + '').clone().appendTo("#b" + i + "");
-    }
-  }
-
- 
-  // on click button event for make blocks 
-  $(".btn-random").on("click", function () {
-
-    // let xAmount = $(this).data('btn-up');
-    // let totalBlocks = $(this).data('btn-x');
-    // console.log($("#b0"))
-    clearArt();
-    $("#board-options").hide();
-    randomBlocks(totalBlocks, xAmount);
-    
-    divAmount.push(totalBlocks);
-  });
-
-  //========================================================================================//
-  // on click button event to randomly rotate blocks 
-  $(".btn-rotate").on("click", function () {
-    for (i = 0; i < divAmount[0]; i++) {
-      const randomRoteValues = [0, 45, 90, 135, 180, 225, 270];
-      var randomRotate = randomRoteValues[Math.floor(Math.random()*randomRoteValues.length)];
-      
-      let element = document.getElementById('b'+ i);
-
-    $(element).rotate(randomRotate);
-
-  }
-      });
 
    //========================================================================================//
   // JS for rotating a block shape
@@ -197,33 +155,66 @@ else {
     $(this).css({ 'transform': 'rotate(' + degrees + 'deg)' });
   };
 
-  $("#art-board").on("click", ".rotate", function () {
+  $("#art-board, #art-board2").on("click", ".rotate", function () {
     var rotateData = this.style['transform'];
 
     var rValue = Number(rotateData.slice(7, -4));
 
-    rotation = rValue + 45;
+    rotation = rValue + 90;
     $(this).rotate(rotation);
     
   });
 
-
   //========================================================================================//
-  // buttons to change shape divs when clicked
-  $(".shape-thumbnail").on("click", function () {
-
-    var start = this.innerHTML.indexOf("block");
-    var end = this.innerHTML.indexOf("class");
-     svgId = (this.innerHTML.substring(start, end - 3));
-
-    $("#art-board").on("click", ".data", function () {
-      $(this).empty();
-      $("#" + svgId).clone().appendTo(this);
-      // console.log(svgId);
-    });
-    return svgId;
+  // JS to toggle layer 1 and 2 on and off
+  $(".btn-hide2").click(function () {
+      
+    function showHide(){
+  var e = document.getElementById('art-board2');
+  if ( e.style.visibility != 'hidden' ) {
+      e.style.visibility = 'hidden';
+  }
+  else {
+      e.style.visibility = '';
+  }
+}
+showHide();
   });
 
+// =============
+  $(".btn-hide").click(function () {
+      
+    function showHide(){
+  var e = document.getElementById('art-board');
+  if ( e.style.visibility != 'hidden' ) {
+      e.style.visibility = 'hidden';
+  }
+  else {
+      e.style.visibility = '';
+  }
+}
+showHide();
+
+  });
+  
+  //========================================================================================//
+  // shape buttons when clicked - then clicked in the artboards -  change the shape div when
+  $(".shape-thumbnail").on("click", function () {
+    var start = this.innerHTML.indexOf("block");
+    var end = this.innerHTML.indexOf("class");
+     var svgId = (this.innerHTML.substring(start, end - 3));
+
+    $("#art-board, #art-board2").on("click", ".data", function () {
+      $(this).empty();
+      $("#" + svgId).clone().appendTo(this);
+
+      $('#art-board .color0').css({ fill: "rgb" + color });
+      $('#art-board2 .color0').css({ fill: "rgb" + color2 });
+      // console.log(svgId);
+    });
+
+    return svgId;
+  });
 
 
   //========================================================================================//
@@ -257,7 +248,6 @@ else {
       //Change Action Item;
     }
     
-
     else {
       $("#action-box").attr({ "aria-expanded": "false", "class": "btn btn-secondary collapsed btn-lg" });
       $("#boxes").attr("class", "collapse");
@@ -270,6 +260,8 @@ else {
     }
   });
 
+
+  //========================================================================================//
   var colors = [
       [255, 132, 124]
     , [255, 221, 121]
@@ -280,9 +272,7 @@ else {
     , [95, 144, 156]
     , [245, 245, 245]
     , [68, 68, 68]
-
   ];
-
 
   //Fill hiding div with color boxes
   function generateColors() {
@@ -306,13 +296,15 @@ else {
   };
 
 
-
+  generateColors();
+  generateColorsTwo();
+  //========================================================================================//
   //On Click Event for blocks
   $("#boxes-holder").on("click", ".boxes-card", function () {
     $(".shape-thumbnail").css('border', 'none');
     $(this).css({ 'border': 'solid', 'border-width': '4px', 'border-color': '#2A363B' });
   });
-
+  //========================================================================================//
   //On Click Event for Colors
   $("#color-holder").on("click", "#color-card", function () {
     $(".img-t1").css('border', 'none');
@@ -325,7 +317,7 @@ else {
     $(this).css({ 'border': 'solid', 'border-width': '4px', 'border-color': '#2A363B' });
   });
 
-  
+    //========================================================================================//
   //On Click Event for boards
   $("#board-holder").on("click", "#board-holder", function () {
     $(".board-thumbnail").css('border', 'none');
@@ -333,135 +325,128 @@ else {
   });
 
 
-  // on Click Event for adding this Color to Blocks
+  //========================================================================================//
+  // on Click Event for adding this Color to Block layer
   $("#color-holder").on("click", "#color-card", function () {
-    var color = ($(this).attr("colorpicker"));
     // console.log(color);
-    // $('.color0').css({ fill:"" + color + "" });
-    $('.color0').css({ fill: "rgb" + color });
+    color = ($(this).attr("colorpicker"));
+
+    // var colorEdit = document.getElementById("art-board").getElementsByClassName("color0");
+    // var artBoard = document.getElementById("art-board").querySelectorAll(".color0");  
+    // document.querySelector(".content h2").style.display="none";
+    $('#art-board .color0').css({ fill: "rgb" + color });
+    return color;
   });
+
 
   $("#color-holder-2").on("click", "#color-card", function () {
-    var color = ($(this).attr("colorpicker"));
-    // console.log(color);
-    // $('.color0').css({ fill:"" + color + "" });
-    $('.color1').css({ fill: "rgb" + color });
-    $("#main-color").css("border-color", "red");
+    color2 = ($(this).attr("colorpicker"));
+
+    $('#art-board2 .color0').css({ fill: "rgb" + color2 });
+    return color2;
   });
 
 
-  generateColors();
-  generateColorsTwo();
+
 
   //========================================================================================//
 // save button function
+// save button function
 // $("#save").on("click", function () {
   document.getElementById("save").addEventListener("click", function(){
-// div block id
-// console.log(divAmount[0]);
-let mongoData = {};
-
-let blockoValue = [];
-let rotatoValue = [];
-let totalValue = [];
-
-
-if (divAmount[0] == 16) { 
-  totalValue.push('0, 250, 500, 750, 1000');
-  mongoData.cssData = "four-up";
-}
-
-else if (divAmount[0] == 25) {
-  totalValue.push('0,200,400,600,800,1000');
-  mongoData.cssData = "five-up";
-}
-
-else if (divAmount[0] == 36) {
-  totalValue.push('0, 166.6666, 333.3333, 500, 666.6666, 833.3333,1000');
-  mongoData.cssData = "six-up";
-}
-
-else if (divAmount[0] == 49) {
-  totalValue.push('0, 142.857, 285.714, 428.571, 571.428, 714.285, 857.142, 1000');
-  mongoData.cssData = "seven-up";
-}
-
-else if (divAmount[0] == 64) {
-  totalValue.push('0, 125, 250, 375, 500, 625, 750, 875, 1000');
-  mongoData.cssData = "eight-up";
-}
-
-else if (divAmount[0] == 81) {
-  totalValue.push('0, 111.1111, 222.2222, 333.3333, 444.4444, 555.5555, 666.6666, 777.7777, 888.8888, 1000');
-  mongoData.cssData = "nine-up";
-}
-
-let blockDat = [];
-
-
-for (i = 0; i < divAmount[0]; i++) {
-let blocko = [];
-let rotato = [];
-let blockD = {};
-
-let element = document.getElementById('b'+ i);
-//   
-// svg block number
-let bData = element.outerHTML;
-let svgBlockData = bData.substring(
-  bData.lastIndexOf('<svg id="') + 14, 
-  bData.lastIndexOf('" "class')
-);
-
-Object.assign(blockD, {bData: svgBlockData});
-
-// rotate info
-  let rotateData = bData.substring(
-    bData.lastIndexOf('style="transform: rotate(') + 25, 
-    bData.lastIndexOf('deg);"')
-  );
-
-  Object.assign(blockD, {rData: rotateData});
-
-
-  // console.log(blockD);
-
-blocko.push(svgBlockData);
-rotato.push(rotateData);
-
-
-blockoValue.push(blocko);
-rotatoValue.push(rotato);
-
-
-blockDat.push(blockD);
-// Object.assign(blockDat, {blockData: blockD});
-}
-
-document.getElementById('block-data').innerHTML = blockoValue;
-document.getElementById('rotate-data').innerHTML = rotatoValue;
-document.getElementById('total-data').innerHTML = totalValue;
-
-
-// let botTest = document.getElementById("bottomDiv").innerHTML;
-let botTest = document.getElementById('b0').innerHTML;
-
-let botTestSub = botTest.substring(
-  botTest.lastIndexOf('class="color1"') + 22, 
-  botTest.lastIndexOf(';">')
-);
-
-// console.log(botTestSub);
-
-
-mongoData.pData = totalValue;
-mongoData.blockData = blockDat;
-
-// mongoData.cssData = cssDataArr;
-console.log(mongoData);
-// console.log(blockDat);
-  });
-
+    // div block id
+    // console.log(divAmount[0]);
+    let mongoData = {};
+    
+    let blockoValue = [];
+    let rotatoValue = [];
+    let totalValue = [];
+    
+    
+    if (divAmount[0] == 16) { 
+      totalValue.push('0, 250, 500, 750, 1000');
+      mongoData.cssData = "four-up";
+    }
+    
+    else if (divAmount[0] == 25) {
+      totalValue.push('0,200,400,600,800,1000');
+      mongoData.cssData = "five-up";
+    }
+    
+    else if (divAmount[0] == 36) {
+      totalValue.push('0, 166.6666, 333.3333, 500, 666.6666, 833.3333,1000');
+      mongoData.cssData = "six-up";
+    }
+    
+    else if (divAmount[0] == 49) {
+      totalValue.push('0, 142.857, 285.714, 428.571, 571.428, 714.285, 857.142, 1000');
+      mongoData.cssData = "seven-up";
+    }
+    
+    else if (divAmount[0] == 64) {
+      totalValue.push('0, 125, 250, 375, 500, 625, 750, 875, 1000');
+      mongoData.cssData = "eight-up";
+    }
+    
+    else if (divAmount[0] == 81) {
+      totalValue.push('0, 111.1111, 222.2222, 333.3333, 444.4444, 555.5555, 666.6666, 777.7777, 888.8888, 1000');
+      mongoData.cssData = "nine-up";
+    }
+    
+    let blockDat = [];
+    
+    
+    for (i = 0; i < divAmount[0]; i++) {
+    let blocko = [];
+    let rotato = [];
+    let blockD = {};
+    
+    let element = document.getElementById('b'+ i);
+    //   
+    // svg block number
+    let bData = element.outerHTML;
+    let svgBlockData = bData.substring(
+      bData.lastIndexOf('<svg id="') + 14, 
+      bData.lastIndexOf('" "class')
+    );
+    
+    Object.assign(blockD, {bData: svgBlockData});
+    
+    // rotate info
+      let rotateData = bData.substring(
+        bData.lastIndexOf('style="transform: rotate(') + 25, 
+        bData.lastIndexOf('deg);"')
+      );
+    
+      Object.assign(blockD, {rData: rotateData});
+    
+    
+      // console.log(blockD);
+    
+    blocko.push(svgBlockData);
+    rotato.push(rotateData);
+    
+    
+    blockoValue.push(blocko);
+    rotatoValue.push(rotato);
+    
+    
+    blockDat.push(blockD);
+    // Object.assign(blockDat, {blockData: blockD});
+    }
+    
+    document.getElementById('block-data').innerHTML = blockoValue;
+    document.getElementById('rotate-data').innerHTML = rotatoValue;
+    document.getElementById('total-data').innerHTML = totalValue;
+    
+        
+    mongoData.pData = totalValue;
+    mongoData.blockData = blockDat;
+    
+    // mongoData.cssData = cssDataArr;
+    console.log(mongoData);
+    // console.log(blockDat);
+      });
 
   //========================================================================================//
   //========================================================================================//

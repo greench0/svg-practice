@@ -12,15 +12,6 @@ html, body {
 }
  
 
-#main-card {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
- 
-
-}
-
-
 .card {
   -webkit-border-radius: 0 !important;
   -moz-border-radius: 0 !important;
@@ -87,11 +78,39 @@ margin-bottom: 8px !important;
   display: inline-block;
 }
 
+#main-card {
+  top: 50%;
+  transform: translateY(-50%);
+  /* position: static; */
+}
+
+#art-container {
+  position: relative;
+}
+
+
+
 #art-board {
   cursor: pointer;
   margin-left:3px;
   margin-bottom: 3px;
+  position: absolute; 
+  top: 0; 
+  left: 0px; 
+  z-index: 1;
+
  }
+ 
+
+ #art-board2 {
+  cursor: pointer;
+  margin-left:3px;
+  margin-bottom: 3px;
+  top: 0; 
+  left: 0;
+  z-index: 2;
+ }
+
 
 
  #main-block {
@@ -128,17 +147,19 @@ margin-bottom: 8px !important;
   word-wrap: break-word;
 }
 
-/* .color1 {
-  fill: #525252;
-} */
-
-.color0 {
-  fill: #525252;
+#art-board2 .color0 {
+  fill: rgb(68, 68, 68);
 }
 
 
+#art-board .color0 {
+  fill: rgb(68, 68, 68);
+}
+
+
+
 .rotate {
-transition: transform .04s;
+transition: transform .11s;
 }
 
 .nav-tabs {

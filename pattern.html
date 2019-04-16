@@ -33,7 +33,7 @@
           <a class="nav-link" href="index.html">Blocks</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="pattern.html">Patterns</a>
+          <a class="nav-link" href="pattern.html"><strike>Layers</strike></a>
         </li>
 
       </ul>
@@ -51,17 +51,22 @@
 
     <div class="nav-buttons">
 
-    <button type="button" id="sidebarCollapse" class="btn btn-secondary btn-lg shadow-sm btn-maker"> <i class="fas fa-arrows-alt-h"></i></button> 
+      <button type="button" id="sidebarCollapse" class="btn btn-secondary btn-lg shadow-sm btn-maker"> <i class="fas fa-arrows-alt-h"></i></button> 
+      <!-- <button type="button" id="" class="btn btn-secondary btn-lg shadow-sm btn-l2">.</button> 
+    <button type="button" id="" class="btn btn-secondary btn-lg shadow-sm btn-l1">.</button>  -->
 
+    <button type="button" id="" class="btn btn-secondary btn-lg shadow-sm btn-hide2"><i class="fas fa-square"></i></button> 
+    <button type="button" id="" class="btn btn-secondary btn-lg shadow-sm btn-hide"><i class="fas fa-circle"></i></button>
+    
     <button type="button" id="action-color" class="btn btn-secondary btn-lg shadow-sm btn-colors" data-toggle="collapse" data-target="#colors" aria-expanded="false" aria-controls="colors"> <i class="fas fa-palette"></i></button>
     <button type="button" id="btn-grid" class="btn btn-secondary btn-lg shadow-sm btn-grid toggle-grid" data-toggle="modal" data-target=""><i class="fas fa-th"></i></button>
-    <button type="button" id="" class="btn btn-secondary btn-lg shadow-sm btn-fill"><i class="fas fa-fill-drip"></i></button> 
 
-    <button type="button" id="" class="btn btn-secondary btn-lg shadow-sm btn-rotate"> <i class="fas fa-sync-alt"></i> </button> 
-    <button type="button" id="" class="btn btn-secondary btn-lg shadow-sm btn-random"><i class="fas fa-dice-d20"></i></button> 
+    <!-- <button type="button" id="" class="btn btn-secondary btn-lg shadow-sm"> <i class="fas fa-star"></i> </button>  -->
+
 
     <button type="button" id="save" class="btn btn-secondary btn-lg shadow-sm btn-export" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fas fa-file-download"></i></button>  
-    <button type="button" id="" class="btn btn-secondary btn-lg shadow-sm btn-help" data-toggle="modal" data-target=".bd-help-modal-lg"><i class="fas fa-question"></i></button>
+    
+    <!-- <button type="button" id="" class="btn btn-secondary btn-lg shadow-sm btn-help" data-toggle="modal" data-target=".bd-help-modal-lg"><i class="fas fa-question"></i></button> -->
   </div>
 
     <div class="card shadow">
@@ -77,11 +82,11 @@
         <div class='card card-body p-3' data-spy="scroll">
 
           <div id='color-holder' class="justify-content-center">
-            <p>color 1</p>
+            <h1><i class="fas fa-circle"></i></h1>
           </div>
 
           <div id="color-holder-2" class="justify-content-center">
-            <p>color 2</p>
+            <h1><i class="fas fa-square"></i></h1>
           </div>
 
         </div>
@@ -99,13 +104,14 @@
   <div id="" class="container">
 
 
-    <div id="main-card" class="card col-lg-7 mx-auto shadow p-0">
+    <div id="main-card" class="card col-lg-7 mx-auto shadow p-0 pb-3">
 
+      <div id="art-container">
+      <div id="art-board2" class="col-lg-12 text-center p-3" style="visibility: hidden;"></div>
       <div id="art-board" class="col-lg-12 text-center p-3"></div>
+    </div>
 
-      <div id="board-options" class="col-lg-12 text-center p-3">
-        <br>
-
+      <div id="board-options" class="col-lg-12 text-center p-3"><br>
         <div id='main-block'></div>
         <br>
         <div class="float-left">
@@ -123,6 +129,7 @@
             data-btn-x="81">9-up</button>
         </div>
       </div>
+
 
     </div>
 

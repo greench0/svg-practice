@@ -3,6 +3,7 @@
 <svg version="1.1" id="layer1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	  viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
 	  <g>
+<rect class="color1" fill="#FFFFFF" fill-opacity="0" width="200" height="200"/>
 <path class="color0" fill="#AAAAAA" d="M0,0v200c0-55.218,44.782-100,100-100c55.214,0,100,44.782,100,100C200,89.542,110.458,0,0,0z"
 	/>
 	</g>
