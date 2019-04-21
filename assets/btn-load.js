@@ -357,8 +357,8 @@ else {
 // save button function
 // $("#save").on("click", function () {
   document.getElementById("save").addEventListener("click", function(){
-// div block id
-// console.log(divAmount[0]);
+
+    
 let mongoData = {};
 
 let blockoValue = [];

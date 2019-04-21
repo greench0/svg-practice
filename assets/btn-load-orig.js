@@ -357,90 +357,110 @@ else {
 // save button function
 // $("#save").on("click", function () {
   document.getElementById("save").addEventListener("click", function(){
+// div block id
+// console.log(divAmount[0]);
+let mongoData = {};
 
-    do_save();
+let blockoValue = [];
+let rotatoValue = [];
+let totalValue = [];
+
+
+if (divAmount[0] == 16) { 
+  totalValue.push('0, 250, 500, 750, 1000');
+  mongoData.cssData = "four-up";
+}
+
+else if (divAmount[0] == 25) {
+  totalValue.push('0,200,400,600,800,1000');
+  mongoData.cssData = "five-up";
+}
+
+else if (divAmount[0] == 36) {
+  totalValue.push('0, 166.6666, 333.3333, 500, 666.6666, 833.3333,1000');
+  mongoData.cssData = "six-up";
+}
+
+else if (divAmount[0] == 49) {
+  totalValue.push('0, 142.857, 285.714, 428.571, 571.428, 714.285, 857.142, 1000');
+  mongoData.cssData = "seven-up";
+}
+
+else if (divAmount[0] == 64) {
+  totalValue.push('0, 125, 250, 375, 500, 625, 750, 875, 1000');
+  mongoData.cssData = "eight-up";
+}
+
+else if (divAmount[0] == 81) {
+  totalValue.push('0, 111.1111, 222.2222, 333.3333, 444.4444, 555.5555, 666.6666, 777.7777, 888.8888, 1000');
+  mongoData.cssData = "nine-up";
+}
+
+let blockDat = [];
+
+
+for (i = 0; i < divAmount[0]; i++) {
+let blocko = [];
+let rotato = [];
+let blockD = {};
+
+let element = document.getElementById('b'+ i);
+//   
+// svg block number
+let bData = element.outerHTML;
+let svgBlockData = bData.substring(
+  bData.lastIndexOf('<svg id="') + 14, 
+  bData.lastIndexOf('" "class')
+);
+
+Object.assign(blockD, {bData: svgBlockData});
+
+// rotate info
+  let rotateData = bData.substring(
+    bData.lastIndexOf('style="transform: rotate(') + 25, 
+    bData.lastIndexOf('deg);"')
+  );
+
+  Object.assign(blockD, {rData: rotateData});
+
+
+  // console.log(blockD);
+
+blocko.push(svgBlockData);
+rotato.push(rotateData);
+
+
+blockoValue.push(blocko);
+rotatoValue.push(rotato);
+
+
+blockDat.push(blockD);
+// Object.assign(blockDat, {blockData: blockD});
+}
+
+document.getElementById('block-data').innerHTML = blockoValue;
+document.getElementById('rotate-data').innerHTML = rotatoValue;
+document.getElementById('total-data').innerHTML = totalValue;
+
+
+// let botTest = document.getElementById("bottomDiv").innerHTML;
+let botTest = document.getElementById('b0').innerHTML;
+
+let botTestSub = botTest.substring(
+  botTest.lastIndexOf('class="color1"') + 22, 
+  botTest.lastIndexOf(';">')
+);
+
+// console.log(botTestSub);
+
+
+mongoData.pData = totalValue;
+mongoData.blockData = blockDat;
+
+// mongoData.cssData = cssDataArr;
+console.log(mongoData);
 // console.log(blockDat);
   });
-
-
-// ==========================================
-var gridPoints = [0, 200, 400, 600];
-
-var blockRow = gridPoints.length;
-var blockAmount = 16;
-
-
-
-// ==========================================
-var grid = [];
-
-var gridData = [];
-var gridData2 = [];
-// loop to push into gridData
-for (var i = 0; i < blockRow; i++) {
-    for (var j = 0; j < blockRow; j++) {
-        gridData[gridData.length] = gridPoints[j];
-    }
-}
-// loop to push into gridData2
-for (var i = 0; i < blockRow; i++) {
-    for (var j = 0; j < blockRow; j++) {
-			gridData2[gridData2.length] = gridPoints[i];
-    }
-}
-
-// for loop to push griddata and gridDAta2 into grid
-for (var i = 0; i < blockAmount; i++) {
-    grid.push([gridData[i], gridData2[i]])
-}
-
-console.log(grid);
- // =======================
-
- let artBWidth = 800;
-
-//  let a = 3;
-
-let rotate = [90,180,180,180,0,270,720,540,0,180,90,180,360,0,0,270];
-
-let blocks = [];
-
-// loop to create each svg shape
-    for (i = 0; i < blockAmount; i++) {
-			var block = '<svg id="layer-' + i +'"> <g transform="translate(' + grid[i][0] +' ,' + grid[i][1] +') rotate(' + rotate[i] +' 100 100)"> <rect class="color1" fill="#AAAAAA" width="200" height="200"/> <polygon class="color0" fill="#FFFFFF" points="0,0 200,200 200,0 "/> </g> </svg>';
-					// return(block);
-					blocks.push(block);
-
-		};
-
-	
-	// generateBlocks(numbers);
-let twoHundred = 200;
-
-let infos = [];
-
-
-
-
-// ==========================================
-document.getElementById("saver").addEventListener("click", function(){
-
-    
-  // console.log(blockDat);
-    });
-
-  function do_save() {
-		
-		let filedata = '<svg version="1.1" id="layer1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="' + artBWidth + '" height="' + artBWidth + '"> ' + blocks + ' </svg> ';
-
-		
-    let locfile = new Blob([filedata], {type: "image/svg+xml;charset=utf-8"});
-    let locfilesrc = URL.createObjectURL(locfile);//mylocfile);
- 
-    let downlo = document.getElementById('dwn');
-    dwn.innerHTML = "<a href=" + locfilesrc + " download='mysvg.svg'>Download</a>";
-  }
-  
 
 
   //========================================================================================//

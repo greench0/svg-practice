@@ -58,6 +58,21 @@ else {
 
   blocksForHtml(totalShapes);
   //========================================================================================//
+
+  // defines the color 1 and 2 for the default shapes
+  var dColor0 = "#525252";
+  var dColor1 = "#ffdd79";
+
+  function loadBlocks(a, block) {
+    Snap.load("assets/svg-pattern/block" + a + ".svg", function (data) {
+      var paper = data.select("g");
+
+      block.append(paper);
+    });
+  }
+
+  //========================================================================================//
+  //========================================================================================//
   // create and load Snap svg blocks in the shape div container
   function LoadSnapsFunc() {
     for ( i=0; i<=totalShapes; i++ )
@@ -78,27 +93,8 @@ else {
     }
  }
  LoadBlocksFunc();
-  //========================================================================================//
 
-  // defines the color 1 and 2 for the default shapes
-  var dColor0 = "#F37B82";
-  var dColor1 = "#808080";
-
-  function loadBlocks(a, block) {
-    Snap.load("assets/svg/block" + a + ".svg", function (data) {
-      var paper = data.select("g");
-      // set attribute color sfor color1 and color0 defined in the external svg
-      attributes = paper.select('[class="color0"]');
-      attributes.attr({ fill: dColor0 });
-
-      attributes = paper.select('[class="color1"]');
-      attributes.attr({ fill: dColor1 });
-
-      block.append(paper);
-    });
-  }
-
-  //========================================================================================//
+   //========================================================================================//
   // create the block elements for the html page
   function makeBlocks(a, b) {
     for (i = 0; i < a; i++) {
@@ -110,6 +106,15 @@ else {
   }
 
 
+  function makeBlocks2(a, b) {
+    for (i = 0; i < a; i++) {
+      var block = $(
+        "<div id='b" + i + "' class='block-up data rotate grid-off " + b + "' style='transform: rotate(0deg);'></div>");
+      $('#art-board2').append(block);
+      $('#block15').clone().appendTo("#b" + i + "");
+    }
+  }
+
   // on click button event for make blocks 
   $(".artBoardButtons").on("click", function () {
      xAmount = $(this).data('btn-up');
@@ -118,6 +123,7 @@ else {
     $("#board-options").hide();
     makeBlocks(totalBlocks, xAmount);
     
+    makeBlocks2(totalBlocks, xAmount);
     divAmount.push(totalBlocks);
 
   });
@@ -179,7 +185,9 @@ else {
   // on click button event to randomly rotate blocks 
   $(".btn-rotate").on("click", function () {
     for (i = 0; i < divAmount[0]; i++) {
-      const randomRoteValues = [0, 90, 180, 270];
+      // const randomRoteValues = [0, 45, 90, 135, 180, 225, 270];
+            const randomRoteValues = [0, 90, 180, 270];
+
       var randomRotate = randomRoteValues[Math.floor(Math.random()*randomRoteValues.length)];
       
       let element = document.getElementById('b'+ i);
@@ -197,7 +205,7 @@ else {
     $(this).css({ 'transform': 'rotate(' + degrees + 'deg)' });
   };
 
-  $("#art-board").on("click", ".rotate", function () {
+  $("#art-board, #art-board2").on("click", ".rotate", function () {
     var rotateData = this.style['transform'];
 
     var rValue = Number(rotateData.slice(7, -4));
@@ -207,25 +215,68 @@ else {
     
   });
 
+  //========================================================================================//
+  $(".btn-hide2").click(function () {
+      
+    function showHide(){
+  var e = document.getElementById('art-board2');
+  if ( e.style.visibility != 'hidden' ) {
+      e.style.visibility = 'hidden';
+  }
+  else {
+      e.style.visibility = '';
+  }
+}
+showHide();
 
+  });
+
+// =============
+  $(".btn-hide").click(function () {
+      
+    function showHide(){
+  var e = document.getElementById('art-board');
+  if ( e.style.visibility != 'hidden' ) {
+      e.style.visibility = 'hidden';
+  }
+  else {
+      e.style.visibility = '';
+  }
+}
+showHide();
+
+  });
+  
   //========================================================================================//
   // buttons to change shape divs when clicked
   $(".shape-thumbnail").on("click", function () {
-
     var start = this.innerHTML.indexOf("block");
     var end = this.innerHTML.indexOf("class");
-     svgId = (this.innerHTML.substring(start, end - 3));
+     var svgId = (this.innerHTML.substring(start, end - 3));
 
-    $("#art-board").on("click", ".data", function () {
+    $("#art-board, #art-board2").on("click", ".data", function () {
       $(this).empty();
       $("#" + svgId).clone().appendTo(this);
       // console.log(svgId);
     });
+
     return svgId;
   });
 
 
+  // $(".shape-thumbnail").on("click", function () {
+  //   var start = this.innerHTML.indexOf("block");
+  //   var end = this.innerHTML.indexOf("class");
+  //    var svgId2 = (this.innerHTML.substring(start, end - 3));
 
+  //   $("#art-board2").on("click", ".data", function () {
+  //     $(this).empty();
+  //     $("#" + svgId2).clone().appendTo(this);
+  //     // console.log(svgId);
+  //   });
+
+  //   return svgId2;
+  // });
   //========================================================================================//
   //========================================================================================//
   // Create hiding div
@@ -335,113 +386,131 @@ else {
 
   // on Click Event for adding this Color to Blocks
   $("#color-holder").on("click", "#color-card", function () {
-    var color = ($(this).attr("colorpicker"));
-    // console.log(color);
-    // $('.color0').css({ fill:"" + color + "" });
-    $('.color0').css({ fill: "rgb" + color });
+    color = ($(this).attr("colorpicker"));
+
+    // var colorEdit = document.getElementById("art-board").getElementsByClassName("color0");
+
+    $('#art-board, .color0').css({ fill: "rgb" + color });
   });
 
   $("#color-holder-2").on("click", "#color-card", function () {
-    var color = ($(this).attr("colorpicker"));
-    // console.log(color);
-    // $('.color0').css({ fill:"" + color + "" });
-    $('.color1').css({ fill: "rgb" + color });
-    $("#main-color").css("border-color", "red");
-  });
+    color2 = ($(this).attr("colorpicker"));
 
+    $('#art-board2, .color0').css({ fill: "rgb" + color2 });
+  });
 
   generateColors();
   generateColorsTwo();
+
+
 
   //========================================================================================//
 // save button function
 // $("#save").on("click", function () {
   document.getElementById("save").addEventListener("click", function(){
+// div block id
+// console.log(divAmount[0]);
+let mongoData = {};
 
-    do_save();
+let blockoValue = [];
+let rotatoValue = [];
+let totalValue = [];
+
+
+if (divAmount[0] == 16) { 
+  totalValue.push('0, 250, 500, 750, 1000');
+  mongoData.cssData = "four-up";
+}
+
+else if (divAmount[0] == 25) {
+  totalValue.push('0,200,400,600,800,1000');
+  mongoData.cssData = "five-up";
+}
+
+else if (divAmount[0] == 36) {
+  totalValue.push('0, 166.6666, 333.3333, 500, 666.6666, 833.3333,1000');
+  mongoData.cssData = "six-up";
+}
+
+else if (divAmount[0] == 49) {
+  totalValue.push('0, 142.857, 285.714, 428.571, 571.428, 714.285, 857.142, 1000');
+  mongoData.cssData = "seven-up";
+}
+
+else if (divAmount[0] == 64) {
+  totalValue.push('0, 125, 250, 375, 500, 625, 750, 875, 1000');
+  mongoData.cssData = "eight-up";
+}
+
+else if (divAmount[0] == 81) {
+  totalValue.push('0, 111.1111, 222.2222, 333.3333, 444.4444, 555.5555, 666.6666, 777.7777, 888.8888, 1000');
+  mongoData.cssData = "nine-up";
+}
+
+let blockDat = [];
+
+
+for (i = 0; i < divAmount[0]; i++) {
+let blocko = [];
+let rotato = [];
+let blockD = {};
+
+let element = document.getElementById('b'+ i);
+//   
+// svg block number
+let bData = element.outerHTML;
+let svgBlockData = bData.substring(
+  bData.lastIndexOf('<svg id="') + 14, 
+  bData.lastIndexOf('" "class')
+);
+
+Object.assign(blockD, {bData: svgBlockData});
+
+// rotate info
+  let rotateData = bData.substring(
+    bData.lastIndexOf('style="transform: rotate(') + 25, 
+    bData.lastIndexOf('deg);"')
+  );
+
+  Object.assign(blockD, {rData: rotateData});
+
+
+  // console.log(blockD);
+
+blocko.push(svgBlockData);
+rotato.push(rotateData);
+
+
+blockoValue.push(blocko);
+rotatoValue.push(rotato);
+
+
+blockDat.push(blockD);
+// Object.assign(blockDat, {blockData: blockD});
+}
+
+document.getElementById('block-data').innerHTML = blockoValue;
+document.getElementById('rotate-data').innerHTML = rotatoValue;
+document.getElementById('total-data').innerHTML = totalValue;
+
+
+// let botTest = document.getElementById("bottomDiv").innerHTML;
+let botTest = document.getElementById('b0').innerHTML;
+
+let botTestSub = botTest.substring(
+  botTest.lastIndexOf('class="color1"') + 22, 
+  botTest.lastIndexOf(';">')
+);
+
+// console.log(botTestSub);
+
+mongoData.pData = totalValue;
+mongoData.blockData = blockDat;
+
+// mongoData.cssData = cssDataArr;
+console.log(mongoData);
 // console.log(blockDat);
   });
-
-
-// ==========================================
-var gridPoints = [0, 200, 400, 600];
-
-var blockRow = gridPoints.length;
-var blockAmount = 16;
-
-
-
-// ==========================================
-var grid = [];
-
-var gridData = [];
-var gridData2 = [];
-// loop to push into gridData
-for (var i = 0; i < blockRow; i++) {
-    for (var j = 0; j < blockRow; j++) {
-        gridData[gridData.length] = gridPoints[j];
-    }
-}
-// loop to push into gridData2
-for (var i = 0; i < blockRow; i++) {
-    for (var j = 0; j < blockRow; j++) {
-			gridData2[gridData2.length] = gridPoints[i];
-    }
-}
-
-// for loop to push griddata and gridDAta2 into grid
-for (var i = 0; i < blockAmount; i++) {
-    grid.push([gridData[i], gridData2[i]])
-}
-
-console.log(grid);
- // =======================
-
- let artBWidth = 800;
-
-//  let a = 3;
-
-let rotate = [90,180,180,180,0,270,720,540,0,180,90,180,360,0,0,270];
-
-let blocks = [];
-
-// loop to create each svg shape
-    for (i = 0; i < blockAmount; i++) {
-			var block = '<svg id="layer-' + i +'"> <g transform="translate(' + grid[i][0] +' ,' + grid[i][1] +') rotate(' + rotate[i] +' 100 100)"> <rect class="color1" fill="#AAAAAA" width="200" height="200"/> <polygon class="color0" fill="#FFFFFF" points="0,0 200,200 200,0 "/> </g> </svg>';
-					// return(block);
-					blocks.push(block);
-
-		};
-
-	
-	// generateBlocks(numbers);
-let twoHundred = 200;
-
-let infos = [];
-
-
-
-
-// ==========================================
-document.getElementById("saver").addEventListener("click", function(){
-
-    
-  // console.log(blockDat);
-    });
-
-  function do_save() {
-		
-		let filedata = '<svg version="1.1" id="layer1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="' + artBWidth + '" height="' + artBWidth + '"> ' + blocks + ' </svg> ';
-
-		
-    let locfile = new Blob([filedata], {type: "image/svg+xml;charset=utf-8"});
-    let locfilesrc = URL.createObjectURL(locfile);//mylocfile);
- 
-    let downlo = document.getElementById('dwn');
-    dwn.innerHTML = "<a href=" + locfilesrc + " download='mysvg.svg'>Download</a>";
-  }
-  
-
 
   //========================================================================================//
   //========================================================================================//
