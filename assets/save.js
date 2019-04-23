@@ -399,26 +399,30 @@ document.getElementById("help").addEventListener("click", function(){
 // $("#save").on("click", function () {
   document.getElementById("save").addEventListener("click", function(){
 //=======
+blockSVGData.length = 0;
 // for loop getting svg block data
+function generateBlockData () {
+
+  console.log(blockSVGData[0]);
+
 for (i = 0; i < totalBlocks; i++) {
 
-        bInfo = document.getElementById('b'+i);
-        bData = bInfo.innerHTML;
+      var  bInfo = document.getElementById('b'+i);
+    var    bData = bInfo.innerHTML;
 
-        svgBlockData = bData.substring(
+  var      svgBlockData = bData.substring(
           bData.lastIndexOf('<g>') + 3,
           bData.lastIndexOf('</g>')
         );
 
-        // svgRotateData = bInfo.lastIndexOf('rotate(') + 2, bInfo.lastIndexOf('deg)');
         var rotateData = bInfo.style['transform'];
-
         var blockRotateValue = Number(rotateData.slice(7, -4));
       
         blockRotateData.push(blockRotateValue);
         blockSVGData.push(svgBlockData);
 }
-
+}
+generateBlockData();
 //=======
 
     var blockRow = gridPoints.length;
