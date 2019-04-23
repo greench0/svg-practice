@@ -114,8 +114,20 @@ else {
   $(".artBoardButtons").on("click", function () {
      xAmount = $(this).data('btn-up');
      totalBlocks = $(this).data('btn-x');
+  
     clearArt();
     $("#board-options").hide();
+
+      // data for saving
+      totalBlocksSqd = Math.sqrt(totalBlocks);
+
+    if (totalBlocksSqd === 4) { gridPoints = [0, 200, 400, 600]; }
+    else if (totalBlocksSqd === 5) { gridPoints = [0, 200, 400, 600, 800]; }
+    else if (totalBlocksSqd === 6) { gridPoints = [0, 200, 400, 600, 800, 1000]; }
+    else if (totalBlocksSqd === 7) { gridPoints = [0, 200, 400, 600, 800, 1000, 1200]; }
+    else if (totalBlocksSqd === 8) { gridPoints = [0, 200, 400, 600, 800, 1000,1200,1400]; }
+    else if (totalBlocksSqd === 8) { gridPoints = [0, 200, 400, 600, 800, 1000,1200,1400, 1600]; }
+
     makeBlocks(totalBlocks, xAmount);
     
     divAmount.push(totalBlocks);
@@ -225,7 +237,6 @@ else {
   });
 
 
-
   //========================================================================================//
   //========================================================================================//
   // Create hiding div
@@ -280,7 +291,6 @@ else {
     , [95, 144, 156]
     , [245, 245, 245]
     , [68, 68, 68]
-
   ];
 
 
@@ -304,7 +314,6 @@ else {
       $("#color-holder-2").append(c);
     };
   };
-
 
 
   //On Click Event for blocks
@@ -354,82 +363,24 @@ else {
   generateColorsTwo();
 
   //========================================================================================//
-// save button function
-// $("#save").on("click", function () {
-  document.getElementById("save").addEventListener("click", function(){
 
-    do_save();
-// console.log(blockDat);
-  });
+var totalBlocksSqd = Math.sqrt(totalBlocks);
 
-
-// ==========================================
 var gridPoints = [0, 200, 400, 600];
 
-var blockRow = gridPoints.length;
-var blockAmount = 16;
-
-
-
 // ==========================================
-var grid = [];
 
-var gridData = [];
-var gridData2 = [];
-// loop to push into gridData
-for (var i = 0; i < blockRow; i++) {
-    for (var j = 0; j < blockRow; j++) {
-        gridData[gridData.length] = gridPoints[j];
-    }
-}
-// loop to push into gridData2
-for (var i = 0; i < blockRow; i++) {
-    for (var j = 0; j < blockRow; j++) {
-			gridData2[gridData2.length] = gridPoints[i];
-    }
-}
-
-// for loop to push griddata and gridDAta2 into grid
-for (var i = 0; i < blockAmount; i++) {
-    grid.push([gridData[i], gridData2[i]])
-}
-
-console.log(grid);
- // =======================
-
- let artBWidth = 800;
-
-//  let a = 3;
-
-let rotate = [90,180,180,180,0,270,720,540,0,180,90,180,360,0,0,270];
-
-let blocks = [];
-
-// loop to create each svg shape
-    for (i = 0; i < blockAmount; i++) {
-			var block = '<svg id="layer-' + i +'"> <g transform="translate(' + grid[i][0] +' ,' + grid[i][1] +') rotate(' + rotate[i] +' 100 100)"> <rect class="color1" fill="#AAAAAA" width="200" height="200"/> <polygon class="color0" fill="#FFFFFF" points="0,0 200,200 200,0 "/> </g> </svg>';
-					// return(block);
-					blocks.push(block);
-
-		};
-
-	
-	// generateBlocks(numbers);
-let twoHundred = 200;
-
-let infos = [];
+document.getElementById("help").addEventListener("click", function(){
 
 
 
+  // console.log(blockSVGData[0]);
+});
 
-// ==========================================
-document.getElementById("saver").addEventListener("click", function(){
 
-    
-  // console.log(blockDat);
-    });
+// =========================================
 
-  function do_save() {
+  function doSave() {
 		
 		let filedata = '<svg version="1.1" id="layer1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="' + artBWidth + '" height="' + artBWidth + '"> ' + blocks + ' </svg> ';
 
@@ -438,10 +389,95 @@ document.getElementById("saver").addEventListener("click", function(){
     let locfilesrc = URL.createObjectURL(locfile);//mylocfile);
  
     let downlo = document.getElementById('dwn');
-    dwn.innerHTML = "<a href=" + locfilesrc + " download='mysvg.svg'>Download</a>";
+    dwn.innerHTML = "<a href=" + locfilesrc + " download='mysvg.svg'>DownloadSVG</a>";
   }
   
+  let blockSVGData = [];
+  let blockRotateData = [];
+  //========================================================================================//
+  // save button function
+// $("#save").on("click", function () {
+  document.getElementById("save").addEventListener("click", function(){
+//=======
+// for loop getting svg block data
+for (i = 0; i < totalBlocks; i++) {
 
+        bInfo = document.getElementById('b'+i);
+        bData = bInfo.innerHTML;
+
+        svgBlockData = bData.substring(
+          bData.lastIndexOf('<g>') + 3,
+          bData.lastIndexOf('</g>')
+        );
+
+        // svgRotateData = bInfo.lastIndexOf('rotate(') + 2, bInfo.lastIndexOf('deg)');
+        var rotateData = bInfo.style['transform'];
+
+        var blockRotateValue = Number(rotateData.slice(7, -4));
+      
+        blockRotateData.push(blockRotateValue);
+        blockSVGData.push(svgBlockData);
+}
+
+//=======
+
+    var blockRow = gridPoints.length;
+var blockAmount = blockRow*blockRow;
+
+    var grid = [];
+
+    var gridData = [];
+    var gridData2 = [];
+    // loop to push into gridData
+    for (var i = 0; i < blockRow; i++) {
+        for (var j = 0; j < blockRow; j++) {
+            gridData[gridData.length] = gridPoints[j];
+        }
+    }
+    // loop to push into gridData2
+    for (var i = 0; i < blockRow; i++) {
+        for (var j = 0; j < blockRow; j++) {
+          gridData2[gridData2.length] = gridPoints[i];
+        }
+    }
+    
+    // for loop to push griddata and gridDAta2 into grid
+    for (var i = 0; i < totalShapes; i++) {
+        grid.push([gridData[i], gridData2[i]])
+    }
+    
+     // =======================
+     let artBWidth = gridPoints[gridPoints.length -1] +200;
+    //  console.log(artBWidth);
+    
+    
+    
+    let blocks = [];
+
+
+    for (i = 0; i < blockAmount; i++) {
+			var block = '<svg id="layer-' + i +'"> <g transform="translate(' + grid[i][0] +' ,' + grid[i][1] +') rotate(' + blockRotateData[i] +' 100 100)"> '+ blockSVGData[i] +' </g> </svg>';
+					// return(block);
+					blocks.push(block);
+
+    };
+    
+
+    function doSave() {
+		
+      let filedata = '<svg version="1.1" id="layer1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="' + artBWidth + '" height="' + artBWidth + '"> ' + blocks + ' </svg> ';
+  
+      
+      let locfile = new Blob([filedata], {type: "image/svg+xml;charset=utf-8"});
+      let locfilesrc = URL.createObjectURL(locfile);//mylocfile);
+   
+      let downlo = document.getElementById('dwn');
+      dwn.innerHTML = "<a href=" + locfilesrc + " download='mysvg.svg'>DownloadSVG</a>";
+    }
+
+    doSave();
+// console.log(blockDat);
+  });
 
   //========================================================================================//
   //========================================================================================//
