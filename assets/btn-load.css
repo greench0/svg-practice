@@ -16,8 +16,6 @@ html, body {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
- 
-
 }
 
 
@@ -139,11 +137,11 @@ margin-bottom: 8px !important;
 }
 
 .color1 {
-  fill: #444444;
+  fill: #FF847C;
 }
 
 .color0 {
-  fill: #ffdd79;
+  fill: #FFDD79;
 }
 
 

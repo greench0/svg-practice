@@ -279,7 +279,7 @@ else {
   //Fill hiding div with color boxes
   function generateColors() {
     for (var i = 0; i < colors2.length; i++) {
-      var c = $("<img id='color-card' class='img-thumbnail img-t1'></img>");
+      var c = $("<img id='color-card' class='img-thumbnail img-t2'></img>");
       var colortype = "background-color: #" + colors2[i];
       
       c.attr("style", colortype);
@@ -351,6 +351,8 @@ var gridPoints = [0, 200, 400, 600];
 document.getElementById("help").addEventListener("click", function(){
 
 
+
+  // console.log(blockSVGData[0]);
 });
 
 
@@ -359,7 +361,7 @@ document.getElementById("help").addEventListener("click", function(){
 		let filedata = '<svg version="1.1" id="layer1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="' + artBWidth + '" height="' + artBWidth + '"> ' + blocks + ' </svg> ';
 
     let locfile = new Blob([filedata], {type: "image/svg+xml;charset=utf-8"});
-    let locfilesrc = URL.createObjectURL(locfile);
+    let locfilesrc = URL.createObjectURL(locfile);//mylocfile);
  
     let downlo = document.getElementById('dwn');
     dwn.innerHTML = "<a href=" + locfilesrc + " download='mysvg.svg'>DownloadSVG</a>";
@@ -373,17 +375,19 @@ document.getElementById("help").addEventListener("click", function(){
   document.getElementById("save").addEventListener("click", function(){
 //=======
 blockSVGData.length = 0;
-blockRotateData.length = 0;
 // for loop getting svg block data
 function generateBlockData () {
+
+  console.log(blockSVGData[0]);
+
 for (i = 0; i < totalBlocks; i++) {
 
-  var bInfo = document.getElementById('b'+i);
-  var bData = bInfo.innerHTML;
+      var  bInfo = document.getElementById('b'+i);
+    var    bData = bInfo.innerHTML;
 
-  var svgBlockData = bData.substring(
-      bData.lastIndexOf('<g>') + 3,
-      bData.lastIndexOf('</g>')
+  var      svgBlockData = bData.substring(
+          bData.lastIndexOf('<g>') + 3,
+          bData.lastIndexOf('</g>')
         );
 
         var rotateData = bInfo.style['transform'];
@@ -425,6 +429,8 @@ var blockAmount = blockRow*blockRow;
      let artBWidth = gridPoints[gridPoints.length -1] +200;
     //  console.log(artBWidth);
     
+    
+    
     let blocks = [];
 
 
@@ -432,6 +438,7 @@ var blockAmount = blockRow*blockRow;
 			var block = '<svg id="layer-' + i +'"> <g transform="translate(' + grid[i][0] +' ,' + grid[i][1] +') rotate(' + blockRotateData[i] +' 100 100)"> '+ blockSVGData[i] +' </g> </svg>';
 					// return(block);
 					blocks.push(block);
+
     };
     
 
@@ -439,6 +446,7 @@ var blockAmount = blockRow*blockRow;
 		
       let filedata = '<svg version="1.1" id="layer1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="' + artBWidth + '" height="' + artBWidth + '"> ' + blocks + ' </svg> ';
   
+      
       let locfile = new Blob([filedata], {type: "image/svg+xml;charset=utf-8"});
       let locfilesrc = URL.createObjectURL(locfile);//mylocfile);
    
