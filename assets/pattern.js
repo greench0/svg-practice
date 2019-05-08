@@ -210,6 +210,14 @@ function loadBlocks(a, block) {
 
   //========================================================================================//
   // create the block elements based on block selection to fill art board
+  function clearArt2() {
+    $("#art-board2").empty();
+  }
+
+  function clearArt3() {
+    $("#art-board3").empty();
+  }
+
   function fillBlocks(a, b) {
     for (i = 0; i < a; i++) {
       var block = $( "<div id='a-b" + i + "' class='block-up data rotate grid-off " + b + "' style='transform: rotate(0deg);'></div>");
@@ -218,7 +226,22 @@ function loadBlocks(a, block) {
     }
   }
 
-  
+  function fillBlocks2(a, b) {
+    for (i = 0; i < a; i++) {
+      var block = $( "<div id='b-b" + i + "' class='block-up data rotate grid-off " + b + "' style='transform: rotate(0deg);'></div>");
+      $('#art-board2').append(block);
+      $('#' + svgId + '').clone().appendTo("#b-b" + i + "");
+    }
+  }
+
+  function fillBlocks3(a, b) {
+    for (i = 0; i < a; i++) {
+      var block = $( "<div id='c-b" + i + "' class='block-up data rotate grid-off " + b + "' style='transform: rotate(0deg);'></div>");
+      $('#art-board3').append(block);
+      $('#' + svgId + '').clone().appendTo("#c-b" + i + "");
+    }
+  }
+    //================================//
   // on click button event for fill blocks when btn-fill pressed
   $(".btn-fill").on("click", function() {
     clearArt();
@@ -226,7 +249,25 @@ function loadBlocks(a, block) {
     fillBlocks(totalBlocks, xAmount);
 
     divAmount.push(totalBlocks);
-    console.log(svgId)
+    console.log('btn fill')
+
+  });
+
+  $(".btn-fill2").on("click", function() {
+    clearArt2();
+    // $("#board-options").hide();
+    fillBlocks2(totalBlocks, xAmount);
+
+    divAmount.push(totalBlocks);
+    console.log('btnfill2')
+  });
+
+  $(".btn-fill3").on("click", function() {
+    clearArt3();
+    // $("#board-options").hide();
+    fillBlocks3(totalBlocks, xAmount);
+
+    divAmount.push(totalBlocks);
   });
 
   //========================================================================================//
@@ -238,6 +279,32 @@ function loadBlocks(a, block) {
         randomRoteValues[Math.floor(Math.random() * randomRoteValues.length)];
 
       let element = document.getElementById("a-b" + i);
+
+      $(element).rotate(randomRotate);
+    }
+  });
+
+
+  $(".btn-rotate2").on("click", function() {
+    for (i = 0; i < divAmount[0]; i++) {
+      const randomRoteValues = [0, 90, 180, 270];
+      var randomRotate =
+        randomRoteValues[Math.floor(Math.random() * randomRoteValues.length)];
+
+      let element = document.getElementById("b-b" + i);
+
+      $(element).rotate(randomRotate);
+    }
+  });
+
+
+  $(".btn-rotate3").on("click", function() {
+    for (i = 0; i < divAmount[0]; i++) {
+      const randomRoteValues = [0, 90, 180, 270];
+      var randomRotate =
+        randomRoteValues[Math.floor(Math.random() * randomRoteValues.length)];
+
+      let element = document.getElementById("c-b" + i);
 
       $(element).rotate(randomRotate);
     }
@@ -430,7 +497,27 @@ function changeColor () {
     $('#art-board3 .color0').css({ fill: "#" + color3 });
     return color3;
   });
-  
+
+
+//   $('.popover-dismiss').popover({
+//     trigger: 'focus'
+//   })
+
+//   $(document).ready(function(){
+//     $('[data-toggle="popover"]').popover();   
+// });
+
+
+// $('[data-toggle="popover"]').popover({
+//   placement : 'top',
+//   html : true,
+//   title : 'User Info <a href="#" class="close" data-dismiss="alert">&times;</a>',
+//   content : '<div class="media"><a href="#" class="pull-left"><img src="/examples/images/avatar-tiny.jpg" class="media-object" alt="Sample Image"></a><div class="media-body"><h4 class="media-heading">Jhon Carter</h4><p>Excellent Bootstrap popover! I really love it.</p></div></div>'
+// });
+// $(document).on("click", ".popover .close" , function(){
+//   $(this).parents(".popover").popover('hide');
+// });
+
   //========================================================================================//
   //========================================================================================//
 }); // end document ready

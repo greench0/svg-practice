@@ -46,11 +46,11 @@ margin-bottom: 8px !important;
      border-radius: 0 !important;
 }
 
-.btn-hide3, #save3 {
+.btn-hide3, #save3, .btn-fill3, .btn-rotate3 {
   color: #FFCCCC;
 }
 
-.btn-hide2, #save2 {
+.btn-hide2, #save2, .btn-fill2, .btn-rotate2 {
   color: #FFFFCC;
 }
 
