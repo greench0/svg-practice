@@ -36,11 +36,6 @@ html, body {
   background-color: #525252;
 }
 
-#board-options {
-  /* border: 2px solid darkgrey; */
-  /* background: "grey";
-  margin-top: -20px; */
-}
 
 .btn
 {
@@ -51,6 +46,13 @@ margin-bottom: 8px !important;
      border-radius: 0 !important;
 }
 
+.btn-hide3, #save3 {
+  color: #FFCCCC;
+}
+
+.btn-hide2, #save2 {
+  color: #FFFFCC;
+}
 
 .nav-buttons {
   position: absolute;
@@ -98,7 +100,6 @@ margin-bottom: 8px !important;
   top: 0; 
   left: 0px; 
   z-index: 1;
-
  }
  
 
