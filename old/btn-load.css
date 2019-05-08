@@ -12,6 +12,13 @@ html, body {
 }
  
 
+#main-card {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
 .card {
   -webkit-border-radius: 0 !important;
   -moz-border-radius: 0 !important;
@@ -19,9 +26,9 @@ html, body {
 }
 
 .card-header {
-  border-bottom: 3px solid #525252 !important;
+  border-bottom: 3px solid #444444 !important;
   height: 50px;
-  background-color: #525252;
+  background-color: #444444;
   /* border-color: #7c7c7c; */
   /* box-shadow: 6px 6px 0px 3px #555555; */
 }
@@ -31,9 +38,9 @@ html, body {
 }
 
 .modal-header {
-  border-bottom: 3px solid #525252 !important;
+  border-bottom: 3px solid #444444 !important;
   /* height: 50px; */
-  background-color: #525252;
+  background-color: #444444;
 }
 
 #board-options {
@@ -62,15 +69,26 @@ margin-bottom: 8px !important;
 .nav-buttons button {
   font-size: 25px;
   width: 58px;
-  background-color:#525252;
+  background-color:#444444;
 }
 
 .btn-maker:hover ,.btn-colors:hover , .btn-export:hover , .btn-grid:hover , .btn-fill:hover , .btn-random:hover, .btn-help:hover {
   color:#f2f2f2 !important;
   }
 
+
+/* .btn-maker { margin-top: 50px; }
+.btn-colors { margin-top: 110px; }
+.btn-grid { margin-top: 170px; }
+.btn-fill { margin-top: 230px; }
+.btn-export { margin-top: 290px; }
+.btn-random { margin-top: 350px; }
+.btn-rotate { margin-top: 410px; }
+.btn-help { margin-top: 470px; } */
+
 .inline {
   display: inline-block;
+  
 }
 
 #help button
@@ -78,47 +96,10 @@ margin-bottom: 8px !important;
   display: inline-block;
 }
 
-#main-card {
-  top: 50%;
-  transform: translateY(-50%);
-  /* position: static; */
-}
-
-#art-container {
-  position: relative;
-}
-
-
-
 #art-board {
   cursor: pointer;
   margin-left:3px;
   margin-bottom: 3px;
-  position: absolute; 
-  top: 0; 
-  left: 0px; 
-  z-index: 1;
-
- }
- 
-
- #art-board2 {
-  cursor: pointer;
-  margin-left:3px;
-  margin-bottom: 3px;
-  position: absolute; 
-  top: 0; 
-  left: 0;
-  z-index: 2;
- }
-
- #art-board3 {
-  cursor: pointer;
-  margin-left:3px;
-  margin-bottom: 3px;
-  top: 0; 
-  left: 0;
-  z-index: 3;
  }
 
 
@@ -136,7 +117,6 @@ margin-bottom: 8px !important;
     display: block;
     float: left;
     line-height: 0;
-    /* background-color: rgb(245, 245, 245); */
 }
 
 .two-up { width:50%; }  
@@ -156,21 +136,17 @@ margin-bottom: 8px !important;
   word-wrap: break-word;
 }
 
-#art-board3 .color0 {
-  fill: #FFC205;
+.color1 {
+  fill: #FF847C;
 }
 
-#art-board2 .color0 {
+.color0 {
   fill: #FFDD79;
-}
-
-#art-board .color0 {
-  fill: #333333;
 }
 
 
 .rotate {
-transition: transform .11s;
+transition: transform .13s;
 }
 
 .nav-tabs {
@@ -186,7 +162,7 @@ transition: transform .11s;
   width: 52px;
   height: 52px;
   float: left;
-  margin: 5px 10px 5px 10px ;
+  margin: 10px;
   background-clip: content-box;
   border: none;
   padding: 0 -5px 0 0;
@@ -204,15 +180,10 @@ transition: transform .11s;
   padding: 0 -5px 0 5px;
   cursor: pointer;
   z-index: 1 !important;
-  background-color: rgb(245, 245, 245);
 }
 
-/* 245, 245, 245
-68, 68, 68 */
-
-
 .shape-thumbnail:hover {
-  background-color: #afafaf;
+  background-color: black;
   opacity: 80%;
 }
 
@@ -232,7 +203,7 @@ transition: transform .11s;
 
 .grid-on {
   border-style: solid !important;
-    border-color: pink !important;
+    border-color: white !important;
     border-width: 2px !important;
   }  
   .grid-off {
@@ -240,10 +211,6 @@ transition: transform .11s;
       border-color: white !important;
       border-width: 0px !important;
     }  
-
-    /* .btn-hide3 {
-      color: pink;
-    } */
 /* -----------------------------------------------------------------------------------------------------------------------------------------
 ------ end Footer Section ------------------- */
 

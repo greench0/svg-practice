@@ -1,47 +1,43 @@
-$(document).ready(function () {
+$(document).ready(function() {
   //========================================================================================//
   let divAmount = [];
-  let xAmount = 'four-up';
-  let totalBlocks = '16';
-  let svgId = 'block16';
-  let svgIdRandom = ''
-    // a = how many svg files
-    const totalShapes = 105;
+  let xAmount = "four-up";
+  let totalBlocks = "16";
+  let svgId = "block16";
 
-      // defines the color 1 and 2 for the default shapes
-    color = '(68,68,68)';
-    color2 = '(68,68,68)';
-  //========================================================================================//
+  // a = how many svg files
+  const totalShapes = 105;
+
+  color = '333333';
+  color2 = 'FFDD79';
+  color3 = 'FFC205';
   
-  var mainBlock = Snap('#main-block');
+  //========================================================================================//
+  var mainBlock = Snap("#main-block");
 
   Snap.load("assets/svg/block-main.svg", onSVGLoaded);
-
   function onSVGLoaded(data) {
     mainBlock.append(data);
   }
 
-    // button events to show / hide the grid - strokes
-    $("#btn-grid").click(function () {
-      
-      if ($( ".data" ).hasClass( "grid-off" )) {
-        $(".data").removeClass("grid-off");
-        $(".data").addClass("grid-on");
-      }
-else {
+  // button events to show / hide the grid - strokes
+  $("#btn-grid").click(function() {
+    if ($(".data").hasClass("grid-off")) {
+      $(".data").removeClass("grid-off");
+      $(".data").addClass("grid-on");
+    } else {
       $(".data").removeClass("grid-on");
       $(".data").addClass("grid-off");
-}
-    });
+    }
+  });
   //========================================================================================//
   //========================================================================================//
   // buttons for art-board generation
-  $(document).ready(function () {
-    $('#sidebarCollapse').on('click', function () {
-        $('#sidebar').toggleClass('active');
+  $(document).ready(function() {
+    $("#sidebarCollapse").on("click", function() {
+      $("#sidebar").toggleClass("active");
     });
-});
-
+  });
 
   function clearArt() {
     $("#art-board").empty();
@@ -53,15 +49,37 @@ else {
   function blocksForHtml(a) {
     for (i = 0; i < a; i++) {
       var total = $(
-        '<div id="" class="boxes-card shape-thumbnail"><svg id="block' + i + '" "class="" viewBox="0 0 200 200"></svg></div>');
-      $('#boxes-holder').append(total);
+        '<div id="" class="boxes-card shape-thumbnail"><svg id="block' +
+          i +
+          '" "class="" viewBox="0 0 200 200"></svg></div>'
+      );
+      $("#boxes-holder").append(total);
     }
   }
 
-
   blocksForHtml(totalShapes);
   //========================================================================================//
-  function loadBlocks(a, block) {
+  // create and load Snap svg blocks in the shape div container
+  function LoadSnapsFunc() {
+    for (i = 0; i <= totalShapes; i++) {
+      var str = "b" + i + " = Snap('#block" + i + "');";
+      //Declaring and Setting dynamic variable to undefined using eval
+      eval(str);
+    }
+  }
+  LoadSnapsFunc();
+
+  function LoadBlocksFunc() {
+    for (i = 0; i <= totalShapes; i++) {
+      var str = "loadBlocks(" + i + ", b" + i + ");";
+      //Declaring and Setting dynamic variable to undefined using eval
+      eval(str);
+    }
+  }
+  LoadBlocksFunc();
+  //========================================================================================//
+  // defines the color 1 and 2 for the default shapes
+function loadBlocks(a, block) {
     Snap.load("assets/svg-pattern/block" + a + ".svg", function (data) {
       var paper = data.select("g");
       block.append(paper);
@@ -69,60 +87,124 @@ else {
   }
 
   //========================================================================================//
-  //========================================================================================//
-  // create and load Snap svg blocks in the shape div container
-  function LoadSnapsFunc() {
-    for ( i=0; i<=totalShapes; i++ )
-    {
-        var str ="b"+ i+" = Snap('#block"+ i +"');";
-        //Declaring and Setting dynamic variable to undefined using eval
-        eval(str);
-    }
- }
- LoadSnapsFunc();
-
-  function LoadBlocksFunc() {
-    for ( i=0; i<=totalShapes; i++ )
-    {
-        var str ="loadBlocks("+i+", b"+i+");";
-        //Declaring and Setting dynamic variable to undefined using eval
-        eval(str);
-    }
- }
- LoadBlocksFunc();
-
-   //========================================================================================//
-  // fills the art boards with Blocks when artBoardButtons is clicked
+  // create the block elements for the html page
   function makeBlocks(a, b) {
     for (i = 0; i < a; i++) {
-      var block = $(
-        "<div id='b" + i + "' class='block-up data rotate grid-off " + b + "' style='transform: rotate(0deg);'></div>");
-      $('#art-board').append(block);
-      $('#block58').clone().appendTo("#b" + i + "");
+      var block = $( "<div id='a-b" + i + "' class='block-up data rotate grid-off " + b + "' style='transform: rotate(0deg);'></div>" );
+      $("#art-board").append(block);
+      $("#block0").clone().appendTo("#a-b" + i + "");
     }
   }
-
 
   function makeBlocks2(a, b) {
     for (i = 0; i < a; i++) {
       var block = $(
-        "<div id='b" + i + "' class='block-up data rotate grid-off " + b + "' style='transform: rotate(0deg);'></div>");
+        "<div id='b-b" + i + "' class='block-up data rotate grid-off " + b + "' style='transform: rotate(0deg);'></div>");
       $('#art-board2').append(block);
-      $('#block16').clone().appendTo("#b" + i + "");
+      $('#block75').clone().appendTo("#b-b" + i + "");
     }
   }
 
-  // on click button event for make blocks 
-  $(".artBoardButtons").on("click", function () {
-     xAmount = $(this).data('btn-up');
-     totalBlocks = $(this).data('btn-x');
+  function makeBlocks3(a, b) {
+    for (i = 0; i < a; i++) {
+      var block = $(
+        "<div id='c-b" + i + "' class='block-up data rotate grid-off " + b + "' style='transform: rotate(0deg);'></div>");
+      $('#art-board3').append(block);
+      $('#block74').clone().appendTo("#c-b" + i + "");
+    }
+  }
+
+  //========================================================================================//
+  // on click button event for make blocks
+  $(".artBoardButtons").on("click", function() {
+    xAmount = $(this).data("btn-up");
+    totalBlocks = $(this).data("btn-x");
+
     clearArt();
     $("#board-options").hide();
-    makeBlocks(totalBlocks, xAmount);
-    
-    makeBlocks2(totalBlocks, xAmount);
-    divAmount.push(totalBlocks);
 
+    // data for saving
+    totalBlocksSqd = Math.sqrt(totalBlocks);
+
+    if (totalBlocksSqd === 4) {
+      gridPoints = [0, 200, 400, 600];
+    } else if (totalBlocksSqd === 5) {
+      gridPoints = [0, 200, 400, 600, 800];
+    } else if (totalBlocksSqd === 6) {
+      gridPoints = [0, 200, 400, 600, 800, 1000];
+    } else if (totalBlocksSqd === 7) {
+      gridPoints = [0, 200, 400, 600, 800, 1000, 1200];
+    } else if (totalBlocksSqd === 8) {
+      gridPoints = [0, 200, 400, 600, 800, 1000, 1200, 1400];
+    } else if (totalBlocksSqd === 8) {
+      gridPoints = [0, 200, 400, 600, 800, 1000, 1200, 1400, 1600];
+    }
+
+    makeBlocks(totalBlocks, xAmount);
+    makeBlocks2(totalBlocks, xAmount);
+    makeBlocks3(totalBlocks, xAmount);
+    divAmount.push(totalBlocks);
+    $('#main-card').attr('data-art-board-size', totalBlocks)
+
+  });
+  
+  //========================================================================================//
+  // create the block elements based on block selection to fill art board
+  function randomBlocks(a, b) {
+    for (i = 0; i < a; i++) {
+      let block = $( "<div id='a-b" + i + "' class='block-up data rotate grid-off " + b + "' data-block='b" + i + "' style='transform: rotate(0deg);'></div>" );
+      let randomNum = Math.floor(Math.random() * (+totalShapes - +0)) + +0;
+      $("#art-board").append(block);
+      $("#block" + randomNum + "") .clone() .appendTo("#a-b" + i + "");
+    }
+  }
+
+  // on click button event for make blocks
+  $(".btn-random").on("click", function() {
+    clearArt();
+    $("#board-options").hide();
+    randomBlocks(totalBlocks, xAmount);
+
+    divAmount.push(totalBlocks);
+  });
+
+  //========================================================================================//
+  // JS for rotating a block shape
+  var rotation = 0;
+  jQuery.fn.rotate = function(degrees) {
+    $(this).css({ transform: "rotate(" + degrees + "deg)" });
+  };
+
+  $("#art-board, #art-board2, #art-board3").on(
+    "click",
+    ".rotate",
+    function() {
+      var rotateData = this.style["transform"];
+      var rValue = Number(rotateData.slice(7, -4));
+
+      rotation = rValue + 90;
+      $(this).rotate(rotation);
+    }
+  );
+
+  //========================================================================================//
+  // buttons to change shape divs when clicked
+  $(".shape-thumbnail").on("click", function () {
+    var start = this.innerHTML.indexOf("block");
+    var end = this.innerHTML.indexOf("class");
+     var svgIdClicked = (this.innerHTML.substring(start, end - 3));
+
+    $("#art-board, #art-board2, #art-board3").on("click", ".data", function () {
+      $(this).empty();
+      $("#" + svgIdClicked).clone().appendTo(this);
+
+      $('#art-board .color0').css({ fill: "#" + color });
+      $('#art-board2 .color0').css({ fill: "#" + color2 });
+      $('#art-board3 .color0').css({ fill: "#" + color3 });
+
+    });
+
+    svgId = svgIdClicked;
   });
 
 
@@ -130,181 +212,169 @@ else {
   // create the block elements based on block selection to fill art board
   function fillBlocks(a, b) {
     for (i = 0; i < a; i++) {
-      var block = $(
-        "<div id='b" + i + "' class='block-up data rotate grid-off " + b + "' style='transform: rotate(0deg);'></div>");
+      var block = $( "<div id='a-b" + i + "' class='block-up data rotate grid-off " + b + "' style='transform: rotate(0deg);'></div>");
       $('#art-board').append(block);
-      $('#' + svgId + '').clone().appendTo("#b" + i + "");
+      $('#' + svgId + '').clone().appendTo("#a-b" + i + "");
     }
   }
 
-  // on click button event for make blocks 
-  $(".btn-fill").on("click", function () {
-    clearArt();
-    $("#board-options").hide();
-    fillBlocks(totalBlocks, xAmount);
-    
-    divAmount.push(totalBlocks);
-  });
-
-
-   //========================================================================================//
-  // JS for rotating a block shape
-  var rotation = 0;
-
-  jQuery.fn.rotate = function (degrees) {
-    $(this).css({ 'transform': 'rotate(' + degrees + 'deg)' });
-  };
-
-  $("#art-board, #art-board2").on("click", ".rotate", function () {
-    var rotateData = this.style['transform'];
-
-    var rValue = Number(rotateData.slice(7, -4));
-
-    rotation = rValue + 90;
-    $(this).rotate(rotation);
-    
-  });
-
-  //========================================================================================//
-  // JS to toggle layer 1 and 2 on and off
-  $(".btn-hide2").click(function () {
-      
-    function showHide(){
-  var e = document.getElementById('art-board2');
-  if ( e.style.visibility != 'hidden' ) {
-      e.style.visibility = 'hidden';
-  }
-  else {
-      e.style.visibility = '';
-  }
-}
-showHide();
-  });
-
-// =============
-  $(".btn-hide").click(function () {
-      
-    function showHide(){
-  var e = document.getElementById('art-board');
-  if ( e.style.visibility != 'hidden' ) {
-      e.style.visibility = 'hidden';
-  }
-  else {
-      e.style.visibility = '';
-  }
-}
-showHide();
-
-  });
   
-  //========================================================================================//
-  // shape buttons when clicked - then clicked in the artboards -  change the shape div when
-  $(".shape-thumbnail").on("click", function () {
-    var start = this.innerHTML.indexOf("block");
-    var end = this.innerHTML.indexOf("class");
-     var svgId = (this.innerHTML.substring(start, end - 3));
+  // on click button event for fill blocks when btn-fill pressed
+  $(".btn-fill").on("click", function() {
+    clearArt();
+    // $("#board-options").hide();
+    fillBlocks(totalBlocks, xAmount);
 
-    $("#art-board, #art-board2").on("click", ".data", function () {
-      $(this).empty();
-      $("#" + svgId).clone().appendTo(this);
-
-      $('#art-board .color0').css({ fill: "rgb" + color });
-      $('#art-board2 .color0').css({ fill: "rgb" + color2 });
-      // console.log(svgId);
-    });
-
-    return svgId;
+    divAmount.push(totalBlocks);
+    console.log(svgId)
   });
 
+  //========================================================================================//
+  // on click button event to randomly rotate blocks 
+  $(".btn-rotate").on("click", function() {
+    for (i = 0; i < divAmount[0]; i++) {
+      const randomRoteValues = [0, 90, 180, 270];
+      var randomRotate =
+        randomRoteValues[Math.floor(Math.random() * randomRoteValues.length)];
 
+      let element = document.getElementById("a-b" + i);
+
+      $(element).rotate(randomRotate);
+    }
+  });
+
+  //========================================================================================//
+  // JS to toggle layers on and off
+  $(".btn-hide3").click(function() {
+    function showHide() {
+      var e = document.getElementById("art-board3");
+      if (e.style.visibility != "hidden") {
+        e.style.visibility = "hidden";
+      } else {
+        e.style.visibility = "";
+      }
+    }
+    showHide();
+  });
+  // =============
+  $(".btn-hide2").click(function() {
+    function showHide() {
+      var e = document.getElementById("art-board2");
+      if (e.style.visibility != "hidden") {
+        e.style.visibility = "hidden";
+      } else {
+        e.style.visibility = "";
+      }
+    }
+    showHide();
+  });
+// =============
+  $(".btn-hide").click(function() {
+    function showHide() {
+      var e = document.getElementById("art-board");
+      if (e.style.visibility != "hidden") {
+        e.style.visibility = "hidden";
+      } else {
+        e.style.visibility = "";
+      }
+    }
+    showHide();
+  });
   //========================================================================================//
   //========================================================================================//
   // Create hiding div
-  $("#footer-btns").on("click", "button", function () {
+  $("#footer-btns").on("click", "button", function() {
     if (this.id === "action-box") {
-      $("#action-colors").attr({ "aria-expanded": "false", "class": "btn btn-secondary collapsed btn-lg" });
+      $("#action-colors").attr({
+        "aria-expanded": "false",
+        class: "btn btn-secondary collapsed btn-lg"
+      });
       $("#colors").attr("class", "collapse");
       // $(this).css({ 'border': 'solid', 'border-width': '4px', 'border-color': 'gold' });
-      $("#action-colors").css('border', 'none');
-      $("#action-block").css('border', 'none');
+      $("#action-colors").css("border", "none");
+      $("#action-block").css("border", "none");
       //Change Action Item;
-    }
-
-    else if (this.id === "action-color") {
-      $("#action-box").attr({ "aria-expanded": "false", "class": "btn btn-secondary collapsed btn-lg" });
+    } else if (this.id === "action-color") {
+      $("#action-box").attr({
+        "aria-expanded": "false",
+        class: "btn btn-secondary collapsed btn-lg"
+      });
       $("#boxes").attr("class", "collapse");
       // $(this).css({ 'border': 'solid', 'border-width': '4px', 'border-color': 'gold' });
-      $("#action-box").css('border', 'none');
-      $("#action-block").css('border', 'none');
+      $("#action-box").css("border", "none");
+      $("#action-block").css("border", "none");
       //Change Action Item;
-    }
-
-    else if (this.id === "action-block") {
-      $("#action-box").attr({ "aria-expanded": "false", "class": "btn btn-secondary collapsed btn-lg" });
+    } else if (this.id === "action-block") {
+      $("#action-box").attr({
+        "aria-expanded": "false",
+        class: "btn btn-secondary collapsed btn-lg"
+      });
       $("#boxes").attr("class", "collapse");
       // $(this).css({ 'border': 'solid', 'border-width': '4px', 'border-color': 'gold' });
-      $("#action-box").css('border', 'none');
-      $("#action-block").css('border', 'none');
+      $("#action-box").css("border", "none");
+      $("#action-block").css("border", "none");
       //Change Action Item;
-    }
-    
-    else {
-      $("#action-box").attr({ "aria-expanded": "false", "class": "btn btn-secondary collapsed btn-lg" });
+    } else {
+      $("#action-box").attr({
+        "aria-expanded": "false",
+        class: "btn btn-secondary collapsed btn-lg"
+      });
       $("#boxes").attr("class", "collapse");
-      $("#action-colors").attr({ "aria-expanded": "false", "class": "btn btn-secondary collapsed" });
+      $("#action-colors").attr({
+        "aria-expanded": "false",
+        class: "btn btn-secondary collapsed"
+      });
       $("#colors").attr("class", "collapse");
       // $(this).css({ 'border': 'solid', 'border-width': '4px', 'border-color': 'gold' });
-      $("#action-box").css('border', 'none');
-      $("#action-colors").css('border', 'none');
+      $("#action-box").css("border", "none");
+      $("#action-colors").css("border", "none");
       //Change Action Item;
     }
   });
 
+  var colors = [ 'FF847C' , 'd84233' , 'c6e7b1' , 'FFDD79' , 'FFC205' , '2044d4' , '5aa6da' , 'F5F5F5' , '333333' ];
 
   //========================================================================================//
-  var colors = [
-      [255, 132, 124]
-    , [255, 221, 121]
-    , [255, 194, 5]
-    , [181, 34, 10]
-    , [139, 192, 100]
-    , [0, 126, 227]
-    , [95, 144, 156]
-    , [245, 245, 245]
-    , [68, 68, 68]
-  ];
-
+  // color section
   //Fill hiding div with color boxes
   function generateColors() {
     for (var i = 0; i < colors.length; i++) {
       var c = $("<img id='color-card' class='img-thumbnail img-t1'></img>");
-      var colortype = "background-color: rgb" + "(" + colors[i][0] + "," + colors[i][1] + "," + colors[i][2] + ")";
+      var colortype = "background-color: #" + colors[i];
+
       c.attr("style", colortype);
-      c.attr("colorpicker", "(" + colors[i][0] + "," + colors[i][1] + "," + colors[i][2] + ")")
+      c.attr("colorpicker", colors[i]);
       $("#color-holder").append(c);
-    };
-  };
+    }
+  }
 
   function generateColorsTwo() {
     for (var i = 0; i < colors.length; i++) {
       var c = $("<img id='color-card' class='img-thumbnail img-t2'></img>");
-      var colortype = "background-color: rgb" + "(" + colors[i][0] + "," + colors[i][1] + "," + colors[i][2] + ")";
-      c.attr("style", colortype);
-      c.attr("colorpicker", "(" + colors[i][0] + "," + colors[i][1] + "," + colors[i][2] + ")")
-      $("#color-holder-2").append(c);
-    };
-  };
+      var colortype = "background-color: #" + colors[i];
 
+      c.attr("style", colortype);
+      c.attr("colorpicker", colors[i]);
+      $("#color-holder-2").append(c);
+    }
+  }
+
+  function generateColorsThree() {
+    for (var i = 0; i < colors.length; i++) {
+      var c = $("<img id='color-card' class='img-thumbnail img-t3'></img>");
+      var colortype = "background-color: #" + colors[i];
+
+      c.attr("style", colortype);
+      c.attr("colorpicker", colors[i]);
+      $("#color-holder-3").append(c);
+    }
+  }
 
   generateColors();
   generateColorsTwo();
+  generateColorsThree();
   //========================================================================================//
-  //On Click Event for blocks
-  $("#boxes-holder").on("click", ".boxes-card", function () {
-    $(".shape-thumbnail").css('border', 'none');
-    $(this).css({ 'border': 'solid', 'border-width': '4px', 'border-color': '#2A363B' });
-  });
-  //========================================================================================//
+    //========================================================================================//
   //On Click Event for Colors
   $("#color-holder").on("click", "#color-card", function () {
     $(".img-t1").css('border', 'none');
@@ -317,73 +387,50 @@ showHide();
     $(this).css({ 'border': 'solid', 'border-width': '4px', 'border-color': '#2A363B' });
   });
 
-    //========================================================================================//
-  //On Click Event for boards
-  $("#board-holder").on("click", "#board-holder", function () {
-    $(".board-thumbnail").css('border', 'none');
+  $("#color-holder-3").on("click", "#color-card", function () {
+    $(".img-t3").css('border', 'none');
+    $(this).css({ 'border': 'solid', 'border-width': '4px', 'border-color': '#2A363B' });
+  });
+  //========================================================================================//
+  //On Click Event for blocks
+  $("#boxes-holder").on("click", ".boxes-card", function () {
+    $(".shape-thumbnail").css('border', 'none');
     $(this).css({ 'border': 'solid', 'border-width': '4px', 'border-color': '#2A363B' });
   });
 
+    //========================================================================================//
+  //On Click Event for boards
+  $("#board-holder").on("click", "#board-holder", function() {
+    $(".board-thumbnail").css("border", "none");
+    $(this).css({ border: "solid", "border-width": "4px", "border-color": "#2A363B"
+    });
+  });
 
-  //========================================================================================//
-  // on Click Event for adding this Color to Block layer
+    //========================================================================================//
+function changeColor () {
+  $('.btn-hide3').css({'color':'black'});
+}
+
+
   $("#color-holder").on("click", "#color-card", function () {
     color = ($(this).attr("colorpicker"));
-
-    $('#art-board .color0').css({ fill: "rgb" + color });
+    $('#art-board .color0').css({ fill: "#" + color });
     return color;
   });
 
 
   $("#color-holder-2").on("click", "#color-card", function () {
     color2 = ($(this).attr("colorpicker"));
-
-    $('#art-board2 .color0').css({ fill: "rgb" + color2 });
+    $('#art-board2 .color0').css({ fill: "#" + color2 });
     return color2;
   });
 
-
-
-
-  //========================================================================================//
-// save button function
-  document.getElementById("save").addEventListener("click", function(){
-
-    
-    var urls = ['svg1.svg', 'svg2.svg'];
-    var loaded = 0;
-    var objects=[];
-    for(var i=0;i<urls.length; i++){
-    objects.push(document.createElement('object'));
-    objects[i].onload = function(){
-      // Only if all our objects are loaded
-      if(++loaded==urls.length){
-        var svgDocType = document.implementation.createDocumentType('svg',  "-//W3C//DTD SVG 1.1//EN", "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd");
-        var svgDoc= document.implementation.createDocument ('http://www.w3.org/2000/svg', 'svg', svgDocType);
-        var svg1 = objects[0].contentDocument.documentElement.cloneNode(true);
-        var svg2 = objects[1].contentDocument.documentElement.cloneNode(true);
-        svg1.appendChild(svg2);
-        svg2.width.baseVal.value/=3;
-        svg2.height.baseVal.value/=3;
-        svgDoc.documentElement.appendChild(svg1)
-        var svgData = (new XMLSerializer()).serializeToString(svgDoc);
-        var a = document.createElement('a');
-        a.href = 'data:image/svg+xml; charset=utf8, '+svgData;
-        a.download = 'yourfile.svg';
-        a.innerHTML = "right click - save as if your browser doesn't support download attribute";
-        document.body.appendChild(a)
-
-        }
-      }
-    // sadly we have to append it in doc to load the resources
-	document.body.appendChild(objects[i])
-    objects[i].data = urls[i];
-    }
-
-
-// console.log(targetDiv);
-
-      });
+  $("#color-holder-3").on("click", "#color-card", function () {
+    color3 = ($(this).attr("colorpicker"));
+    $('#art-board3 .color0').css({ fill: "#" + color3 });
+    return color3;
+  });
+  
   //========================================================================================//
   //========================================================================================//
 }); // end document ready

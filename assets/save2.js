@@ -42,7 +42,7 @@ artBWidth = gridPoints[gridPoints.length - 1] + 200;
 // function for getting svg block data
   function generateBlockData() {
     for (i = 0; i < totalBlocks; i++) {
-      var bInfo = document.getElementById("a-b" + i);
+      var bInfo = document.getElementById("b-b" + i);
 
       var bData = bInfo.innerHTML;
 
@@ -87,7 +87,7 @@ function getGridData () {
 
 //========================================================================================//
 // save button function
-document.getElementById("save").addEventListener("click", function() {
+document.getElementById("save2").addEventListener("click", function() {
 
 totalBlocks = $('#main-card').data('art-board-size');
 // let artBWidth = gridPoints[gridPoints.length - 1] + 200;

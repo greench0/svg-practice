@@ -106,20 +106,11 @@ margin-bottom: 8px !important;
   cursor: pointer;
   margin-left:3px;
   margin-bottom: 3px;
-  position: absolute; 
   top: 0; 
   left: 0;
   z-index: 2;
  }
 
- #art-board3 {
-  cursor: pointer;
-  margin-left:3px;
-  margin-bottom: 3px;
-  top: 0; 
-  left: 0;
-  z-index: 3;
- }
 
 
  #main-block {
@@ -156,17 +147,15 @@ margin-bottom: 8px !important;
   word-wrap: break-word;
 }
 
-#art-board3 .color0 {
-  fill: #FFC205;
+#art-board2 .color0 {
+  fill: #FF847C;
 }
 
-#art-board2 .color0 {
-  fill: #FFDD79;
-}
 
 #art-board .color0 {
-  fill: #333333;
+  fill: #FF847C;
 }
+
 
 
 .rotate {
@@ -186,7 +175,7 @@ transition: transform .11s;
   width: 52px;
   height: 52px;
   float: left;
-  margin: 5px 10px 5px 10px ;
+  margin: 10px;
   background-clip: content-box;
   border: none;
   padding: 0 -5px 0 0;
@@ -240,10 +229,6 @@ transition: transform .11s;
       border-color: white !important;
       border-width: 0px !important;
     }  
-
-    /* .btn-hide3 {
-      color: pink;
-    } */
 /* -----------------------------------------------------------------------------------------------------------------------------------------
 ------ end Footer Section ------------------- */
 
