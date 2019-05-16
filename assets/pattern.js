@@ -90,27 +90,27 @@ function loadBlocks(a, block) {
   // create the block elements for the html page
   function makeBlocks(a, b) {
     for (i = 0; i < a; i++) {
-      var block = $( "<div id='a-b" + i + "' class='block-up data rotate grid-off " + b + "' style='transform: rotate(0deg);'></div>" );
+      var block = $( "<div id='a-b" + i + "' class='block-up data rotate grid-on " + b + "' style='transform: rotate(0deg);'></div>" );
       $("#art-board").append(block);
-      $("#block0").clone().appendTo("#a-b" + i + "");
+      $("#block1").clone().appendTo("#a-b" + i + "");
     }
   }
 
   function makeBlocks2(a, b) {
     for (i = 0; i < a; i++) {
       var block = $(
-        "<div id='b-b" + i + "' class='block-up data rotate grid-off " + b + "' style='transform: rotate(0deg);'></div>");
+        "<div id='b-b" + i + "' class='block-up data rotate grid-on " + b + "' style='transform: rotate(0deg);'></div>");
       $('#art-board2').append(block);
-      $('#block75').clone().appendTo("#b-b" + i + "");
+      $('#block1').clone().appendTo("#b-b" + i + "");
     }
   }
 
   function makeBlocks3(a, b) {
     for (i = 0; i < a; i++) {
       var block = $(
-        "<div id='c-b" + i + "' class='block-up data rotate grid-off " + b + "' style='transform: rotate(0deg);'></div>");
+        "<div id='c-b" + i + "' class='block-up data rotate grid-on " + b + "' style='transform: rotate(0deg);'></div>");
       $('#art-board3').append(block);
-      $('#block74').clone().appendTo("#c-b" + i + "");
+      $('#block1').clone().appendTo("#c-b" + i + "");
     }
   }
 
