@@ -102,7 +102,7 @@ getGridData();
    blocks = [];
 
   for (i = 0; i < blockAmount; i++) {
-    var block = '<svg id="layer-' + i + '"> <g transform="translate(' + grid[i][0] + " ," + grid[i][1] + ") rotate(" + blockRotateData[i] + ' 100 100)"> ' + blockSVGData[i] + " </g> </svg>"; 
+    var block = '<g transform="translate(' + grid[i][0] + " ," + grid[i][1] + ") rotate(" + blockRotateData[i] + ' 100 100)"> ' + blockSVGData[i] + " </g>"; 
     blocks.push(block);
   }
 
