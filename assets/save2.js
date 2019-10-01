@@ -31,6 +31,7 @@ else if (totalBlocks === 36) { gridPoints = [0, 200, 400, 600, 800, 1000]; }
 else if (totalBlocks === 49) { gridPoints = [0, 200, 400, 600, 800, 1000, 1200]; }
 else if (totalBlocks === 64) { gridPoints = [0, 200, 400, 600, 800, 1000,1200,1400]; }
 else if (totalBlocks === 81) { gridPoints = [0, 200, 400, 600, 800, 1000,1200,1400, 1600]; } 
+else if (totalBlocks === 100) { gridPoints = [0, 200, 400, 600, 800, 1000,1200,1400, 1600, 1800]; } 
 
 blockRow = gridPoints.length;
 blockAmount = blockRow * blockRow;

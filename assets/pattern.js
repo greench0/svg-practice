@@ -136,8 +136,10 @@ function loadBlocks(a, block) {
       gridPoints = [0, 200, 400, 600, 800, 1000, 1200];
     } else if (totalBlocksSqd === 8) {
       gridPoints = [0, 200, 400, 600, 800, 1000, 1200, 1400];
-    } else if (totalBlocksSqd === 8) {
+    } else if (totalBlocksSqd === 9) {
       gridPoints = [0, 200, 400, 600, 800, 1000, 1200, 1400, 1600];
+    } else if (totalBlocksSqd === 10) {
+      gridPoints = [0, 200, 400, 600, 800, 1000, 1200, 1400, 1600, 1800];
     }
 
     makeBlocks(totalBlocks, xAmount);
