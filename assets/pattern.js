@@ -6,7 +6,7 @@ $(document).ready(function() {
   let svgId = "block16";
 
   // a = how many svg files
-  const totalShapes = 108;
+  const totalShapes = 107;
 
   color = '333333';
   color2 = 'FFDD79';
@@ -401,7 +401,9 @@ function loadBlocks(a, block) {
     }
   });
 
-  var colors = [ 'FF847C' , 'd84233' , 'c6e7b1' , 'FFDD79' , 'FFC205' , '2044d4' , '5aa6da' , 'F5F5F5' , '333333' ];
+
+
+var colors = [ 'ff6560' , 'd3342e' , '828f00' , 'ffbd00' , '00bfe1' , '0f24a9' , 'FAFAFA' , '0e0e10' ];
 
   //========================================================================================//
   // color section

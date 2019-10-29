@@ -40,11 +40,12 @@ html, body {
 .btn
 {
 margin-right: 16px;
-margin-bottom: 8px !important;
+margin-bottom: 5px !important;
 -webkit-border-radius: 0 !important;
 -moz-border-radius: 0 !important;
      border-radius: 0 !important;
 }
+
 
 .btn-hide3, #save3, .btn-fill3, .btn-rotate3 {
   color: #FFCCCC;
@@ -61,7 +62,20 @@ margin-bottom: 8px !important;
   margin-left: 253px;
 }
 
+.nav-buttons2 {
+  position: absolute;
+  width: 58px;
+  margin-top: 51px;
+  margin-left: 317px;
+}
+
 .nav-buttons button {
+  font-size: 25px;
+  width: 58px;
+  background-color:#525252;
+}
+
+.nav-buttons2 button {
   font-size: 25px;
   width: 58px;
   background-color:#525252;
@@ -297,4 +311,11 @@ transition: transform .11s;
     margin-left: 167px;
   }
   
+  .nav-buttons2 {
+    position: absolute;
+    width: 58px;
+    margin-top: 51px;
+    margin-left: 231px;
+  }
+
 }
