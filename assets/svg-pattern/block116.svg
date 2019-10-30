@@ -5,5 +5,7 @@
 	  <g>
 	<rect class="color1" fill="#FFFFFF" fill-opacity="0" width="200" height="200"/>
 	<rect class="color0" fill="#AAAAAA" width="50" height="200"/>
+	<rect x="75" class="color0" fill="#AAAAAA" width="50" height="200"/>
+	<rect x="150" class="color0" fill="#AAAAAA" width="50" height="200"/>
 </g>
 </svg>
