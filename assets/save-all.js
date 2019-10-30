@@ -132,7 +132,7 @@ getGridData3();
   //========================================================================================//
   // save file here
   function doSave() {
-    let filedata = '<svg version="1.1" id="layer1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="' + artBWidth + '" height="' + artBWidth + '"> <g id="layertest">' + blocks + "</g> <g id='layertwo'>" + blocks2 + "</g><g id='layerthree'>" + blocks3 + "</g> </svg> ";
+    let filedata = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="' + artBWidth + '" height="' + artBWidth + '"> <g id="Layer_1">' + blocks + "</g> <g id='Layer_2'>" + blocks2 + "</g><g id='Layer_3'>" + blocks3 + "</g> </svg> ";
     let locfile = new Blob([filedata], {
       type: "image/svg+xml;charset=utf-8"
     });
