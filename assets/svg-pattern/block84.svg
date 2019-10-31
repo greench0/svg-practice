@@ -3,12 +3,8 @@
 <svg version="1.1" id="layer1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	  viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
 	  <g>
-	<rect class="color1" fill="#FFFFFF" fill-opacity="0" width="200" height="200"/>
-	<path class="color0" fill="#AAAAAA" d="M100,200h100V100C200,155.2,155.2,200,100,200z"/>
-	<path class="color0" fill="#AAAAAA" d="M100,0H0v100C0,44.8,44.8,0,100,0z"/>
-	<path class="color0" fill="#AAAAAA" d="M0,100v100h100C44.8,200,0,155.2,0,100z"/>
-	<path class="color0" fill="#AAAAAA" d="M125,25c-41.4,0-75,33.6-75,75c0,41.4,33.6,75,75,75c41.4,0,75-33.6,75-75
-		C200,58.6,166.4,25,125,25z"/>
-	<path class="color0" fill="#AAAAAA" d="M100,0c55.2,0,100,44.8,100,100V0H100z"/>
+<rect class="color1" fill="#FFFFFF" fill-opacity="0" width="200" height="200"/>
+<path class="color0" fill="#AAAAAA" d="M0,200h0.014C60.726,154.389,100,81.782,100,0H0V200z"/>
+<path class="color0" fill="#AAAAAA" d="M100,0c0,81.782,39.273,154.389,99.988,200H200V0H100z"/>
 </g>
 </svg>

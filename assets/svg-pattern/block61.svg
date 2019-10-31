@@ -4,7 +4,6 @@
 	  viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
 	  <g>
 	<rect class="color1" fill="#FFFFFF" fill-opacity="0" width="200" height="200"/>
-	<path class="color0" fill="#AAAAAA" d="M0,0v200h200V0H0z M100,150c-27.614,0-50-22.386-50-50s22.386-50,50-50s50,22.386,50,50
-		S127.614,150,100,150z"/>
+	<path class="color0" fill="#AAAAAA" d="M150,200C150,117.156,82.844,50,0,50v150H150z"/>
 </g>
 </svg>

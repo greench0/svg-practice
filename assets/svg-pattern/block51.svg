@@ -3,8 +3,9 @@
 <svg version="1.1" id="layer1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	  viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
 	  <g>
-	<rect class="color1" fill="#FFFFFF" fill-opacity="0" width="200" height="200"/>
-	<path class="color0" fill="#AAAAAA" d="M125,103.154V0H75v103.154C31.885,114.266,0,153.432,0,200h75h50h75
-		C200,153.432,168.115,114.266,125,103.154z"/>
-</g>
+<rect class="color1" fill="#FFFFFF" fill-opacity="0" width="200" height="200"/>
+<path class="color0" fill="#AAAAAA" d="M100,0C44.784,0,0,44.782,0,100s44.782,100,100,100c55.216,0,100-44.782,100-100
+	S155.218,0,100,0z M100,125c-13.804,0-25-11.195-25-25c0-13.804,11.196-25,25-25c13.805,0,25,11.196,25,25
+	C125,113.805,113.805,125,100,125z"/>
+	</g>
 </svg>
