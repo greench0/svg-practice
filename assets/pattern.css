@@ -59,14 +59,14 @@ margin-bottom: 5px !important;
   position: absolute;
   width: 58px;
   margin-top: 51px;
-  margin-left: 253px;
+  margin-left: 263px;
 }
 
 .nav-buttons2 {
   position: absolute;
   width: 58px;
   margin-top: 51px;
-  margin-left: 317px;
+  margin-left: 327px;
 }
 
 .nav-buttons button {
@@ -215,10 +215,11 @@ transition: transform .11s;
   width: 52px;
   height: 52px;
   float: left;
-  margin: 4px;
+  /* margin: 5px 5px 5px 2px; */
+  margin: 8px 0px 0px 8px;
   background-clip: content-box;
   border: none;
-  padding: 4 -4px 0 8px;
+  padding: 4 -4px 0 6px;
   cursor: pointer;
   z-index: 1 !important;
   background-color: rgb(245, 245, 245);
@@ -268,15 +269,15 @@ transition: transform .11s;
 #sidebar {
   padding-left: 15px;
   padding-top: -5px;
-    min-width: 270px;
-    max-width: 270px;
+    min-width: 280px;
+    max-width: 280px;
     background: #f2f2f2;
     transition: all 0.3s;
     height: 86vh; 
 }
 
 #sidebar.active {
-    margin-left: -270px;
+    margin-left: -280px;
 }
 
 /* ---------------------------------------------------
