@@ -6,7 +6,7 @@ $(document).ready(function() {
   let svgId = "block16";
 
   // a = how many svg files
-  const totalShapes = 145;
+  const totalShapes = 147;
 
   color = '333333';
   color2 = 'FFDD79';
@@ -32,13 +32,18 @@ $(document).ready(function() {
   });
   //========================================================================================//
   //========================================================================================//
-  // buttons for art-board generation
-  $(document).ready(function() {
-    $("#sidebarCollapse").on("click", function() {
+  // buttons for art-board generation    
+    function sidebarCollapse() {
       $("#sidebar").toggleClass("active");
-    });
+  }
+  
+  $("#sidebarCollapse").on("click", function() {
+    // $("#sidebar").toggleClass("active");
+    sidebarCollapse();
   });
 
+  
+  
   function clearArt() {
     $("#art-board").empty();
   }
@@ -122,6 +127,7 @@ function loadBlocks(a, block) {
 
     clearArt();
     $("#board-options").hide();
+    sidebarCollapse();
 
     // data for saving
     totalBlocksSqd = Math.sqrt(totalBlocks);

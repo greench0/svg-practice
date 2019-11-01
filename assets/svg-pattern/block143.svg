@@ -4,13 +4,8 @@
 	  viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
 	  <g>
 	<rect class="color1" fill="#FFFFFF" fill-opacity="0" width="200" height="200"/>
-	<rect class="color0" fill="#AAAAAA" width="50" height="50"/>
-	<rect x="50" y="50" class="color0" fill="#AAAAAA" width="50" height="50"/>
-	<rect y="100" class="color0" fill="#AAAAAA" width="50" height="50"/>
-	<rect x="50" y="150" class="color0" fill="#AAAAAA" width="50" height="50"/>
-	<rect x="100" class="color0" fill="#AAAAAA" width="50" height="50"/>
-	<rect x="150" y="150" class="color0" fill="#AAAAAA" width="50" height="50"/>
-	<rect x="100" y="100" class="color0" fill="#AAAAAA" width="50" height="50"/>
-	<rect x="150" y="50" class="color0" fill="#AAAAAA" width="50" height="50"/>
+	<polygon class="color0" fill="#AAAAAA" points="0,200 50,200 0,100 	"/>
+	<polygon class="color0" fill="#AAAAAA" points="50,200 150,200 100,100 	"/>
+	<polygon class="color0" fill="#AAAAAA" points="150,200 200,200 200,100 	"/>
 </g>
 </svg>
