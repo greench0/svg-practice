@@ -6,11 +6,13 @@ $(document).ready(function() {
   let svgId = "block16";
 
   // a = how many svg files
-  const totalShapes = 147;
+  const totalShapes = 159;
 
-  color = '333333';
-  color2 = 'FFDD79';
-  color3 = 'FFC205';
+  color = '151515';
+  color2 = 'FFCE00';
+  color3 = 'ff6560';
+
+  colorblocks = '333333';
   
   //========================================================================================//
   var mainBlock = Snap("#main-block");
@@ -84,13 +86,26 @@ $(document).ready(function() {
   LoadBlocksFunc();
   //========================================================================================//
   // defines the color 1 and 2 for the default shapes
-function loadBlocks(a, block) {
-    Snap.load("assets/svg-pattern/block" + a + ".svg", function (data) {
-      var paper = data.select("g");
-      block.append(paper);
-    });
-  }
+// function loadBlocks(a, block) {
+//     Snap.load("assets/svg-pattern/block" + a + ".svg", function (data) {
+//       var paper = data.select("g");
+//       block.append(paper);
+//     });
+//   }
 
+function loadBlocks(a, block) {
+  Snap.load("assets/svg-pattern/block" + a + ".svg", function (data) {
+    var paper = data.select("g");
+    // set attribute color sfor color1 and color0 defined in the external svg
+    attributes = paper.selectAll('[class="color0"]');
+    attributes.attr({ fill: "#" + colorblocks });
+    attributes = paper.selectAll('[class="color1"]');
+    attributes.attr({ fill: "#" + color });
+
+
+    block.append(paper);
+  });
+}
   //========================================================================================//
   // create the block elements for the html page
   function makeBlocks(a, b) {
@@ -231,6 +246,7 @@ function loadBlocks(a, block) {
       var block = $( "<div id='a-b" + i + "' class='block-up data rotate grid-off " + b + "' style='transform: rotate(0deg);'></div>");
       $('#art-board').append(block);
       $('#' + svgId + '').clone().appendTo("#a-b" + i + "");
+      $('#art-board .color0').css({ fill: "#" + color });
     }
   }
 
@@ -239,6 +255,7 @@ function loadBlocks(a, block) {
       var block = $( "<div id='b-b" + i + "' class='block-up data rotate grid-off " + b + "' style='transform: rotate(0deg);'></div>");
       $('#art-board2').append(block);
       $('#' + svgId + '').clone().appendTo("#b-b" + i + "");
+      $('#art-board2 .color0').css({ fill: "#" + color2 });
     }
   }
 
@@ -247,6 +264,7 @@ function loadBlocks(a, block) {
       var block = $( "<div id='c-b" + i + "' class='block-up data rotate grid-off " + b + "' style='transform: rotate(0deg);'></div>");
       $('#art-board3').append(block);
       $('#' + svgId + '').clone().appendTo("#c-b" + i + "");
+      $('#art-board3 .color0').css({ fill: "#" + color3 });
     }
   }
     //================================//
@@ -257,8 +275,7 @@ function loadBlocks(a, block) {
     fillBlocks(totalBlocks, xAmount);
 
     divAmount.push(totalBlocks);
-    console.log('btn fill')
-
+    // console.log('btn fill')
   });
 
   $(".btn-fill2").on("click", function() {
@@ -267,7 +284,7 @@ function loadBlocks(a, block) {
     fillBlocks2(totalBlocks, xAmount);
 
     divAmount.push(totalBlocks);
-    console.log('btnfill2')
+    // console.log('btnfill2')
   });
 
   $(".btn-fill3").on("click", function() {
@@ -409,7 +426,7 @@ function loadBlocks(a, block) {
 
 
 
-var colors = [ 'ff6560' , 'd3342e' , '828f00' , 'FFCE00' , '00bfe1' , '0f24a9' , 'FAFAFA' , '0e0e10' ];
+var colors = [ 'ff6560' , 'd3342e' , '828f00' , 'FFCE00' , '00bfe1' , '0f24a9' , 'FAFAFA' , '151515' ];
 
   //========================================================================================//
   // color section
