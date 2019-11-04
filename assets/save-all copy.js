@@ -63,45 +63,11 @@ artBWidth = gridPoints[gridPoints.length - 1] + 200;
 //========================================================================================//
 //========================================================================================//
 // function for getting svg block data
-  // function generateBlockData() {
-  //   for (i = 0; i < totalBlocks; i++) {
-  //     var bInfo = document.getElementById("a-b" + i);
-  //     var bData = bInfo.innerHTML;
-  //     var svgBlockData = bData.substring(bData.lastIndexOf("<g>") + 3, bData.lastIndexOf("</g>"));
-  //     var rotateData = bInfo.style["transform"]; var blockRotateValue = Number(rotateData.slice(7, -4)); blockRotateData.push(blockRotateValue); blockSVGData.push(svgBlockData);
-  //   }
-  // }
+  function generateBlockData() { for (i = 0; i < totalBlocks; i++) { var bInfo = document.getElementById("a-b" + i); var bData = bInfo.innerHTML; var svgBlockData = bData.substring( bData.lastIndexOf("<g>") + 3, bData.lastIndexOf("</g>") ); var rotateData = bInfo.style["transform"]; var blockRotateValue = Number(rotateData.slice(7, -4)); blockRotateData.push(blockRotateValue); blockSVGData.push(svgBlockData); } }
 
+  function generateBlockData2() { for (i = 0; i < totalBlocks; i++) { var bInfo = document.getElementById("b-b" + i); var bData = bInfo.innerHTML; var svgBlockData2 = bData.substring( bData.lastIndexOf("<g>") + 3, bData.lastIndexOf("</g>") ); var rotateData2 = bInfo.style["transform"]; var blockRotateValue2 = Number(rotateData2.slice(7, -4)); blockRotateData2.push(blockRotateValue2); blockSVGData2.push(svgBlockData2); } }
 
-  function generateBlockData(valA) {
-    for (i = 0; i < totalBlocks; i++) {
-      var bInfo = document.getElementById(valA + i);
-      var bData = bInfo.innerHTML;
-      var svgBlockData = bData.substring(bData.lastIndexOf("<g>") + 3, bData.lastIndexOf("</g>"));
-      var rotateData = bInfo.style["transform"]; 
-      var blockRotateValue = Number(rotateData.slice(7, -4)); blockRotateData.push(blockRotateValue); blockSVGData.push(svgBlockData);
-    }
-  }
-
-  function generateBlockData2() {
-    for (i = 0; i < totalBlocks; i++) {
-      var bInfo = document.getElementById("b-b" + i);
-      var bData = bInfo.innerHTML;
-      var svgBlockData2 = bData.substring(bData.lastIndexOf("<g>") + 3, bData.lastIndexOf("</g>"));
-      var rotateData2 = bInfo.style["transform"];
-      var blockRotateValue2 = Number(rotateData2.slice(7, -4)); blockRotateData2.push(blockRotateValue2); blockSVGData2.push(svgBlockData2);
-    }
-  }
-
-  function generateBlockData3() {
-    for (i = 0; i < totalBlocks; i++) {
-      var bInfo = document.getElementById("c-b" + i);
-      var bData = bInfo.innerHTML;
-      var svgBlockData3 = bData.substring(bData.lastIndexOf("<g>") + 3, bData.lastIndexOf("</g>"));
-      var rotateData3 = bInfo.style["transform"];
-      var blockRotateValue3 = Number(rotateData3.slice(7, -4)); blockRotateData3.push(blockRotateValue3); blockSVGData3.push(svgBlockData3);
-    }
-  }
+  function generateBlockData3() { for (i = 0; i < totalBlocks; i++) { var bInfo = document.getElementById("c-b" + i); var bData = bInfo.innerHTML; var svgBlockData3 = bData.substring( bData.lastIndexOf("<g>") + 3, bData.lastIndexOf("</g>") ); var rotateData3 = bInfo.style["transform"]; var blockRotateValue3 = Number(rotateData3.slice(7, -4)); blockRotateData3.push(blockRotateValue3); blockSVGData3.push(svgBlockData3); } }
 
 // ==================
 function getGridData () {
@@ -133,14 +99,9 @@ blockSVGData = [];
 
 blockRotateData2 = [];
 blockSVGData2 = [];
-
-blockRotateData3 = [];
-blockSVGData3 = [];
-
 totalBlockSqd();
 
-// generateBlockData();
-generateBlockData("a-b");
+generateBlockData();
 getGridData();
 
 generateBlockData2();
