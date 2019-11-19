@@ -6,7 +6,7 @@ $(document).ready(function() {
   let svgId = "block16";
 
   // a = how many svg files
-  const totalShapes = 160;
+  const totalShapes = 167;
 
   color = '151515';
   color2 = 'FFCE00';
@@ -426,7 +426,7 @@ function loadBlocks(a, block) {
 
 
 
-var colors = [ 'ff6560' , 'd3342e' , '828f00' , 'FFCE00' , '00bfe1' , '0f24a9' , 'FAFAFA' , '151515' ];
+var colors = [ 'ff6560', 'd3342e', 'FFCE00', 'ffa60e', '828f00', '00bfe1', '0277b1', '0f24a9' , 'FAFAFA', '151515' ];
 
   //========================================================================================//
   // color section

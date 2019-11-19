@@ -270,12 +270,12 @@ transition: transform .11s;
 
 #sidebar {
   padding-left: 15px;
-  padding-top: -5px;
+  padding-top: -15px;
     min-width: 365px;
     max-width: 365px;
     background: #f2f2f2;
     transition: all 0.35s;
-    height: 86vh; 
+    height: 88.5vh; 
 }
 
 #sidebar.active {
