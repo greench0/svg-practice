@@ -3,6 +3,7 @@
 <svg version="1.1" id="layer1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	  viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
 	  <g>
-<polygon class="color0" fill="#AAAAAA" points="200,200 150,0 200,0 "/>
+	<rect class="color1" fill="#FFFFFF" fill-opacity="0" width="200" height="200"/>
+	<path class="color0" fill="#AAAAAA" d="M100,179.29c27.611,27.612,72.387,27.612,100,0V0H0v179.29C27.614,151.675,72.387,151.677,100,179.29z"/>
 </g>
 </svg>
