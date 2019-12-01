@@ -6,7 +6,7 @@ $(document).ready(function() {
   let svgId = "block16";
 
   // a = how many svg files
-  const totalShapes = 170;
+  const totalShapes = 173;
 
   color = '151515';
   color2 = 'FFCE00';
