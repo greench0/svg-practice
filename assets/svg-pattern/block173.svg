@@ -4,6 +4,7 @@
 	  viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
 	  <g>
 	<rect class="color1" fill="#FFFFFF" fill-opacity="0" width="200" height="200"/>
-	<polygon class="color0" fill="#AAAAAA" points="0,0 0,100 200,200 200,0 	"/>
+	<path class="color0" fill="#AAAAAA" d="M53.518,200h59.223c23.702-33.98,53.278-63.559,87.26-87.262V53.518
+		C139.275,88.645,88.645,139.275,53.518,200z"/>
 </g>
 </svg>
