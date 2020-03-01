@@ -426,7 +426,7 @@ function loadBlocks(a, block) {
 
 
 
-var colors = [ 'ff6560', 'd3342e', 'FFCE00', 'ffa60e', '7dc135', '00bfe1', '212121', 'ffde37', '049c6d', '0e9642', '064edb', '0410ba', '887db7', 'ab50b9', 'f5313e', 'fb1419', 'fe731d', 'fe2785'  ];
+var colors = [ 'ff6560', 'f2f2f2', '212121', 'FFCE00', 'ffa60e', '7dc135', '00bfe1', 'ffde37', '049c6d', '0e9642', '064edb', '0410ba', '887db7', 'ab50b9', 'f5313e', 'fb1419', 'fe731d', 'fe2785'  ];
 
 
 
